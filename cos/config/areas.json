@@ -1,0 +1,39 @@
+{
+  "areas": [
+    {
+      "id": "economic_output",
+      "name": "Output Econômico",
+      "weight": 0.35,
+      "description": "Licitações, pipeline, receita gerada, clientes ativados",
+      "indicators": ["licitacao_avancada", "proposta_enviada", "pipeline_movido", "cliente_ativado", "followup_estrategico"]
+    },
+    {
+      "id": "system_building",
+      "name": "Construção de Sistema",
+      "weight": 0.25,
+      "description": "Automação criada, scripts funcionais, gargalos removidos",
+      "indicators": ["script_criado", "automacao_criada", "bug_resolvido", "feature_entregue", "gargalo_removido"]
+    },
+    {
+      "id": "execution_discipline",
+      "name": "Execução & Disciplina",
+      "weight": 0.20,
+      "description": "Tarefas fechadas vs abertas, cumprimento do plano",
+      "indicators": ["tarefa_concluida", "plano_cumprido", "tarefa_iniciada", "desvio_detectado"]
+    },
+    {
+      "id": "energy_body",
+      "name": "Energia & Corpo",
+      "weight": 0.10,
+      "description": "Sono, academia, organização, hidratação",
+      "indicators": ["sono_adequado", "treino_realizado", "casa_organizada", "alimentacao_ok"]
+    },
+    {
+      "id": "relations_influence",
+      "name": "Relações & Influência",
+      "weight": 0.10,
+      "description": "Follow-ups, conteúdo publicado, networking, parcerias",
+      "indicators": ["followup_realizado", "conteudo_publicado", "reuniao_realizada", "parceria_avancada"]
+    }
+  ]
+}

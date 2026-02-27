@@ -1,0 +1,67 @@
+{
+    "governance_rules": [
+        {
+            "id": "RULE-001",
+            "name": "Foco Econômico Obrigatório",
+            "trigger": "economic_output_declining_3_days",
+            "condition": "economic_output.trend_3d < 0",
+            "action": "force_economic_focus",
+            "authority": "mandatory",
+            "message": "Output Econômico caindo há 3 dias. Foco obrigatório em pipeline e receita agora."
+        },
+        {
+            "id": "RULE-002",
+            "name": "Alerta de Dispersão",
+            "trigger": "tasks_open_no_close",
+            "condition": "open_tasks >= 3 AND closed_tasks_today == 0",
+            "action": "alert_dispersion",
+            "authority": "alert",
+            "message": "Você abriu {open_tasks} tarefas sem fechar nenhuma. Isso é dispersão operacional."
+        },
+        {
+            "id": "RULE-003",
+            "name": "Alerta de Inatividade",
+            "trigger": "inactivity_2h",
+            "condition": "last_event_minutes_ago >= 120",
+            "action": "alert_inactivity",
+            "authority": "alert",
+            "message": "2h sem atividade relevante registrada. O que está acontecendo?"
+        },
+        {
+            "id": "RULE-004",
+            "name": "Follow-up Atrasado",
+            "trigger": "followup_overdue",
+            "condition": "pending_followup_hours >= 48",
+            "action": "alert_followup",
+            "authority": "alert",
+            "message": "Follow-up com {contact} está atrasado há {hours}h. Ação imediata necessária."
+        },
+        {
+            "id": "RULE-005",
+            "name": "Alerta de Disciplina",
+            "trigger": "discipline_low",
+            "condition": "execution_discipline.score < 60",
+            "action": "suggest_focus",
+            "authority": "suggestion",
+            "message": "Disciplina em {score}. Feche tarefas pendentes antes de iniciar novas."
+        }
+    ],
+    "execution_protocol": {
+        "phases": [
+            "propose",
+            "pre_log",
+            "confirm",
+            "execute",
+            "post_log"
+        ],
+        "require_confirmation": true,
+        "auto_execute_never": [
+            "scripts",
+            "external_messages"
+        ],
+        "auto_execute_with_log": []
+    },
+    "confrontation_mode": "aggressive",
+    "confrontation_template": "Você está desperdiçando potencial. Evidência: {evidence}. Ajuste imediato: {action}.",
+    "adaptive_mode": true
+}

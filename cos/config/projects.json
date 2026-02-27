@@ -1,0 +1,80 @@
+{
+    "project_root": "c:/Users/pietr/OneDrive/.vscode",
+    "projects": [
+        {
+            "id": "arca_pietro",
+            "name": "Arca Pietro",
+            "path": "c:/Users/pietr/OneDrive/.vscode/arca_pietro",
+            "area": "economic_output",
+            "tags": [
+                "personal",
+                "finance",
+                "github"
+            ]
+        },
+        {
+            "id": "arte_rwa",
+            "name": "Arte RWA",
+            "path": "c:/Users/pietr/OneDrive/.vscode/arte_rwa",
+            "area": "economic_output",
+            "tags": [
+                "business",
+                "rwa"
+            ]
+        },
+        {
+            "id": "wappi",
+            "name": "Wappi",
+            "path": "c:/Users/pietr/OneDrive/.vscode/wappi",
+            "area": "system_building",
+            "tags": [
+                "saas",
+                "whatsapp"
+            ]
+        },
+        {
+            "id": "wappi_evolution",
+            "name": "Wappi Evolution",
+            "path": "c:/Users/pietr/OneDrive/.vscode/wappi_evolution",
+            "area": "system_building",
+            "tags": [
+                "evolution"
+            ]
+        },
+        {
+            "id": "wappi_lovable",
+            "name": "Wappi Lovable",
+            "path": "c:/Users/pietr/OneDrive/.vscode/wappi_lovable",
+            "area": "system_building",
+            "tags": [
+                "ui",
+                "frontend"
+            ]
+        },
+        {
+            "id": "bianance",
+            "name": "Binance Bot",
+            "path": "c:/Users/pietr/OneDrive/.vscode/bianance",
+            "area": "economic_output",
+            "tags": [
+                "crypto",
+                "trading"
+            ]
+        },
+        {
+            "id": "arte_",
+            "name": "Arte Base",
+            "path": "c:/Users/pietr/OneDrive/.vscode/arte_",
+            "area": "economic_output",
+            "tags": [
+                "business"
+            ]
+        }
+    ],
+    "monitoring": {
+        "check_git": true,
+        "check_readme": true,
+        "check_todos": true,
+        "idle_days_threshold": 3
+    }
+}

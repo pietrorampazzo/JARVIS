@@ -1,0 +1,166 @@
+{
+    "_board": "Arte Comercial",
+    "_board_id": "68569b7191cc868682152923",
+    "pipeline_order": [
+        "Compras.Gov",
+        "PREPARANDO",
+        "PROPOSTAS - PIEZO",
+        "PROPOSTAS - ARTE",
+        "PREGAO",
+        "HABILITADO",
+        "EMPENHO",
+        "ENVIADO",
+        "RECEBIDO",
+        "GANHOS - ARTE",
+        "PERDIDOS",
+        "DESCART",
+        "DADOS"
+    ],
+    "pipeline_stages": {
+        "Compras.Gov": {
+            "stage": "prospeccao",
+            "priority": 1,
+            "color": "🔵"
+        },
+        "PREPARANDO": {
+            "stage": "preparacao",
+            "priority": 2,
+            "color": "🟡"
+        },
+        "PROPOSTAS - PIEZO": {
+            "stage": "proposta",
+            "priority": 3,
+            "color": "🟠"
+        },
+        "PROPOSTAS - ARTE": {
+            "stage": "proposta",
+            "priority": 3,
+            "color": "🟠"
+        },
+        "PREGAO": {
+            "stage": "disputa",
+            "priority": 4,
+            "color": "🔴"
+        },
+        "HABILITADO": {
+            "stage": "habilitacao",
+            "priority": 5,
+            "color": "🟣"
+        },
+        "EMPENHO": {
+            "stage": "ganho_parcial",
+            "priority": 6,
+            "color": "🟢"
+        },
+        "ENVIADO": {
+            "stage": "entrega",
+            "priority": 7,
+            "color": "🟢"
+        },
+        "RECEBIDO": {
+            "stage": "concluido",
+            "priority": 8,
+            "color": "✅"
+        },
+        "GANHOS - ARTE": {
+            "stage": "ganho_final",
+            "priority": 8,
+            "color": "🏆"
+        },
+        "PERDIDOS": {
+            "stage": "perdido",
+            "priority": 0,
+            "color": "❌"
+        },
+        "DESCART": {
+            "stage": "descartado",
+            "priority": 0,
+            "color": "🗑️"
+        },
+        "DADOS": {
+            "stage": "referencia",
+            "priority": 0,
+            "color": "📋"
+        }
+    },
+    "list_to_cos": {
+        "Compras.Gov": {
+            "area": "economic_output",
+            "category": "licitacao",
+            "impact": 2,
+            "duration_minutes": 30,
+            "action_template": "Identificou oportunidade no Compras.gov: {card_name}"
+        },
+        "PREPARANDO": {
+            "area": "economic_output",
+            "category": "licitacao",
+            "impact": 3,
+            "duration_minutes": 45,
+            "action_template": "Preparou documentação para licitação: {card_name}"
+        },
+        "PROPOSTAS - PIEZO": {
+            "area": "economic_output",
+            "category": "licitacao",
+            "impact": 4,
+            "duration_minutes": 60,
+            "action_template": "Elaborou proposta de preço (Piezzo): {card_name}"
+        },
+        "PROPOSTAS - ARTE": {
+            "area": "economic_output",
+            "category": "licitacao",
+            "impact": 4,
+            "duration_minutes": 60,
+            "action_template": "Elaborou proposta de preço (Arte): {card_name}"
+        },
+        "PREGAO": {
+            "area": "economic_output",
+            "category": "licitacao",
+            "impact": 4,
+            "duration_minutes": 90,
+            "action_template": "Participou do pregão eletrônico: {card_name}"
+        },
+        "HABILITADO": {
+            "area": "economic_output",
+            "category": "licitacao",
+            "impact": 4,
+            "duration_minutes": 60,
+            "action_template": "Enviou habilitação técnica: {card_name}"
+        },
+        "EMPENHO": {
+            "area": "economic_output",
+            "category": "licitacao",
+            "impact": 5,
+            "duration_minutes": 30,
+            "action_template": "Licitação em empenho (GANHO confirmado): {card_name}"
+        },
+        "ENVIADO": {
+            "area": "economic_output",
+            "category": "licitacao",
+            "impact": 4,
+            "duration_minutes": 45,
+            "action_template": "Produto enviado ao órgão: {card_name}"
+        },
+        "RECEBIDO": {
+            "area": "economic_output",
+            "category": "licitacao",
+            "impact": 5,
+            "duration_minutes": 30,
+            "action_template": "Entrega concluída e recebida: {card_name}"
+        },
+        "GANHOS - ARTE": {
+            "area": "economic_output",
+            "category": "licitacao",
+            "impact": 5,
+            "duration_minutes": 15,
+            "action_template": "VITÓRIA em licitação (Arte Comercial): {card_name}"
+        }
+    },
+    "labels_to_status": {
+        "⚡ GANHO": "won",
+        "⌛ SUSPENSA": "suspended",
+        "TROCA/DEVOLUÇÃO": "return",
+        "ANSELMO": "assignee_anselmo",
+        "LUCAS": "assignee_lucas",
+        "PIEZZO": "assignee_piezzo"
+    }
+}

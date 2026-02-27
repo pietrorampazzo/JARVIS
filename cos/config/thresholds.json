@@ -1,0 +1,49 @@
+{
+    "score_thresholds": {
+        "excellent": {
+            "min": 85,
+            "label": "Dia Excelente",
+            "emoji": "🏆",
+            "action": "positive_record"
+        },
+        "good": {
+            "min": 70,
+            "label": "Dia Bom",
+            "emoji": "✅",
+            "action": "normal"
+        },
+        "average": {
+            "min": 55,
+            "label": "Dia Mediano",
+            "emoji": "⚠️",
+            "action": "adjustment_alert"
+        },
+        "poor": {
+            "min": 0,
+            "label": "Dia Ineficiente",
+            "emoji": "🚨",
+            "action": "mandatory_intervention"
+        }
+    },
+    "impact_scale": {
+        "1": "Baixo impacto — tarefa rotineira",
+        "2": "Tarefa pequena — contribuição modesta",
+        "3": "Produtivo — trabalho relevante entregue",
+        "4": "Alta relevância — avanço real",
+        "5": "Movimento estratégico — impacto direto em meta"
+    },
+    "daily_minimums": {
+        "economic_output": 1,
+        "system_building": 1,
+        "execution_discipline": 2
+    },
+    "open_tasks_limit": 7,
+    "inactivity_alert_minutes": 120,
+    "followup_overdue_hours": 48,
+    "economic_decline_days": 3,
+    "predictive_windows": [
+        3,
+        7,
+        30
+    ]
+}
