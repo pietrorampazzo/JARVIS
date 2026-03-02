@@ -20,6 +20,7 @@ from cos.engine.score_engine import calculate_daily_score
 from cos.engine.predictive_engine import get_predictive_alerts, get_scores_range
 from cos.engine.pipeline_sentinel import analyze_pipeline_bottlenecks
 from cos.integrations.project_analyzer import scan_projects
+from cos.integrations.openclaw_notifier import send_notification
 
 def get_open_tasks_count() -> int:
     """Conta tarefas em aberto (eventos sem par 'concluido')."""
@@ -146,6 +147,9 @@ def print_governance_report() -> None:
         print(f"\n  🚨 INTERVENÇÕES ATIVAS ({result['intervention_count']}):")
         for iv in result["interventions"]:
             print(f"\n  [{iv['priority']}] {iv['message']}")
+            # Disparo Proativo via OpenClaw para alertas CRITICAL ou HIGH
+            if iv['priority'] in ["CRITICAL", "HIGH"]:
+                send_notification(iv['message'], priority="high")
     else:
         print(f"\n  ✅ Nenhuma intervenção necessária no momento.")
 

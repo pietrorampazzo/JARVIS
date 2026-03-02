@@ -9,6 +9,8 @@ import argparse
 from datetime import datetime, date
 from pathlib import Path
 import sys
+import os
+import requests
 
 sys.stdout.reconfigure(encoding='utf-8')
 
@@ -95,16 +97,43 @@ def log_event(
         "notes": notes
     }
 
-    events = load_today_log()
-    events.append(event)
-    save_log(events)
+    # Despacho Inteligente (Local vs Rede Neural)
+    master_url = os.getenv("JARVIS_MASTER_URL")
+    if master_url:
+        try:
+            payload = {
+                "area_id": area,
+                "category": category,
+                "action": action,
+                "impact": impact,
+                "duration_minutes": duration_minutes,
+                "project": project
+            }
+            res = requests.post(f"{master_url}/api/log", json=payload, timeout=5)
+            if res.status_code == 200:
+                print(f"[JARVIS Network] Evento sincronizado com o Master node ({master_url})")
+            else:
+                print(f"⚠️ Erro ao syncar com Master: {res.text}. Salvando local fallback.")
+                events = load_today_log()
+                events.append(event)
+                save_log(events)
+        except Exception as e:
+            print(f"⚠️ Node Master inalcançável: {e}. Salvando local fallback.")
+            events = load_today_log()
+            events.append(event)
+            save_log(events)
+    else:
+        # Modo Monolítico Tradicional
+        events = load_today_log()
+        events.append(event)
+        save_log(events)
 
     print(f"\n✅ EVENTO LOGADO")
     print(f"   Área:     {areas[area]['name']}")
     print(f"   Ação:     {action}")
     print(f"   Impacto:  {'⭐' * impact} ({impact}/5)")
     print(f"   Duração:  {duration_minutes}min")
-    print(f"   Log:      {get_log_path()}\n")
+    print(f"   Modo:     {'Rede Neural' if master_url else 'Monolítico (Local)'}\n")
 
     return event
 

@@ -18,6 +18,9 @@ from score_engine import calculate_daily_score
 from predictive_engine import get_predictive_alerts, get_scores_range
 from governance_rules import evaluate_governance
 
+sys.path.insert(0, str(BASE_DIR / "integrations"))
+from openclaw_notifier import send_notification
+
 
 def get_yesterday_score() -> dict:
     yesterday = date.today() - timedelta(days=1)
@@ -125,6 +128,9 @@ if __name__ == "__main__":
 
     brief = generate_morning_brief()
     print(brief)
+
+    # Disparo Pró-ativo via OpenClaw
+    send_notification(brief, priority="briefing")
 
     if args.save:
         path = save_brief_to_file(brief)

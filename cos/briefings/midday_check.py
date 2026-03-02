@@ -15,6 +15,9 @@ sys.path.insert(0, str(BASE_DIR / "engine"))
 from score_engine import calculate_daily_score
 from governance_rules import evaluate_governance
 
+sys.path.insert(0, str(BASE_DIR / "integrations"))
+from openclaw_notifier import send_notification
+
 LOGS_DIR = BASE_DIR / "logs"
 
 
@@ -89,4 +92,8 @@ def generate_midday_check() -> str:
 
 
 if __name__ == "__main__":
-    print(generate_midday_check())
+    brief = generate_midday_check()
+    print(brief)
+    
+    # Disparo Pró-ativo via OpenClaw
+    send_notification(brief, priority="briefing")
