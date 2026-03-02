@@ -1,17 +1,17 @@
 {
     "folders": [
+        
         {
             "path": "C:/Users/pietr/OneDrive/.vscode/JARVIS"
-        },
-        {
-            "path": "C:/Users/pietr/OneDrive/.vscode/arte_"
         },
         {
             "path": "C:/Users/pietr/OneDrive/.vscode/wappi"
         },
         {
-            "path": "I:/Meu Drive"
+            "path": "C:/Users/pietr/OneDrive/.vscode/arte_"
         }
+        ,
+
     ],
     "settings": {
         "python.defaultInterpreterPath": "C:/Python313/python.exe",

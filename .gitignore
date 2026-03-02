@@ -1,15 +1,3 @@
-# Credenciais e configurações sensíveis
-cos/config/.env
-*.env
-
-# Logs do COS (dados pessoais)
-cos/logs/
-
-# Briefings gerados
-cos/briefings/output/
-
-# Uploads JARVIS
-cos/integrations/jarvis_uploads/
 
 # Python
 __pycache__/
@@ -20,3 +8,4 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
+.env
