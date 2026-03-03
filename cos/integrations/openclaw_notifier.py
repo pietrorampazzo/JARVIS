@@ -16,14 +16,15 @@ def send_notification(message: str, priority: str = "normal"):
     logging.info(f"Enviando notificação pró-ativa (Prioridade: {priority})...")
     
     # Prepara o comando
-    # O OpenClaw usa: openclaw message send --message "Texto"
-    cmd = ["openclaw", "message", "send", "--message", message]
+    # O OpenClaw usa: openclaw message send --target <dest> --message "Texto"
+    target = "+5511994103374"
+    cmd = ["openclaw", "message", "send", "--target", target, "--message", message]
     
     # Se for alta prioridade, podemos querer formatar com emojis ou prefixos
     if priority == "high":
-        cmd[4] = f"🚨 *[JARVIS CRITICAL]* 🚨\n{message}"
+        cmd[6] = f"🚨 *[JARVIS CRITICAL]* 🚨\n{message}"
     elif priority == "briefing":
-        cmd[4] = f"📊 *[JARVIS BRIEFING]*\n{message}"
+        cmd[6] = f"📊 *[JARVIS BRIEFING]*\n{message}"
         
     try:
         # Executa em background para não travar o daemon
@@ -44,6 +45,9 @@ def send_notification(message: str, priority: str = "normal"):
 if __name__ == "__main__":
     # Teste simples CLI
     if len(sys.argv) > 1:
-        send_notification(" ".join(sys.argv[1:]), "normal")
+        # Join elements from index 1 onwards to avoid slice type issues
+        args_to_join = [sys.argv[i] for i in range(1, len(sys.argv))]
+        full_message = " ".join(args_to_join)
+        send_notification(full_message, "normal")
     else:
         print("Uso: python openclaw_notifier.py 'Mensagem de teste'")

@@ -15,10 +15,8 @@ sys.path.insert(0, str(BASE_DIR / "engine"))
 from score_engine import calculate_daily_score
 from governance_rules import evaluate_governance
 
-sys.path.insert(0, str(BASE_DIR / "integrations"))
-from openclaw_notifier import send_notification
-
-LOGS_DIR = BASE_DIR / "logs"
+sys.path.insert(0, str(BASE_DIR / "engine"))
+import gerador_dia
 
 
 def get_morning_events_count() -> int:
@@ -95,5 +93,6 @@ if __name__ == "__main__":
     brief = generate_midday_check()
     print(brief)
     
-    # Disparo Pró-ativo via OpenClaw
-    send_notification(brief, priority="briefing")
+    # Atualiza o estado global no dia.md
+    print("Atualizando dia.md...")
+    gerador_dia.build_dia_md()

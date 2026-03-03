@@ -2,6 +2,20 @@
     "project_root": "c:/Users/pietr/OneDrive/.vscode",
     "projects": [
         {
+            "id": "jarvis",
+            "name": "JARVIS CORE (Infraestrutura)",
+            "path": "c:/Users/pietr/OneDrive/.vscode/JARVIS",
+            "area": "system_building",
+            "priority": "critical",
+            "tags": [
+                "core",
+                "automation"
+            ],
+            "observe": {
+                "todo_file": "TODO.md"
+            }
+        },
+        {
             "id": "arte_",
             "name": "ARTE — Licitações & BI",
             "path": "c:/Users/pietr/OneDrive/.vscode/arte_",
@@ -55,6 +69,7 @@
                     "agent_core/main.py",
                     "backend_api/server.js"
                 ],
+                "todo_file": "TODO.md",
                 "readme_file": "JARVIS/README.md"
             }
         },
@@ -69,7 +84,9 @@
                 "finance",
                 "github"
             ],
-            "observe": {}
+            "observe": {
+                "todo_file": "TODO.md"
+            }
         },
         {
             "id": "arte_rwa",
