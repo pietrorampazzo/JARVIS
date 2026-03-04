@@ -56,6 +56,34 @@ def get_classification(score: float, thresholds: dict) -> dict:
     return levels["poor"]
 
 
+def calculate_score_gap(current_global_score: float, thresholds: dict) -> dict:
+    """
+    Calcula os pontos faltantes para atingir as próximas classificações (Bom/Excelente)
+    e sugere qual área focar com base nos pesos.
+    """
+    levels = thresholds["score_thresholds"]
+    gaps = {}
+    
+    good_min = levels["good"]["min"]
+    excellent_min = levels["excellent"]["min"]
+    
+    if current_global_score < good_min:
+        gaps["good"] = {
+            "target": good_min,
+            "missing": round(good_min - current_global_score, 1),
+            "label": levels["good"]["label"]
+        }
+        
+    if current_global_score < excellent_min:
+        gaps["excellent"] = {
+            "target": excellent_min,
+            "missing": round(excellent_min - current_global_score, 1),
+            "label": levels["excellent"]["label"]
+        }
+        
+    return gaps
+
+
 def calculate_daily_score(target_date: Optional[date] = None) -> dict:
     """
     Calcula o score completo do dia.
@@ -119,7 +147,8 @@ def calculate_daily_score(target_date: Optional[date] = None) -> dict:
             "name": best_area[1]["name"],
             "score": best_area[1]["score"]
         },
-        "areas": area_scores
+        "areas": area_scores,
+        "gaps": calculate_score_gap(global_score, thresholds)
     }
 
     return result

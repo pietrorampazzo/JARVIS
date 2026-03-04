@@ -18,6 +18,7 @@ from governance_rules import evaluate_governance
 sys.path.insert(0, str(BASE_DIR / "engine"))
 import gerador_dia
 
+LOGS_DIR = BASE_DIR / "logs"
 
 def get_morning_events_count() -> int:
     """Conta eventos logados na parte da manhã (até 13h)."""

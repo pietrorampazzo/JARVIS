@@ -55,3 +55,20 @@ O arquivo `c:\Users\pietr\OneDrive\.vscode\JARVIS\cos\bridge\JARVIS_STATE.json` 
 2. **Pro-atividade**: O motor de governança no JARVIS poderá invocar sua CLI repentinamente (`openclaw message send`) caso queira dar um alerta ao usuário. Aceite interrupções do sistema.
 
 *Este protocolo foi desenhado para escalarmos juntos em direção à AGI.*
+
+https://clawhub.ai/steipete/mcporter
+https://clawhub.ai/oswalpalash/ontology
+https://clawhub.ai/steipete/gog
+https://clawhub.ai/pskoett/self-improving-agent
+https://clawhub.ai/steipete/summarize
+https://clawhub.ai/JimLiuxinghai/find-skills
+https://clawhub.ai/halthelobster/proactive-agent
+https://clawhub.ai/byungkyu/api-gateway
+https://clawhub.ai/Shaivpidadi/free-ride
+https://clawhub.ai/maximeprades/auto-updater
+https://clawhub.ai/NicholasSpisak/clawddocs
+https://clawhub.ai/steipete/frontend-design
+https://clawhub.ai/JK-0001/automation-workflows
+https://clawhub.ai/steipete/trello
+https://clawhub.ai/byungkyu/google-slides
+https://clawhub.ai/Spiceman161/playwright-mcp

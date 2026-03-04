@@ -27,15 +27,17 @@ def analyze_pipeline_bottlenecks(board_name: str = "arte_comercial") -> list[dic
     
     alerts = []
     
-    # 1. Analisar HABILITADO (O gargalo identificado anteriormente)
+    # 1. Analisar HABILITADO (Espera de ATA/Contrato)
+    # Habilitados não são gargalos operacionais imediatos. Eles aguardam documentação oficial.
+    # Se houver muitos, a ação estratégica futura é movê-los para a Lojinha B2C.
     habilitados = snapshot.get("cards_by_list", {}).get("HABILITADO", [])
-    if len(habilitados) > 40:
+    if len(habilitados) > 50:
         alerts.append({
             "identity": "Pipeline Sentinel",
-            "priority": "HIGH",
-            "type": "bottleneck",
-            "message": f"🚨 GARGALO DE ESCALA: {len(habilitados)} licitações travadas em 'HABILITADO'. "
-                       f"O fluxo de caixa futuro está represado. Necessário revisar status desses pregões.",
+            "priority": "INFO",
+            "type": "opportunity",
+            "message": f"💡 OPORTUNIDADE B2C: {len(habilitados)} licitações em 'HABILITADO'. "
+                       f"Potencial enorme para popular a Lojinha de ATAs assim que os contratos chegarem.",
             "evidence": f"Board: {board_name} | Lista: HABILITADO | Qtd: {len(habilitados)}"
         })
 

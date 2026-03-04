@@ -1,5 +1,5 @@
 {
-  "imported_at": "2026-03-03T10:56:27.751468",
+  "imported_at": "2026-03-03T18:51:28.783823",
   "board": {
     "id": "68569b7191cc868682152923",
     "name": "Arte Comercial",
@@ -7,8 +7,8 @@
     "last_activity": "2026-03-03"
   },
   "stats": {
-    "total": 554,
-    "open": 553,
+    "total": 555,
+    "open": 554,
     "closed": 1,
     "with_due": 526,
     "overdue": 517,
@@ -16,7 +16,7 @@
     "suspended": 12,
     "by_list": {
       "DADOS": 8,
-      "Compras.Gov": 0,
+      "Compras.Gov": 1,
       "PREPARANDO": 9,
       "PREGAO": 2,
       "PROPOSTAS - PIEZO": 10,
@@ -152,7 +152,19 @@
         "desc": "Call Terça 10hrs -"
       }
     ],
-    "Compras.Gov": [],
+    "Compras.Gov": [
+      {
+        "id": "69a70cfde0d999669934c57f",
+        "name": "card",
+        "list": "Compras.Gov",
+        "labels": [],
+        "due": null,
+        "overdue": false,
+        "last_activity": "2026-03-03",
+        "url": "https://trello.com/c/qASiGUjo/2706-card",
+        "closed": false
+      }
+    ],
     "PREPARANDO": [
       {
         "id": "69a0a9b93c6ad4c59f948f2e",
@@ -259,7 +271,9 @@
         "id": "698f455390ca513fd5f66b65",
         "name": "ASSEMBLEIA LEGISLATIVA DO EST R.G.DO NORTE\nUasg: 926697\nPregão Eletrônico SRP 900062026",
         "list": "PREGAO",
-        "labels": [],
+        "labels": [
+          "PIEZZO"
+        ],
         "due": "2026-03-03",
         "overdue": true,
         "last_activity": "2026-03-03",
@@ -270,7 +284,9 @@
         "id": "698f4573ac52e8cd3a1650d6",
         "name": "SECRETARIA MUNICIPAL DE EDUCACAO DE MARABA-PA\nUasg: 927862\nPregão Eletrônico SRP 900182026",
         "list": "PREGAO",
-        "labels": [],
+        "labels": [
+          "PIEZZO"
+        ],
         "due": "2026-03-03",
         "overdue": true,
         "last_activity": "2026-03-03",

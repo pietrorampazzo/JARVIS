@@ -19,6 +19,7 @@ LOGS_DIR = BASE_DIR / "cos" / "logs"
 INTEGRATIONS_DIR = BASE_DIR / "cos" / "integrations"
 SNAPSHOTS_DIR = INTEGRATIONS_DIR / "snapshots"
 OUTPUT_DIR = BASE_DIR / "cos" / "briefings" / "output"
+HEARTBEAT_FILE = LOGS_DIR / "jarvis_heartbeat.json"
 
 def load_json(path: Path) -> dict:
     if path.exists():

@@ -10,8 +10,11 @@
             "path": "C:/Users/pietr/OneDrive/.vscode/wappi"
         },
         {
-            "path": "I:/Meu Drive"
+            "path": "C:/Users/pietr/OneDrive/.vscode/global_window"
         },
+        {
+            "path": "I:/Meu Drive"
+        }
     ],
     "settings": {
         "python.defaultInterpreterPath": "C:/Python313/python.exe",

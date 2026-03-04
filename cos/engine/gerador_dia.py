@@ -128,16 +128,21 @@ Sua missão é gerar diretamente o texto Markdown formatado para a seção "3) �
 - Pendências e TODOs dos Sistemas (Use isso para saber o que "FALTA Fazer"):
 {todos_content}
 
+- REGRAS DE NEGÓCIO ARTE (Crucial para seus insights):
+  * "Compras.Gov": A ação exigida é baixar os editais recém-descobertos.
+  * "PREPARANDO": A ação exigida é fazer o estudo orçamentário via `arte_heavy_notebook.py` e verificar quantos itens orçar via `master.xlsx`.
+  * "HABILITADO": Significa vitória na disputa técnica. O card fica parado aqui aguardando o envio do contrato/ATA oficial do governo. Não é gargalo. Oportunidade futura: Levar ATAs assinadas para a "Lojinha online B2C".
+
 **RETORNO EXIGIDO EM MARKDOWN (sem cabeçalhos H1/H2 fora dos solicitados):**
 Retorne APENAS:
 ### 📊 Índice de Esforço
 - Liste 3 pontos onde ele gastou mais tempo baseado nos logs, com qualificadores (Alto/Baixo).
 
-### 🤖 Insights Operacionais (Sintetizados)
-- 3 a 4 bullet points no máximo. Fale diretamente com o usuário ("Você fez...", "Você gastou...").
-- Se houve muito log em "Construção de Sistema", alerte que isso é bom para a infraestrutura, mas não pode parar as licitações.
-- Seja prescritivo e confronte-o caso haja muita configuração e pouca entrega (baseado nos logs e diffs).
-- Indique gargalos caso a produção econômica esteja baixa.
+### 🤖 Insights Operacionais ESTRATÉGICOS (Sintetizados)
+- 3 a 5 bullet points no máximo. Fale diretamente com o usuário de forma prescritiva e inteligente, como um co-piloto ("Você tem X em Preparação, rode o arte_heavy...").
+- Interprete os logs vs o estado do Pipeline baseado nas REGRAS DE NEGÓCIO. Dê conselhos práticos e não genéricos. Se há cards em Compras.Gov, lembre-o de baixar os editais. Se há cards em Preparando, lembre-o da planilha master.
+- Se houve muito log em "Construção de Sistema", alerte que isso é bom para a infraestrutura, mas não pode parar as licitações se o pipeline estiver carente.
+- Indique onde está o fluxo de dinheiro parado no pipeline e o que fazer. Se há muitos habilitados, elogie o volume aguardando contrato B2C.
 
 Não faça nenhuma saudação inicial. Entregue apenas o markdown em formatação pura a partir do "### 📊 Índice de Esforço".
 '''

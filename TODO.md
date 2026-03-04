@@ -1,7 +1,7 @@
 ### 🧠 JARVIS CORE (Infraestrutura)
 
-* Pendentes:
+* Concluídas:
 
-  * [ ] Desenvolver arquitetura de memória longa otimizada para Gemini.
-  * [ ] Integrar todos os status da saúde do sistema no RAG Rápido.
-  * [ ] Gerenciar task_sync de forma distribuída.
+  * [x] Desenvolver arquitetura de memória longa otimizada para Gemini.
+  * [x] Integrar todos os status da saúde do sistema no RAG Rápido.
+  * [x] Gerenciar task_sync de forma distribuída.

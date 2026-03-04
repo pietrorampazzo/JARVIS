@@ -15,7 +15,7 @@ from datetime import date, datetime
 # Integrar com o core
 BASE_DIR = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(BASE_DIR))
-from cos.core.shared import get_config, get_today_log
+from cos.core.shared import get_config, get_today_log, HEARTBEAT_FILE
 from cos.engine.score_engine import calculate_daily_score
 from cos.engine.predictive_engine import get_predictive_alerts, get_scores_range
 from cos.engine.pipeline_sentinel import analyze_pipeline_bottlenecks
@@ -123,7 +123,7 @@ def evaluate_governance() -> dict:
     if proj_summary.get("total_todos", 0) > 1000:
         actions.append(f"📦 DÍVIDA TÉCNICA CRÍTICA: {proj_summary['total_todos']} TODOs detectados. Hora de um dia 'Clean Up'.")
 
-    return {
+    result = {
         "timestamp": datetime.now().isoformat(),
         "current_score": today_score["global_score"],
         "classification": today_score["classification"],
@@ -133,6 +133,24 @@ def evaluate_governance() -> dict:
         "critical_area": today_score.get("critical_area", {}),
         "mode": "adaptive"
     }
+
+    # ---- FAST RAG HEARTBEAT INJECTION ----
+    # Save a minified lightweight state for fast access without recalculation
+    try:
+        with open(HEARTBEAT_FILE, "w", encoding="utf-8") as f:
+            json.dump({
+                "timestamp": result["timestamp"],
+                "score": result["current_score"],
+                "classification": result["classification"],
+                "interventions_active": result["intervention_count"],
+                "critical_area": result["critical_area"],
+            }, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        import traceback
+        import sys
+        print(f"Erro ao salvar heartbeat: {e}\n{traceback.format_exc()}", file=sys.stderr)
+
+    return result
 
 
 def print_governance_report() -> None:

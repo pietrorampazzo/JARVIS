@@ -45,3 +45,12 @@ mcp_notebooklm_select_notebook({ id: "UUID-AQUI" })
 ## 🎥 Extra: Geração de Conteúdo
 
 O módulo suporta `mcp_notebooklm_generate_content`. Você pode gerar Podcasts de Arquitetura (`audio_overview`) ou Briefings Diários em formato relatório PDF ("report"). Utilize conforme o usuário peça relatórios mais "físicos" ou "multimídia".
+
+## 🔌 Estratégia de Ingestão de Arquivos (Live Sync via Google Drive)
+
+Devido a restrições de segurança do MCP (bloqueio de caminhos absolutos) e instabilidades da interface do Google (timeouts do Playwright ao upar arquivos e textos nativamente), a **estratégia oficial e mais eficiente para popular Notebooks** é a técnica **"Chumbo" via Google Drive**:
+
+1. Crie uma pasta específica no Google Drive mapeado localmente (ex: `I:\Meu Drive\GoogleAI\Nome_do_Notebook`).
+2. Garanta que seus scripts de rastreamento/logs (ex: `edital_quality_logger`, `jarvis_daemon`, trackers) salvem as saídas (JSONs, MDs) **diretamente nessa pasta do Drive**.
+3. No painel web do NotebookLM, o usuário faz uma única importação inicial puxando esses arquivos pelo botão nativo "Google Drive".
+4. **Sincronia Viva:** Toda vez que seu script local atualizar o arquivo, o Google Drive sobe a modificação e o NotebookLM é capaz de re-sincronizá-la nativamente, sem dependermos de manipulação de DOM/Selenium pelo MCP.
