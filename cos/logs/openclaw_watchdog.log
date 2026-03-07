@@ -1,0 +1,8 @@
+2026-03-06 01:25:40,985 [WATCHDOG] INFO — ============================================================
+2026-03-06 01:25:40,987 [WATCHDOG] INFO —   JARVIS — OpenClaw Watchdog INICIADO
+2026-03-06 01:25:40,989 [WATCHDOG] INFO —   Check interval : 15s
+2026-03-06 01:25:40,990 [WATCHDOG] INFO —   Backoff inicial: 5s (máx. 60s)
+2026-03-06 01:25:40,991 [WATCHDOG] INFO —   Log: c:\Users\pietr\OneDrive\.vscode\JARVIS\cos\logs\openclaw_watchdog.log
+2026-03-06 01:25:40,992 [WATCHDOG] INFO — ============================================================
+2026-03-06 01:25:40,992 [WATCHDOG] INFO — 🚀 Iniciando OpenClaw: openclaw start
+2026-03-06 01:25:41,054 [WATCHDOG] INFO — [DRY-RUN] Simulando inicialização — nenhum processo real criado.

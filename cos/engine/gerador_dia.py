@@ -11,6 +11,12 @@ from pathlib import Path
 from datetime import date, datetime
 
 try:
+    import pandas as pd
+    HAS_PANDAS = True
+except ImportError:
+    HAS_PANDAS = False
+
+try:
     from google import genai
     HAS_GENAI = True
 except ImportError:
@@ -96,6 +102,117 @@ def get_todos_content() -> str:
                 pass
                 
     return "\n\n".join(todos) if todos else ""
+
+
+def get_planilhas_summary() -> str:
+    """Lê os arquivos master.xlsx, master_heavy.xlsx e master_heavy_ultra.xlsx e retorna um bloco markdown de sumário."""
+    if not HAS_PANDAS:
+        return "> ⚠️ `pandas` não instalado. Execute `pip install pandas openpyxl` para ativar este sumário.\n"
+
+    # Configurar o path das planilhas a partir da config de projetos
+    projects_config = get_config("projects")
+    arte_path = None
+    if projects_config:
+        for proj_data in projects_config.get("projects", []):
+            if "arte" in proj_data.get("id", "").lower() or "arte" in proj_data.get("name", "").lower():
+                arte_path = proj_data.get("path")
+                break
+
+    if not arte_path:
+        # Fallback: tentar path padrão
+        arte_path = r"c:\Users\pietr\OneDrive\.vscode\arte_"
+
+    downloads_path = Path(arte_path) / "DOWNLOADS"
+    master_path = downloads_path / "master.xlsx"
+    heavy_path = downloads_path / "master_heavy.xlsx"
+    ultra_path = downloads_path / "master_heavy_ultra.xlsx"
+
+    lines = []
+    lines.append("\n### 📊 Inteligência de Planilhas (ARTE)\n")
+
+    def fmt_brl(valor):
+        try:
+            return f"R$ {valor:_.2f}".replace("_", ".").replace(",", ",").replace(".", ",", 1) if valor < 1000 else "R$ {:,.2f}".format(valor).replace(",", "X").replace(".", ",").replace("X", ".")
+        except Exception:
+            return f"R$ {valor:.2f}"
+
+    # --- master.xlsx ---
+    if master_path.exists():
+        try:
+            df_m = pd.read_excel(master_path)
+            total_itens_m = len(df_m)
+            licit_unicas_m = df_m["ARQUIVO"].nunique() if "ARQUIVO" in df_m.columns else 0
+            valor_total_m = df_m["VALOR_TOTAL"].sum() if "VALOR_TOTAL" in df_m.columns else 0
+
+            # Saldo por mês usando TIMESTAMP
+            saldo_mes_str = ""
+            if "TIMESTAMP" in df_m.columns:
+                df_m["_dt"] = pd.to_datetime(df_m["TIMESTAMP"], errors="coerce")
+                df_m["_mes"] = df_m["_dt"].dt.to_period("M")
+                por_mes = df_m.groupby("_mes")["ARQUIVO"].nunique().sort_index()
+                MESES_PT = {1:"Jan",2:"Fev",3:"Mar",4:"Abr",5:"Mai",6:"Jun",7:"Jul",8:"Ago",9:"Set",10:"Out",11:"Nov",12:"Dez"}
+                partes = []
+                for periodo, qtd in por_mes.items():
+                    nome_mes = MESES_PT.get(periodo.month, str(periodo.month))
+                    partes.append(f"{nome_mes}/{str(periodo.year)[2:]}: {qtd}")
+                saldo_mes_str = " · ".join(partes) if partes else "Sem datas."
+
+            lines.append(f"**📋 master.xlsx** — `{total_itens_m}` itens | `{licit_unicas_m}` licitações | Potencial: `{fmt_brl(valor_total_m)}`")
+            if saldo_mes_str:
+                lines.append(f"  - Processadas por mês: {saldo_mes_str}")
+        except Exception as e:
+            lines.append(f"**📋 master.xlsx** — ⚠️ Erro ao ler: {e}")
+    else:
+        lines.append("**📋 master.xlsx** — Arquivo não encontrado.")
+
+    # --- master_heavy.xlsx ---
+    if heavy_path.exists():
+        try:
+            df_h = pd.read_excel(heavy_path)
+            total_itens_h = len(df_h)
+            licit_unicas_h = df_h["ARQUIVO"].nunique() if "ARQUIVO" in df_h.columns else 0
+            valor_total_h = df_h["VALOR_TOTAL"].sum() if "VALOR_TOTAL" in df_h.columns else 0
+            valor_venda_h = df_h["VALOR_FINAL"].sum() if "VALOR_FINAL" in df_h.columns else 0
+
+            # Itens sem proposta (sem VALOR_FINAL preenchido)
+            pendentes_h = 0
+            if "VALOR_FINAL" in df_h.columns:
+                pendentes_h = df_h["VALOR_FINAL"].isna().sum() + (df_h["VALOR_FINAL"] == 0).sum()
+            elif "JUSTIFICATIVA_TECNICA" in df_h.columns:
+                pendentes_h = df_h["JUSTIFICATIVA_TECNICA"].isna().sum()
+
+            lines.append(f"**🧠 master_heavy.xlsx** — `{total_itens_h}` itens | `{licit_unicas_h}` licitações | Pendentes: `{pendentes_h}` | Potencial Edital: `{fmt_brl(valor_total_h)}` | Proposta Total: `{fmt_brl(valor_venda_h)}`")
+        except Exception as e:
+            lines.append(f"**🧠 master_heavy.xlsx** — ⚠️ Erro ao ler: {e}")
+    else:
+        lines.append("**🧠 master_heavy.xlsx** — Arquivo não encontrado.")
+
+    # --- master_heavy_ultra.xlsx ---
+    if ultra_path.exists():
+        try:
+            df_u = pd.read_excel(ultra_path)
+            total_itens_u = len(df_u)
+            licit_unicas_u = df_u["ARQUIVO"].nunique() if "ARQUIVO" in df_u.columns else 0
+            valor_total_u = df_u["VALOR_TOTAL"].sum() if "VALOR_TOTAL" in df_u.columns else 0
+            valor_venda_u = df_u["PRECO_VENDA"].sum() if "PRECO_VENDA" in df_u.columns else 0
+
+            # Status de matching
+            status_str = ""
+            if "STATUS" in df_u.columns:
+                status_counts = df_u["STATUS"].value_counts(dropna=True)
+                partes_s = [f"`{s}`: {c}" for s, c in status_counts.items()]
+                status_str = " · ".join(partes_s)
+
+            lines.append(f"**⚡ master_heavy_ultra.xlsx** — `{total_itens_u}` itens | `{licit_unicas_u}` licitações | Potencial Edital: `{fmt_brl(valor_total_u)}` | Preço Venda: `{fmt_brl(valor_venda_u)}`")
+            if status_str:
+                lines.append(f"  - Status Matching: {status_str}")
+        except Exception as e:
+            lines.append(f"**⚡ master_heavy_ultra.xlsx** — ⚠️ Erro ao ler: {e}")
+    else:
+        lines.append("**⚡ master_heavy_ultra.xlsx** — Arquivo não encontrado.")
+
+    return "\n".join(lines) + "\n"
+
 
 def generate_ai_insights(score_data, logs_data, git_summary, pipeline_str, todos_content) -> str:
     """Consome a API do Gemini para gerar a seção 3 do dia.md."""
@@ -188,8 +305,8 @@ def build_dia_md():
     # Quantas concluidas hoje? Vendo logs.
     concluidas_hoje = len(logs)
     
-    # Montagem do Resumo
-    header = f"""# ☀️ Status do Dia: {now.strftime('%d/%m/%Y')}
+    # Montagem do Resumo Inicial
+    summary_header = f"""# ☀️ Status do Dia: {now.strftime('%d/%m/%Y')}
 
 > **Última atualização:** {now.strftime('%H:%M')} | **Score Atual:** {score['global_score']:.0f}/100 ({score['emoji']} {score['classification']})
 
@@ -203,17 +320,23 @@ Resumo dia até agora:
 
 - {concluidas_hoje} tasks concluidas hoje
 - {score['global_score']:.0f}% de esforço melhorado hoje.
-
-## 1) 📌 TASKS EM ABERTO (Global)
 """
 
-    # Mantendo os conteúdos do TODO (Seção 1) puros e originais exatamente como lidos
-    if todos_content:
-        header += "\n" + todos_content + "\n"
-    else:
-        header += "> *Nenhum arquivo TODO detectado nos projetos.*\n"
+    # Preparação dos dados para o Gemini (pipeline_str e logs_str)
+    pipeline_info = []
+    if trello_snap and "cards_by_list" in trello_snap:
+        for lst, cards in trello_snap["cards_by_list"].items():
+            if len(cards) > 0:
+                pipeline_info.append(f"{lst}: {len(cards)} cards")
+    pipeline_str = ", ".join(pipeline_info) if pipeline_info else "Nenhum dado do Trello."
 
-    # 2) Pipeline de Licitações
+    logs_str = ""
+    for idx, e in enumerate(logs):
+        logs_str += f"- [{e.get('area_name', 'None')}] {e.get('action', 'None')} (impacto {e.get('impact',0)}, duração {e.get('duration_minutes',0)}m)\n"
+    if not logs_str:
+        logs_str = "Nenhum evento produtivo logado hoje."
+
+    # 1) Pipeline de Licitações (Visão Operacional — PRIMEIRO)
     import sys
     sys.path.insert(0, str(BASE_DIR / "cos" / "briefings"))
     try:
@@ -223,27 +346,24 @@ Resumo dia até agora:
         pipeline = []
         
     total_active = sum(stage["count"] for stage in pipeline)
-    header += f"\n## 2) 🏢 PIPELINE DE LICITAÇÕES: {total_active} Licitações\n\n"
-    header += f"📊 PIPELINE ATIVO — {total_active} licitações\n\n"
+    pipeline_section = f"\n## 1) 🏢 PIPELINE DE LICITAÇÕES: {total_active} Licitações\n\n"
+    pipeline_section += f"📊 PIPELINE ATIVO — {total_active} licitações\n\n"
     
     if pipeline:
         for stage in pipeline:
             lst_name = stage['list']
-            # Para agradar o template ideal, injetamos a string
             pad = " " * max(1, 28 - len(lst_name))
             desc = f"({stage.get('stage', '')})" if stage.get("stage") else ""
-            header += f"{stage['color']} {lst_name}{pad} {stage['count']:<3} {desc}\n"
+            pipeline_section += f"{stage['color']} {lst_name}{pad} {stage['count']:<3} {desc}\n"
     else:
-        header += "- Operando sem dados do Trello localmente (Rode `pipeline_report.py --import-first`)\n"
+        pipeline_section += "- Operando sem dados do Trello localmente (Rode `pipeline_report.py --import-first`)\n"
 
-    # Estatísticas Inferiores do Pipeline
     if trello_snap:
         stats = trello_snap.get("stats", {})
         cards_by_list = trello_snap.get("cards_by_list", {})
         perdidas = len(cards_by_list.get('PERDIDOS', []))
         descart= len(cards_by_list.get('DESCART', []))
         
-        # Calcular vencidas
         vencidas = 0
         from pipeline_report import load_config
         config = load_config()
@@ -255,32 +375,29 @@ Resumo dia até agora:
                     if config_stage.get("priority", 0) > 0:
                         vencidas += 1
 
-        header += f"─────────────────────────────\n"
-        header += f"🏆 Total histórico GANHAS: {stats.get('won', 0)}\n"
-        header += f"❌ PERDIDAS: {perdidas} | 🗑️ DESCART: {descart}\n"
-        header += f"⚠️  HABILITAÇÕES VENCIDAS: {vencidas}\n"
+        pipeline_section += f"─────────────────────────────\n"
+        pipeline_section += f"🏆 Total histórico GANHAS: {stats.get('won', 0)}\n"
+        pipeline_section += f"❌ PERDIDAS: {perdidas} | 🗑️ DESCART: {descart}\n"
+        pipeline_section += f"⚠️  HABILITAÇÕES VENCIDAS: {vencidas}\n"
 
-    header += "\n## 3) 👁️ MONITORAMENTO E INSIGHTS (Gerado por IA)\n"
-    header += "\n> *Esta seção é reescrita automaticamente pela Engine JARVIS.*\n\n"
+    # Sumário das Planilhas ARTE (logo abaixo do pipeline do Trello)
+    planilhas_summary = get_planilhas_summary()
+    pipeline_section += planilhas_summary
 
-    # Formatação do Pipeline p/ o prompt Gemini
-    pipeline_info = []
-    if trello_snap and "cards_by_list" in trello_snap:
-        for lst, cards in trello_snap["cards_by_list"].items():
-            if len(cards) > 0:
-                pipeline_info.append(f"{lst}: {len(cards)} cards")
-    pipeline_str = ", ".join(pipeline_info) if pipeline_info else "Nenhum dado do Trello."
+    # 2) Insights Gerados por IA (SEGUNDO — após o pipeline)
+    insights_header = "\n## 2) 👁️ MONITORAMENTO E INSIGHTS (Gerado por IA)\n"
+    insights_header += "\n> *Esta seção é reescrita automaticamente pela Engine JARVIS.*\n\n"
+    insights_content = generate_ai_insights(score, logs_str, git_summary, pipeline_str, todos_content)
 
-    # Logs formatados
-    logs_str = ""
-    for idx, e in enumerate(logs):
-        logs_str += f"- [{e.get('area_name', 'None')}] {e.get('action', 'None')} (impacto {e.get('impact',0)}, duração {e.get('duration_minutes',0)}m)\n"
-    if not logs_str:
-        logs_str = "Nenhum evento produtivo logado hoje."
+    # 3) Tasks em Aberto (Detalhamento - Final do arquivo)
+    todos_section = "\n## 3) 📌 TASKS EM ABERTO (Global)\n"
+    if todos_content:
+        todos_section += "\n" + todos_content + "\n"
+    else:
+        todos_section += "> *Nenhum arquivo TODO detectado nos projetos.*\n"
 
-    insights = generate_ai_insights(score, logs_str, git_summary, pipeline_str, todos_content)
-    
-    full_content = header + insights + "\n"
+    # Interpolação final: header → pipeline → insights → todos
+    full_content = summary_header + pipeline_section + insights_header + insights_content + "\n" + todos_section
     
     with open(DIA_MD_PATH, "w", encoding="utf-8") as f:
         f.write(full_content)

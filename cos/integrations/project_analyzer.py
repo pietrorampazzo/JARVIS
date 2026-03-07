@@ -74,12 +74,12 @@ def analyze_docs(project_path: str) -> dict:
             dirs[:] = [d for d in dirs if d not in ignore_dirs]
             
             for file in files:
-                if file.endswith((".md", ".py", ".js", ".ts", ".html", ".css")):
+                if file.lower() == "todo.md":
                     file_path = os.path.join(root, file)
                     try:
                         with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
                             content = f.read().lower()
-                            todo_count += content.count("todo:") + content.count("fixme:")
+                            todo_count += content.count("- [ ]") + content.count("todo")
                     except:
                         pass
     except:

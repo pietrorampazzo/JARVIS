@@ -105,7 +105,9 @@ def import_board(board_id: str, open_only: bool = False) -> dict:
     # Cards
     card_filter = "open" if open_only else "all"
     cards_raw = trello_get(f"boards/{board_id}/cards/{card_filter}", {
-        "fields": "id,name,desc,idList,labels,due,dateLastActivity,url,closed"
+        "fields": "id,name,desc,idList,labels,due,dateLastActivity,url,closed",
+        "attachments": "true",
+        "attachment_fields": "url,name"
     })
 
     # Organizar por lista
@@ -162,6 +164,7 @@ def import_board(board_id: str, open_only: bool = False) -> dict:
             "last_activity": card.get("dateLastActivity", "")[:10] if card.get("dateLastActivity") else None,
             "url": card.get("url", ""),
             "closed": card.get("closed", False),
+            "attachments": [{"name": att.get("name"), "url": att.get("url")} for att in card.get("attachments", [])]
         }
         # Inclui desc apenas se preenchida (economiza espaço)
         if card.get("desc", "").strip():
