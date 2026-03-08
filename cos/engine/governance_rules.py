@@ -15,12 +15,13 @@ from datetime import date, datetime
 # Integrar com o core
 BASE_DIR = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(BASE_DIR))
+sys.path.insert(0, str(BASE_DIR / "tools")) # Para project_analyzer
+
 from cos.core.shared import get_config, get_today_log, HEARTBEAT_FILE
 from cos.engine.score_engine import calculate_daily_score
 from cos.engine.predictive_engine import get_predictive_alerts, get_scores_range
-from cos.engine.pipeline_sentinel import analyze_pipeline_bottlenecks
-from cos.integrations.project_analyzer import scan_projects
-from cos.integrations.openclaw_notifier import send_notification
+from project_analyzer import scan_projects
+from cos.core.openclaw_notifier import send_notification
 
 def get_open_tasks_count() -> int:
     """Conta tarefas em aberto (eventos sem par 'concluido')."""
@@ -30,13 +31,9 @@ def get_open_tasks_count() -> int:
     return max(started - finished, 0)
 
 def evaluate_governance() -> dict:
-    """
-    Avalia o estado atual e retorna intervenções necessárias.
-    """
     rules = get_config("rules")
     today_score = calculate_daily_score()
     predictive_alerts = get_predictive_alerts(7)
-    pipeline_alerts = analyze_pipeline_bottlenecks()
     project_data = scan_projects()
     
     interventions = []
@@ -92,16 +89,7 @@ def evaluate_governance() -> dict:
             "recommended_action": "review_idle_projects"
         })
 
-    # --- Intevenções de Pipeline (Pipeline Sentinel) ---
-    for alert in pipeline_alerts:
-        interventions.append({
-            "rule": "SENTINEL-" + alert["type"].upper(),
-            "priority": alert["priority"],
-            "type": alert["type"],
-            "message": alert["message"],
-            "recommended_action": "review_trello_pipeline",
-            "evidence": alert.get("evidence", "")
-        })
+    # --- Intevenções de Pipeline (Removed: Pipeline Sentinel) ---
 
     # --- Alertas Preditivos como Intervenções ---
     for alert in predictive_alerts:

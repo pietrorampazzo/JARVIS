@@ -27,11 +27,9 @@ sys.stdout.reconfigure(encoding='utf-8')
 BASE_DIR = Path(__file__).parent.parent.parent
 DIA_MD_PATH = BASE_DIR / "dia.md"
 
-sys.path.insert(0, str(BASE_DIR / "cos" / "core"))
-from shared import get_config, get_today_log, load_env, get_latest_snapshot
-
-sys.path.insert(0, str(BASE_DIR / "cos" / "engine"))
-from score_engine import calculate_daily_score
+sys.path.insert(0, str(BASE_DIR))
+from cos.core.shared import get_config, get_today_log, load_env, get_latest_snapshot
+from cos.engine.score_engine import calculate_daily_score
 
 
 def get_git_summary() -> str:
@@ -338,7 +336,7 @@ Resumo dia até agora:
 
     # 1) Pipeline de Licitações (Visão Operacional — PRIMEIRO)
     import sys
-    sys.path.insert(0, str(BASE_DIR / "cos" / "briefings"))
+    sys.path.insert(0, str(BASE_DIR / "cos" / "heartbeat"))
     try:
         from pipeline_report import get_pipeline_status
         pipeline = get_pipeline_status(trello_snap) if trello_snap else []
