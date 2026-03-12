@@ -27,25 +27,34 @@ def load_areas() -> dict:
     return {a["id"]: a for a in data["areas"]}
 
 
-def get_log_path(log_date: date = None) -> Path:
-    """Retorna o caminho do arquivo de log do dia."""
+def get_log_path() -> Path:
+    """Retorna o caminho do arquivo mestre de logs."""
     LOGS_DIR.mkdir(parents=True, exist_ok=True)
-    d = log_date or date.today()
-    return LOGS_DIR / f"{d.isoformat()}.json"
+    return LOGS_DIR / "cos_events.json"
 
 
-def load_today_log() -> list:
-    """Carrega os eventos do dia atual."""
+def load_all_events() -> list:
+    """Carrega todos os eventos históricos."""
     log_path = get_log_path()
     if log_path.exists():
         with open(log_path, "r", encoding="utf-8") as f:
-            return json.load(f)
+            try:
+                return json.load(f)
+            except:
+                return []
     return []
 
 
-def save_log(events: list, log_date: date = None) -> None:
-    """Salva o log do dia (append-only via substituição completa)."""
-    log_path = get_log_path(log_date)
+def load_today_log() -> list:
+    """Carrega apenas os eventos do dia de hoje."""
+    events = load_all_events()
+    today = date.today().isoformat()
+    return [e for e in events if e.get("timestamp", "").startswith(today)]
+
+
+def save_events(events: list) -> None:
+    """Salva a lista completa de eventos no arquivo mestre."""
+    log_path = get_log_path()
     with open(log_path, "w", encoding="utf-8") as f:
         json.dump(events, f, ensure_ascii=False, indent=2)
 
@@ -114,19 +123,19 @@ def log_event(
                 print(f"[JARVIS Network] Evento sincronizado com o Master node ({master_url})")
             else:
                 print(f"⚠️ Erro ao syncar com Master: {res.text}. Salvando local fallback.")
-                events = load_today_log()
+                events = load_all_events()
                 events.append(event)
-                save_log(events)
+                save_events(events)
         except Exception as e:
             print(f"⚠️ Node Master inalcançável: {e}. Salvando local fallback.")
-            events = load_today_log()
+            events = load_all_events()
             events.append(event)
-            save_log(events)
+            save_events(events)
     else:
         # Modo Monolítico Tradicional
-        events = load_today_log()
+        events = load_all_events()
         events.append(event)
-        save_log(events)
+        save_events(events)
 
     print(f"\n✅ EVENTO LOGADO")
     print(f"   Área:     {areas[area]['name']}")

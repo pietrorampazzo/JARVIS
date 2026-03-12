@@ -1,189 +1,259 @@
 """
-COS — Score Engine v1.0
-Calcula o score diário por área e o score global ponderado.
+COS — Score Engine v3.0 (Moving Average & 30 Strategies)
+Calcula a performance diária com base em média móvel competitiva.
 """
 
 import json
 import sys
-from datetime import date, timedelta
-from typing import Optional
-
-if hasattr(sys.stdout, 'reconfigure'):
-    sys.stdout.reconfigure(encoding='utf-8')
-
-import sys
+import os
+import subprocess
+from datetime import date, datetime, timedelta
 from pathlib import Path
-from datetime import date, datetime
+from typing import Optional, Dict, List
 
-# Integrar com o core
+# Setup caminhos
 BASE_DIR = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(BASE_DIR))
+
 from cos.core.shared import get_config, get_today_log, load_json, LOGS_DIR
+from cos.engine import inventory_engine
+import pandas as pd
 
+# Arquivo de histórico
+HISTORY_FILE = BASE_DIR / "cos" / "logs" / "score_history.json"
 
-def calculate_area_score(area_events: list, thresholds: dict) -> float:
-    """
-    Calcula score de uma área (0–100) baseado em:
-    - Número de eventos
-    - Impacto médio
-    - Duração total
-    """
-    if not area_events:
-        return 0.0
-
-    total_impact = sum(e["impact"] for e in area_events)
-    avg_impact = total_impact / len(area_events)
-    event_count = len(area_events)
-    total_duration = sum(e.get("duration_minutes", 0) for e in area_events)
-
-    # Fórmula: impacto médio (0-5) * 12 = 0-60 pts base
-    # + bônus por múltiplos eventos (até +20)
-    # + bônus por duração substancial (até +20)
-    base_score = (avg_impact / 5) * 60
-    event_bonus = min(event_count * 5, 20)
-    duration_bonus = min((total_duration / 60) * 10, 20)
-
-    score = base_score + event_bonus + duration_bonus
-    return min(round(score, 1), 100.0)
-
-
-def get_classification(score: float, thresholds: dict) -> dict:
-    """Retorna classificação do score."""
-    levels = thresholds["score_thresholds"]
-    for key in ["excellent", "good", "average", "poor"]:
-        if score >= levels[key]["min"]:
-            return levels[key]
-    return levels["poor"]
-
-
-def calculate_score_gap(current_global_score: float, thresholds: dict) -> dict:
-    """
-    Calcula os pontos faltantes para atingir as próximas classificações (Bom/Excelente)
-    e sugere qual área focar com base nos pesos.
-    """
-    levels = thresholds["score_thresholds"]
-    gaps = {}
-    
-    good_min = levels["good"]["min"]
-    excellent_min = levels["excellent"]["min"]
-    
-    if current_global_score < good_min:
-        gaps["good"] = {
-            "target": good_min,
-            "missing": round(good_min - current_global_score, 1),
-            "label": levels["good"]["label"]
+class ScoreEngineV3:
+    def __init__(self):
+        self.points_config = {
+            "delta_proposals": 15,       # por nova proposta
+            "triagem_progress": 1,       # por item movido M->H
+            "triagem_ultra": 2,          # por item movido H->U
+            "commit_jarvis": 10,         # por commit jarvis
+            "commit_project": 15,        # por commit arte/wappi
+            "task_done": 5,              # por task [x]
+            "bug_fixed": 20,             # tag #bug
+            "deploy_major": 50,          # deploy site/bot
+            "volume_heavy_50k": 1,       # cada 50k no heavy
+            "volume_ultra_20k": 2,       # cada 20k no ultra
+            "trello_move": 10,           # card movido p/ estágio final
+            "pipeline_clean": 10,        # compras.gov zerado
+            "focus_bonus": 10,           # log gap < 2h
+            "multiproject": 5,           # 3+ projetos no dia
+            "early_bird": 5,             # log antes das 09h
+            "night_owl": 5,              # log após as 18h
+            "refactor": 5,               # commit com 5+ arquivos
+            "lead_capture": 5,           # novo lead no supabase
+            "conversion": 30,            # card p/ GANHO
+            "briefing_usage": 5,         # rodar cos_briefing
+            "ocr_success": 5,            # extração OCR ok
+            "data_audit": 10,            # correção excel
+            "doc_update": 10,            # atualização walkthrough
+            "health_log": 5,             # log exercício/descanso
+            "networking": 10,            # log reunião
+            "matching_growth": 10,       # +5% aproveitamento
+            "infra_health": 10,          # pulse sem erros
+            "oracle_usage": 5,           # consulta oráculo
+            "task_edit": 5,              # atualizou task.md
+            "bot_automation": 10         # envio bot ok
         }
+
+    def get_history(self) -> Dict:
+        if not HISTORY_FILE.exists():
+            return {}
+        try:
+            with open(HISTORY_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except:
+            return {}
+
+    def save_to_history(self, day_data: Dict):
+        history = self.get_history()
+        history[day_data["date"]] = {
+            "total_pts": day_data["total_pts"],
+            "metrics": day_data["metrics"]
+        }
+        # Mantém apenas os últimos 30 dias para não inflar
+        sorted_dates = sorted(history.keys(), reverse=True)[:30]
+        trimmed_history = {d: history[d] for d in sorted_dates}
         
-    if current_global_score < excellent_min:
-        gaps["excellent"] = {
-            "target": excellent_min,
-            "missing": round(excellent_min - current_global_score, 1),
-            "label": levels["excellent"]["label"]
-        }
+        HISTORY_FILE.parent.mkdir(parents=True, exist_ok=True)
+        with open(HISTORY_FILE, "w", encoding="utf-8") as f:
+            json.dump(trimmed_history, f, ensure_ascii=False, indent=2)
+
+    def calculate_moving_average(self, days: int = 7) -> float:
+        history = self.get_history()
+        if not history:
+            return 50.0 # Valor base se não houver histórico
         
-    return gaps
+        scores = [v["total_pts"] for v in history.values()]
+        recent_scores = scores[:days]
+        return sum(recent_scores) / len(recent_scores)
 
+    def get_git_metrics(self) -> Dict:
+        metrics = {"commits_jarvis": 0, "commits_project": 0, "refactors": 0, "bugs": 0}
+        try:
+            # Commits últimas 24h
+            git_cmd = ["git", "log", "--since='24 hours ago'", "--oneline", "--pretty=format:%s"]
+            output = subprocess.check_output(git_cmd, encoding="utf-8").strip()
+            if output:
+                lines = output.splitlines()
+                for msg in lines:
+                    if "#bug" in msg.lower(): metrics["bugs"] += 1
+                    # Nota: Isso é simplificado, teria que varrer cada projeto no config
+                    metrics["commits_jarvis"] += 1 
+            
+            # Refactors (arquivos mudados)
+            git_diff = ["git", "diff", "--name-only", "HEAD@{1 day ago}", "HEAD"]
+            files = subprocess.check_output(git_diff, encoding="utf-8").strip()
+            if files and len(files.splitlines()) > 5:
+                metrics["refactors"] += 1
+        except:
+            pass
+        return metrics
 
-def calculate_daily_score(target_date: Optional[date] = None) -> dict:
-    """
-    Calcula o score completo do dia.
-    
-    Returns:
-        dict com score global, por área, classificação e eventos
-    """
-    if target_date is None:
-        target_date = date.today()
+    def calculate_daily_points(self, target_date: date) -> Dict:
+        pts = 0
+        metrics = {}
+        
+        # 1. Delta Propostas
+        inventory_snap = inventory_engine.run_inventory()
+        prev_inv_path = inventory_engine.find_previous_snapshot()
+        if prev_inv_path:
+            with open(prev_inv_path, "r", encoding="utf-8") as f:
+                prev_inv = json.load(f)
+            delta_inv = inventory_engine.calculate_delta(inventory_snap, prev_inv)
+            new_props = delta_inv["new_count"]
+            if new_props > 0:
+                val = new_props * self.points_config["delta_proposals"]
+                pts += val
+                metrics["propostas_novas"] = new_props
 
-    areas_config = get_config("areas")
-    areas = {a["id"]: a for a in areas_config["areas"]}
-    thresholds = get_config("thresholds")
-    
-    # Carregar logs do dia alvo
-    log_path = LOGS_DIR / f"{target_date.isoformat()}.json"
-    events = load_json(log_path) if log_path.exists() else []
+        # 2. Triagem e UIDs
+        try:
+            projects_config = get_config("projects")
+            arte_path = next((Path(p["path"]) for p in projects_config["projects"] if p["id"] == "arte_"), None)
+            if arte_path:
+                downloads = arte_path / "DOWNLOADS"
+                m_path = downloads / "master.xlsx"
+                h_path = downloads / "master_heavy.xlsx"
+                u_path = downloads / "master_heavy_ultra.xlsx"
+                
+                # UID Logic Robusta (V3)
+                uids_total = set()
+                for path in [h_path, u_path]:
+                    if path.exists():
+                        try:
+                            df_tmp = pd.read_excel(path, nrows=5)
+                            cols = df_tmp.columns.tolist()
+                            c_arq = "ARQUIVO" if "ARQUIVO" in cols else None
+                            c_item = "Nº" if "Nº" in cols else ("ITEM" if "ITEM" in cols else None)
+                            
+                            if c_item:
+                                use_cols = [c_item]
+                                if c_arq: use_cols.append(c_arq)
+                                df = pd.read_excel(path, usecols=use_cols)
+                                if c_arq:
+                                    df["uid"] = df[c_arq].astype(str) + "_" + df[c_item].astype(str)
+                                else:
+                                    df["uid"] = path.name + "_" + df[c_item].astype(str)
+                                uids_total.update(df["uid"].dropna().tolist())
+                        except:
+                            pass
+                
+                if m_path.exists():
+                    df_m_tmp = pd.read_excel(m_path, nrows=5)
+                    c_arq_m = "ARQUIVO" if "ARQUIVO" in df_m_tmp.columns else None
+                    c_item_m = "Nº" if "Nº" in df_m_tmp.columns else ("ITEM" if "ITEM" in df_m_tmp.columns else None)
+                    
+                    if c_item_m:
+                        use_cols_m = [c_item_m]
+                        if c_arq_m: use_cols_m.append(c_arq_m)
+                        df_m = pd.read_excel(m_path, usecols=use_cols_m)
+                        if c_arq_m:
+                            df_m["uid"] = df_m[c_arq_m].astype(str) + "_" + df_m[c_item_m].astype(str)
+                        else:
+                            df_m["uid"] = "master_" + df_m[c_item_m].astype(str)
+                        
+                        uids_m = set(df_m["uid"].dropna().tolist())
+                        triados = len(uids_m.intersection(uids_total))
+                        
+                        metrics["triados_count"] = triados
+                        metrics["total_master"] = len(df_m)
+                        pts += (triados * self.points_config["triagem_progress"])
+                
+                metrics["items_ultra"] = len(uids_total)
+                pts += (len(uids_total) * self.points_config["triagem_ultra"])
+        except:
+            pass
 
-    area_scores = {}
-    for area_id, area_info in areas.items():
-        area_events = [e for e in events if e["area"] == area_id]
-        score = calculate_area_score(area_events, thresholds)
-        area_scores[area_id] = {
-            "name": area_info["name"],
-            "weight": area_info["weight"],
-            "score": score,
-            "events": len(area_events),
-            "weighted_contribution": round(score * area_info["weight"], 2)
+        # 3. Logs e Tasks
+        logs = get_today_log() if target_date == date.today() else []
+        metrics["logs_count"] = len(logs)
+        pts += len(logs) * 10 # 10 pts por log padrão
+        
+        # 4. Git
+        git = self.get_git_metrics()
+        pts += git["commits_jarvis"] * self.points_config["commit_jarvis"]
+        pts += git["bugs"] * self.points_config["bug_fixed"]
+        
+        return {"total_pts": pts, "metrics": metrics, "date": target_date.isoformat()}
+
+    def run(self):
+        today = date.today()
+        daily_data = self.calculate_daily_points(today)
+        self.save_to_history(daily_data)
+        
+        avg = self.calculate_moving_average()
+        performance = (daily_data["total_pts"] / avg) if avg > 0 else 1.0
+        
+        status = "⚖️ NA MÉDIA"
+        if performance > 1.2: status = "🚀 ACIMA DA MÉDIA"
+        elif performance < 0.8: status = "📉 ABAIXO DA MÉDIA"
+        
+        result = {
+            **daily_data,
+            "moving_average": round(avg, 1),
+            "performance_ratio": round(performance, 2),
+            "status": status,
+            "emoji": "🔥" if performance > 1.0 else "❄️"
         }
+        return result
 
-    # Score global ponderado
-    global_score = sum(
-        v["score"] * v["weight"] for v in area_scores.values()
-    )
-    global_score = round(global_score, 1)
-
-    classification = get_classification(global_score, thresholds)
-
-    # Área mais crítica (menor score ponderado)
-    critical_area = min(
-        area_scores.items(),
-        key=lambda x: x[1]["score"] * x[1]["weight"]
-    )
-
-    # Área com melhor performance
-    best_area = max(area_scores.items(), key=lambda x: x[1]["score"])
-
-    result = {
-        "date": target_date.isoformat(),
-        "global_score": global_score,
-        "classification": classification["label"],
-        "emoji": classification["emoji"],
-        "total_events": len(events),
-        "critical_area": {
-            "id": critical_area[0],
-            "name": critical_area[1]["name"],
-            "score": critical_area[1]["score"]
-        },
-        "best_area": {
-            "id": best_area[0],
-            "name": best_area[1]["name"],
-            "score": best_area[1]["score"]
-        },
-        "areas": area_scores,
-        "gaps": calculate_score_gap(global_score, thresholds)
+def calculate_daily_score(target_date: Optional[date] = None):
+    # Proxy para manter compatibilidade com gerador_dia.py e predictive_engine.py
+    engine = ScoreEngineV3()
+    data = engine.run()
+    
+    # Mapeia métricas para áreas legadas para evitar KeyErrors
+    m = data["metrics"]
+    areas_legacy = {
+        "economic_output": {"score": m.get("propostas_novas", 0) * 15 + m.get("triados_count", 0)},
+        "system_building": {"score": m.get("commits_jarvis", 0) * 10},
+        "execution_discipline": {"score": m.get("logs_count", 0) * 5},
+        "energy_body": {"score": m.get("health_log", 0) * 5},
+        "relations_influence": {"score": m.get("networking", 0) * 10}
     }
 
-    return result
+    return {
+        "global_score": data["total_pts"],
+        "classification": f"{data['status']} ({data['performance_ratio']:.2f}x)",
+        "emoji": data["emoji"],
+        "moving_average": data["moving_average"],
+        "performance_ratio": data["performance_ratio"],
+        "areas": areas_legacy  # Backwards compatibility
+    }
 
-
-def print_score_report(score_data: dict) -> None:
-    """Exibe relatório de score formatado no terminal."""
-    print(f"\n{'='*60}")
-    print(f"  📊 SCORE DIÁRIO — {score_data['date']}")
-    print(f"{'='*60}")
-    print(f"  {score_data['emoji']} Score Global: {score_data['global_score']}/100")
-    print(f"  Status:       {score_data['classification']}")
-    print(f"  Eventos:      {score_data['total_events']}")
-    print(f"\n  Por Área:")
-    print(f"  {'Área':<28} {'Score':>6}  {'Contribuição':>12}")
-    print(f"  {'-'*50}")
-    for area_id, data in score_data["areas"].items():
-        bar = "█" * int(data["score"] / 10) + "▒" * (10 - int(data["score"] / 10))
-        print(f"  {data['name']:<28} {data['score']:>5.1f}  {bar}")
-    print(f"\n  ⚠️  Área Crítica: {score_data['critical_area']['name']} ({score_data['critical_area']['score']:.1f})")
-    print(f"  🏆 Melhor Área:  {score_data['best_area']['name']} ({score_data['best_area']['score']:.1f})")
-    print(f"{'='*60}\n")
-
+def print_report(data):
+    print(f"\n{'='*40}")
+    print(f"  🏆 JARVIS SCORE V3 — {data['date']}")
+    print(f"{'='*40}")
+    print(f"  Pontos Hoje:    {data['total_pts']} pts")
+    print(f"  Média Móvel:    {data['moving_average']} pts")
+    print(f"  Performance:    {data['performance_ratio']:.2f}x")
+    print(f"  Status:         {data['status']}")
+    print(f"{'='*40}\n")
 
 if __name__ == "__main__":
-    import argparse
-    parser = argparse.ArgumentParser(description="COS Score Engine")
-    parser.add_argument("--date", type=str, default="today", help="Data (YYYY-MM-DD ou 'today')")
-    parser.add_argument("--json", action="store_true", help="Output em JSON")
-    args = parser.parse_args()
-
-    target = date.today() if args.date == "today" else date.fromisoformat(args.date)
-    result = calculate_daily_score(target)
-
-    if args.json:
-        print(json.dumps(result, ensure_ascii=False, indent=2))
-    else:
-        print_score_report(result)
+    engine = ScoreEngineV3()
+    res = engine.run()
+    print_report(res)

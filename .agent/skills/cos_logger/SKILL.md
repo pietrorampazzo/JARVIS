@@ -12,7 +12,8 @@ Esta skill deve ser ativada **automaticamente** ao final de qualquer:
 - Script criado ou modificado com sucesso
 - Bug resolvido
 - Feature entregue
-- Documento importantye gerado (walkthrough, implementation_plan, etc.)
+- Documento importante gerado (walkthrough, implementation_plan, etc.)
+- **Mudança Estratégica**: Qualquer alteração na arquitetura, nova tecnologia adotada ou marco atingido (ex: finalização de uma fase de limpeza).
 
 ## Instruções
 
@@ -36,6 +37,11 @@ Mapeie a tarefa concluída para uma das 5 áreas:
 | 3 | Produtivo — trabalho relevante entregue |
 | 2 | Tarefa pequena — contribuição modesta |
 | 1 | Baixo impacto — rotineiro |
+
+| 1 | Baixo impacto — rotineiro |
+
+### 2.1 Categoria Especial: DECISION
+Use a categoria `DECISION` sempre que o Impacto for 5 e envolver uma mudança permanente no "como o software funciona" ou uma "vitória estratégica" no negócio. Isso alimentará o Oráculo automaticamente.
 
 ### 3. Executar o Log
 

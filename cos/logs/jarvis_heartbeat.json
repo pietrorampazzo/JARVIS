@@ -1,11 +1,7 @@
 {
-  "timestamp": "2026-03-08T18:55:45.823614",
-  "score": 0.0,
-  "classification": "Dia Ineficiente",
-  "interventions_active": 6,
-  "critical_area": {
-    "id": "economic_output",
-    "name": "Output Econômico",
-    "score": 0.0
-  }
+  "timestamp": "2026-03-12T19:42:48.665991",
+  "score": 1568,
+  "classification": "⚖️ NA MÉDIA (1.00x)",
+  "interventions_active": 4,
+  "critical_area": {}
 }

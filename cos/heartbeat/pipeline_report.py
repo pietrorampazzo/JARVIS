@@ -339,7 +339,7 @@ Exemplos:
     # Importa snapshot fresco se pedido
     if args.import_first:
         print("  🔄 Importando snapshot atualizado do Trello...")
-        import_script = BASE_DIR / "integrations" / "board_import.py"
+        import_script = BASE_DIR.parent / "tools" / "board_import.py"
         result = subprocess.run(
             [sys.executable, str(import_script)],
             capture_output=True, text=True

@@ -44,7 +44,10 @@ def get_config(name: str) -> dict:
     return load_json(CONFIG_DIR / f"{name}.json")
 
 def get_today_log() -> list:
-    return load_json(LOGS_DIR / f"{date.today().isoformat()}.json") or []
+    all_events = load_json(LOGS_DIR / "cos_events.json")
+    if not isinstance(all_events, list): return []
+    today = date.today().isoformat()
+    return [e for e in all_events if e.get("timestamp", "").startswith(today)]
 
 def get_latest_snapshot(board_name: str = "arte_comercial") -> dict:
     snapshots = sorted(SNAPSHOTS_DIR.glob(f"{board_name}_*.json"), reverse=True)

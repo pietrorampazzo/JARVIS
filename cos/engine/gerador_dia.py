@@ -30,6 +30,7 @@ DIA_MD_PATH = BASE_DIR / "dia.md"
 sys.path.insert(0, str(BASE_DIR))
 from cos.core.shared import get_config, get_today_log, load_env, get_latest_snapshot
 from cos.engine.score_engine import calculate_daily_score
+from cos.engine.oracle_query import query_oracle
 
 
 def get_git_summary() -> str:
@@ -172,12 +173,12 @@ def get_planilhas_summary() -> str:
             valor_total_h = df_h["VALOR_TOTAL"].sum() if "VALOR_TOTAL" in df_h.columns else 0
             valor_venda_h = df_h["VALOR_FINAL"].sum() if "VALOR_FINAL" in df_h.columns else 0
 
-            # Itens sem proposta (sem VALOR_FINAL preenchido)
-            pendentes_h = 0
-            if "VALOR_FINAL" in df_h.columns:
-                pendentes_h = df_h["VALOR_FINAL"].isna().sum() + (df_h["VALOR_FINAL"] == 0).sum()
-            elif "JUSTIFICATIVA_TECNICA" in df_h.columns:
-                pendentes_h = df_h["JUSTIFICATIVA_TECNICA"].isna().sum()
+            # Cálculo de Pendentes: Itens master.xlsx - master_heavy.xlsx
+            pendentes_h = max(0, total_itens_m - total_itens_h)
+            
+            # Potencial Edital: soma VALOR_TOTAL (já estava correto, mas garantindo contexto)
+            # Proposta Total: soma (QTDE * VALOR_VENDA)
+            valor_venda_h = (df_h["QTDE"] * df_h["VALOR_VENDA"]).sum() if "QTDE" in df_h.columns and "VALOR_VENDA" in df_h.columns else 0
 
             lines.append(f"**🧠 master_heavy.xlsx** — `{total_itens_h}` itens | `{licit_unicas_h}` licitações | Pendentes: `{pendentes_h}` | Potencial Edital: `{fmt_brl(valor_total_h)}` | Proposta Total: `{fmt_brl(valor_venda_h)}`")
         except Exception as e:
@@ -305,19 +306,20 @@ def build_dia_md():
     
     # Montagem do Resumo Inicial
     summary_header = f"""# ☀️ Status do Dia: {now.strftime('%d/%m/%Y')}
-
-> **Última atualização:** {now.strftime('%H:%M')} | **Score Atual:** {score['global_score']:.0f}/100 ({score['emoji']} {score['classification']})
+ 
+> **Última atualização:** {now.strftime('%H:%M')} | **Points:** {score['global_score']} pts | **Média (7d):** {score['moving_average']} pts
+> **Performance:** {score['emoji']} {score['classification']}
 
 # 📊 Resumo do Status:
-
+ 
 * Total de Tasks: {total_tasks}
 * Concluídas: {done_tasks} ({done_pct}%)
 * Pendentes: {pending_tasks} ({pending_pct}%)
-
+ 
 Resumo dia até agora:
-
+ 
 - {concluidas_hoje} tasks concluidas hoje
-- {score['global_score']:.0f}% de esforço melhorado hoje.
+- Performance Relativa: {score['performance_ratio']:.2f}x vs média móvel.
 """
 
     # Preparação dos dados para o Gemini (pipeline_str e logs_str)
@@ -348,11 +350,30 @@ Resumo dia até agora:
     pipeline_section += f"📊 PIPELINE ATIVO — {total_active} licitações\n\n"
     
     if pipeline:
+        # Título da tabela com a nova coluna
+        pipeline_section += f"{'LISTA':<28} {'QTD':<5} {'GOV':<5} {'ESTÁGIO'}\n"
+        pipeline_section += f"{'─'*60}\n"
+        
         for stage in pipeline:
             lst_name = stage['list']
+            # Ignora a coluna DADOS no pipeline de licitações
+            if lst_name.upper() == "DADOS":
+                continue
+                
             pad = " " * max(1, 28 - len(lst_name))
             desc = f"({stage.get('stage', '')})" if stage.get("stage") else ""
-            pipeline_section += f"{stage['color']} {lst_name}{pad} {stage['count']:<3} {desc}\n"
+            
+            # Lógica simples para detectar se é compras.gov (ex: se tem link ou padrão no nome do card)
+            has_gov = False
+            for card in stage.get("cards", []):
+                desc_card = (card.get("desc") or "").lower()
+                name_card = (card.get("name") or "").lower()
+                if "compras.gov" in desc_card or "compras.gov" in name_card or "compras" in (card.get("url") or "").lower():
+                    has_gov = True
+                    break
+            
+            gov_icon = "🌐" if has_gov else "  "
+            pipeline_section += f"{stage['color']} {lst_name}{pad} {stage['count']:<5} {gov_icon:<5} {desc}\n"
     else:
         pipeline_section += "- Operando sem dados do Trello localmente (Rode `pipeline_report.py --import-first`)\n"
 
@@ -387,15 +408,20 @@ Resumo dia até agora:
     insights_header += "\n> *Esta seção é reescrita automaticamente pela Engine JARVIS.*\n\n"
     insights_content = generate_ai_insights(score, logs_str, git_summary, pipeline_str, todos_content)
 
-    # 3) Tasks em Aberto (Detalhamento - Final do arquivo)
-    todos_section = "\n## 3) 📌 TASKS EM ABERTO (Global)\n"
+    # 3) A Fala do Oráculo (TERCEIRO — consulta ao NoteBookLM)
+    oracle_header = "\n## 3) 🦉 ORÁCULO (Dica da Memória Longa)\n"
+    # Somente consulta se já passamos por uma atualização de logs hoje
+    oracle_content = f"\n> {query_oracle()}\n"
+
+    # 4) Tasks em Aberto (Detalhamento - Final do arquivo)
+    todos_section = "\n## 4) 📌 TASKS EM ABERTO (Global)\n"
     if todos_content:
         todos_section += "\n" + todos_content + "\n"
     else:
         todos_section += "> *Nenhum arquivo TODO detectado nos projetos.*\n"
 
-    # Interpolação final: header → pipeline → insights → todos
-    full_content = summary_header + pipeline_section + insights_header + insights_content + "\n" + todos_section
+    # Interpolação final: header → pipeline → insights → oracle → todos
+    full_content = summary_header + pipeline_section + insights_header + insights_content + oracle_header + oracle_content + "\n" + todos_section
     
     with open(DIA_MD_PATH, "w", encoding="utf-8") as f:
         f.write(full_content)

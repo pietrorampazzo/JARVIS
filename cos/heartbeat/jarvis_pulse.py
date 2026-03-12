@@ -6,7 +6,8 @@ Gera o flash update na tela, reescreve o dia.md e exibe a Calculadora de Gap par
 
 import sys
 import json
-from datetime import datetime
+import subprocess
+from datetime import datetime, date
 from pathlib import Path
 
 # Ajuste de encoding
@@ -21,7 +22,8 @@ from cos.engine.score_engine import calculate_daily_score
 from cos.engine.governance_rules import evaluate_governance
 from cos.engine.predictive_engine import get_predictive_alerts
 from cos.engine import gerador_dia
-from cos.engine import oracle_sync
+from cos.engine import knowledge_engine
+from cos.engine import oracle_manager
 from cos.engine import task_sync
 
 
@@ -98,16 +100,25 @@ def print_pulse_report():
     # Sync bidirecional de TODOs antes de gerar o dia.md
     print("  🔄 Sincronizando Tasks entre projetos (Bidirecional)...")
     task_sync.run_full_sync()
+
+    # Importa dados frescos do Trello em tempo real (sempre que o pulso rodar)
+    print("  🔄 Importando snapshot fresco do Trello (Real-time)...")
+    import_script = BASE_DIR / "tools" / "board_import.py"
+    subprocess.run([sys.executable, str(import_script)], capture_output=True)
     
     # Atualiza o Frontend Markdown e o Gemini Insight
     print("  🔄 Sincronizando Inteligência e gerando dia.md...")
     gerador_dia.build_dia_md()
     
-    if hour == 4:
-        print("\n" + "=" * 64)
-        print("  🧠 INICIANDO RITUAL DE ORQUESTRAÇÃO ESTRATÉGICA (ORÁCULO)")
-        print("=" * 64)
-        oracle_sync.upload_eod_report()
+    # --- Ciclo do Oráculo (NotebookLM) ---
+    print("  🧠 Alimentando a Biblioteca do Oráculo (Google Drive)...")
+    knowledge_engine.run_knowledge_cycle()
+    
+    # Faz o Sync visual no NotebookLM (opcional em cada pulso, vamos rodar no EOD e Morning)
+    # Ou se preferir, a cada pulso para manter o Oráculo sempre 'vivo'.
+    if is_morning or is_eod or hour % 4 == 0:
+        print("  📡 Sincronizando Oráculo com o Google Drive (Browser Sync)...")
+        oracle_manager.run_sync()
 
     print("=" * 64 + "\n")
 
