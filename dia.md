@@ -1,100 +1,97 @@
-# ☀️ Status do Dia: 12/03/2026
+# ☀️ Status do Dia: 14/03/2026
  
-> **Última atualização:** 19:42 | **Points:** 1571 pts | **Média (7d):** 1571.0 pts
-> **Performance:** ❄️ ⚖️ NA MÉDIA (1.00x)
+> **Última atualização:** 11:24 | **Points:** 1725 pts | **Média (7d):** 1528.7 pts
+> **Performance:** 🔥 ⚖️ NA MÉDIA (1.13x)
 
 # 📊 Resumo do Status:
  
-* Total de Tasks: 84
-* Concluídas: 40 (47%)
-* Pendentes: 44 (52%)
+* Total de Tasks: 79
+* Concluídas: 37 (46%)
+* Pendentes: 42 (53%)
  
 Resumo dia até agora:
  
 - 0 tasks concluidas hoje
-- Performance Relativa: 1.00x vs média móvel.
+- Performance Relativa: 1.13x vs média móvel.
 
-## 1) 🏢 PIPELINE DE LICITAÇÕES: 99 Licitações
+## 1) 🏢 PIPELINE DE LICITAÇÕES: 98 Licitações
 
-📊 PIPELINE ATIVO — 99 licitações
+📊 PIPELINE ATIVO — 98 licitações
 
 LISTA                        QTD   GOV   ESTÁGIO
 ────────────────────────────────────────────────────────────
-🟡 PREPARANDO                   4           (preparacao)
-🟠 PROPOSTAS - PIEZO            9           (proposta)
+🔵 Compras.Gov                  1           (prospeccao)
+🟡 PREPARANDO                   3           (preparacao)
+🟠 PROPOSTAS - PIEZO            10          (proposta)
 🟠 PROPOSTAS - ARTE             6           (proposta)
-🔴 PREGAO                       5           (disputa)
-🟣 HABILITADO                   48          (habilitacao)
+🔴 PREGAO                       2           (disputa)
+🟣 HABILITADO                   49          (habilitacao)
 🟢 EMPENHO                      3           (ganho_parcial)
 🟢 ENVIADO                      3           (entrega)
 ✅ RECEBIDO                     1           (concluido)
 🏆 GANHOS - ARTE                20          (ganho_final)
 ─────────────────────────────
 🏆 Total histórico GANHAS: 75
-❌ PERDIDAS: 330 | 🗑️ DESCART: 118
-⚠️  HABILITAÇÕES VENCIDAS: 83
+❌ PERDIDAS: 331 | 🗑️ DESCART: 118
+⚠️  HABILITAÇÕES VENCIDAS: 82
 
 ### 📊 Inteligência de Planilhas (ARTE)
 
 **📋 master.xlsx** — `130` itens | `4` licitações | Potencial: `R$ 1.459.638,03`
   - Processadas por mês: Mar/26: 4
-**🧠 master_heavy.xlsx** — `28` itens | `2` licitações | Pendentes: `102` | Potencial Edital: `R$ 708.759,47` | Proposta Total: `R$ 366.157,11`
+**🧠 master_heavy.xlsx** — `126` itens | `5` licitações | Pendentes: `4` | Potencial Edital: `R$ 1.329.813,08` | Proposta Total: `R$ 816.975,22`
 **⚡ master_heavy_ultra.xlsx** — `830` itens | `33` licitações | Potencial Edital: `R$ 13.509.745,73` | Preço Venda: `R$ 0,00`
-  - Status Matching: `Match Encontrado (IA)`: 297 · `NAO ATENDE`: 56 · `ATENDE COM RESSALVAS`: 54 · `ATENDE`: 22 · `Sem Candidatos`: 8 · `NÃO ATENDE`: 1
+  - Status Matching: `Sem Candidatos`: 390 · `ATENDE COM RESSALVAS`: 361 · `NAO ATENDE`: 57 · `ATENDE`: 22
 
 ## 2) 👁️ MONITORAMENTO E INSIGHTS (Gerado por IA)
 
 > *Esta seção é reescrita automaticamente pela Engine JARVIS.*
 
 ### 📊 Índice de Esforço
-- **Desenvolvimento WAPPI (Correção de Bugs Críticos e Testes E2E):** Alto. (Conclusão da Fase 7 e resolução dos bugs B1 e B2 evidenciam um esforço concentrado na estabilização e testes do Wappi hoje).
-- **Manutenção e Infraestrutura JARVIS CORE / ARTE:** Médio-Alto. (A presença de 33 arquivos modificados não commitados no JARVIS CORE e 6 no ARTE, juntamente com o volume de tarefas de infraestrutura/pipeline marcadas como concluídas, sugere um investimento contínuo na base tecnológica).
-- **Operações Core de Licitações ARTE (Processamento de Editais/Propostas):** Baixo. (A ausência de "Nenhum evento produtivo logado hoje" é um indicador claro de baixa ou nula atividade operacional no front das licitações).
+- **Desenvolvimento Wappi**: Alto (Evidenciado por 6 commits e a conclusão de diversas fases cruciais do projeto).
+- **Infraestrutura JARVIS CORE**: Alto (103 arquivos modificados não commitados demonstram trabalho substancial em sua fundação).
+- **Refinamento do Sistema ARTE**: Médio (Muitas tarefas de desenvolvimento marcadas como concluídas na automação e qualidade, indicando esforço em otimização interna).
 
 ### 🤖 Insights Operacionais ESTRATÉGICOS (Sintetizados)
-- O dia de hoje registrou **NENHUM EVENTO PRODUTIVO** nas operações de licitações do ARTE, apesar de sua classificação geral estar "NA MÉDIA". Este é um alerta crítico: enquanto o desenvolvimento de sistemas como o Wappi avança significativamente (Fase 7 concluída e bugs corrigidos), a inação no pipeline de licitações impacta diretamente a geração de novas oportunidades e, consequentemente, o fluxo de caixa do ARTE.
-- **Você tem 9 cards parados na coluna "DADOS" (Compras.Gov).** Sua ação imediata e **CRÍTICA** é baixar esses editais para permitir o avanço para as próximas etapas. Sem essa ingestão, o pipeline está paralisado na sua origem.
-- Adicionalmente, **4 cards aguardam em "PREPARANDO"**. Para que estas oportunidades progridam, você precisa executar o `arte_heavy_notebook.py` para o estudo orçamentário e validar os itens na `master.xlsx`. A demora aqui significa oportunidades de receita perdidas.
-- A quantidade de **48 cards em "HABILITADO"** é um indicativo positivo de sucessos passados, representando dinheiro em processo de formalização contratual. No entanto, sem a alimentação contínua do pipeline via `DADOS` e `PREPARANDO`, essa "reserva" não se renovará, e as oportunidades futuras estarão comprometidas.
-- **Sua prioridade para as próximas horas deve ser reativar o motor de licitações.** Direcione seu esforço para os cards em "DADOS" e "PREPARANDO". O avanço em infraestrutura é fundamental a longo prazo, mas a saúde operacional e financeira do ARTE exige atenção imediata ao core business.
+- **Pietro, o sistema não registrou *nenhum* evento produtivo direto para licitações hoje.** Este é um desvio crítico. Embora o desenvolvimento de infraestrutura seja vital e tenha consumido grande parte do seu tempo, o core do negócio depende de atividades operacionais registradas para avançar no funil de licitações. O esforço em desenvolvimento é um meio, não um fim.
+- Você tem **1 card em "Compras.Gov" e 3 cards em "PREPARANDO"** aguardando ação. Baixe o edital do Compras.Gov imediatamente. Para os cards em Preparando, sua prioridade deve ser o estudo orçamentário via `arte_heavy_notebook.py` e a análise da `master.xlsx` para definir os itens a orçar. **Estas são oportunidades que não devem ser negligenciadas.**
+- Observo um alto volume de trabalho em desenvolvimento, com 6 commits no Wappi e 103 arquivos não commitados no JARVIS CORE. É crucial que este foco em aprimoramento da infraestrutura se traduza em **ganhos de eficiência visíveis no pipeline de licitações, e não em uma paralisação das atividades operacionais**. As otimizações que você implementou em `Arte_Edital` e `Arte_Heavy` precisam ser aplicadas ativamente.
+- **Os 49 cards em "HABILITADO" são um excelente resultado do seu trabalho prévio, representando vitórias importantes e um sinal de que seus esforços passados estão colhendo frutos.** É fundamental manter o funil de entrada abastecido para sustentar e expandir esse sucesso, garantindo que novos cards avancem para essa coluna.
 ## 3) 🦉 ORÁCULO (Dica da Memória Longa)
 
-> 🦉 As forjas do seu imperio ardem com correcoes vitais, mas o rio da prosperidade permanecera seco enquanto o arquiteto nao desvendar os editais estagnados e curar a cegueira de seu oraculo.
-Avanco na Estabilidade e Risco de Codigo. O ecossistema recebeu alto esforco tecnico focado em correcoes vitais no motor de comunicacao, garantindo que agentes pausados ou nao atribuidos nao enviem mensagens indesejadas, alem de profundas modificacoes estruturais na base central do sistema com vinte e nove arquivos modificados
+> 🦉 As engrenagens do seu império ganharam nova estabilidade na forja, mas o rio da prosperidade permanecerá seco até que o arquiteto baixe os editais estagnados e cure a cegueira de seu oráculo.
+Avanço na Estabilidade e Risco de Infraestrutura. O ecossistema recebeu alto esforço técnico focado na estabilidade, com o projeto de comunicação registrando correções vitais que impedem agentes pausados ou não atribuídos de responder indevidamente
 1
 ...
-. Porem, todo esse massivo volume de desenvolvimento na infraestrutura precisa ser consolidado e salvo formalmente para evitar perdas irreversiveis
+. Em paralelo, a infraestrutura central de gerenciamento teve vinte e nove modificações
 1
+. O gargalo é que esse enorme volume de alterações na arquitetura precisa ser formalizado e salvo com urgência para evitar a perda do que foi construído
+1
+...
 .
-Paralisia do Funil Comercial e Cegueira da Inteligencia. O braco economico acumulou um potencial gigantesco com quarenta e oito licitacoes ja na fase de habilitados aguardando formalizacao
-4
-5
-. Em contrapartida, a geracao de novas propostas parou completamente, havendo tres editais travados na fase de prospeccao inicial e um aguardando processamento orcamentario
-4
+Paralisia do Funil e Cegueira da Inteligência. O braço de negócios e licitações acumula um enorme potencial, com quarenta e oito processos na fase de habilitados aguardando formalização
 6
-. Para agravar o cenario, uma falha critica de comunicacao faz a inteligencia artificial descartar itens instantaneamente em zero segundos por nao reconhecer uma ferramenta de questionamento
 7
+. O gargalo crítico é que a geração de novas propostas estagnou por completo, havendo três editais travados aguardando prospecção inicial e um edital esperando processamento orçamentário
+6
+8
+. Agravando o cenário, os registros apontam uma falha crítica de integração que faz a inteligência artificial descartar itens instantaneamente por não reconhecer sua ferramenta de questionamento
+5
+...
 .
-Desequilibrio Operacional e Dia Ineficiente. A jornada registrou quatorze por cento de esforco melhorado, alavancado estritamente pela programacao e correcao de falhas criticas
+Desequilíbrio Operacional e Ineficiência. A jornada registrou catorze por cento de esforço melhorado, sendo alavancado puramente pelas correções no código
 1
+11
+. Contudo, a inteligência do sistema manteve a classificação de dia ineficiente devido à ausência total de registros de produção na área comercial
+1
+...
+. O gargalo atual reside no foco excessivo e exclusivo na engenharia de software, e a ação imediata exigida pela inteligência é baixar e processar os editais parados para destravar o ciclo financeiro
+7
 8
-. A inteligencia do sistema, contudo, manteve a classificacao de dia ineficiente devido a ausencia absoluta de registros de producao comercial
-6
-8
-. A recomendacao imediata do sistema e que o foco exclusivo em codigo seja balanceado e que os editais parados sejam processados sem demora para destravar o ciclo de receitas
-6
 .
 
 
 ## 4) 📌 TASKS EM ABERTO (Global)
-
-### 🧠 JARVIS CORE (Infraestrutura)
-
-* Concluídas:
-
-  * [x] Desenvolver arquitetura de memória longa otimizada para Gemini.
-  * [x] Integrar todos os status da saúde do sistema no RAG Rápido.
-  * [x] Gerenciar task_sync de forma distribuída.
 
 # 🌐 ARTE (Licitações - O Core Econômico)
 
@@ -102,7 +99,7 @@ Desequilibrio Operacional e Dia Ineficiente. A jornada registrou quatorze por ce
 
 ### 🚀 Prioridades Máximas (Workflow & Pipeline)
 
-- [X] Matching Inteligente: Melhorar precisão do `arte_heavy_notebook.py` para >85%.
+- [X] Matching Inteligente: Melhorar precisão do `arte_heavy.py` para >85%.
 - [ ] Implementar pipeline completo e contínuo: Edital → Matching → Proposta → Licitei
 - [ ] Desenvolver Fluxo automático: Empenho -> Trello -> Planilha de Pedidos.
 - [ ] Habilitação: Criar Cronjob para coleta mensal de documentos de habilitação (ARTE & PIEZZO).
@@ -116,16 +113,14 @@ Desequilibrio Operacional e Dia Ineficiente. A jornada registrou quatorze por ce
 
 - [X] Construir Fundação do NLM Client: Blindar contra quedas de sessão (Auto-Relogin) do MCP.
 - [X] Construir script de Ingestão de Dados: Upload de editais e manuais da pasta DOWNLOADS.
-- [X] Integrar nova arquitetura robusta no `arte_heavy_notebook.py`.
+- [X] Integrar nova arquitetura robusta no `arte_heavy.py`.
 
 ### Arte_Edital: Pipeline Core
 
 - [X] Receber ZIP → deszipar recursivamente → achatar estrutura
 - [X] Processar RelacaoItens → extrair itens tabelados (`_itens.xlsx`)
 - [X] Identificar e renomear Termo de Referência (`termo_referencia.pdf`)
-
 - [/] Extrair tabelas com Camelot → `_referencia.xlsx` (funcional mas instável)
-
 - [ ] Fallback pdfplumber quando Camelot retorna 0 tabelas
 - [X] Merge itens + referência → `_master.xlsx` por subpasta
 - [X] Concatenar tudo → `summary.xlsx` + `master.xlsx` (filtrado por keywords)
@@ -138,9 +133,6 @@ Desequilibrio Operacional e Dia Ineficiente. A jornada registrou quatorze por ce
 - [ ] Validação: garantir que nenhum item do RelacaoItens fique sem REFERENCIA no merge
 - [ ] Log de taxa de completude do TR por edital (meta: >90%)
 - [ ] Integrar quality logger no daemon pulse ✅ (Step 4/5)
-
-### Arte_Edital: Gargalos Conhecidos
-
 - [ ] Editais com formatação não-padrão (tabelas em formato livre/texto corrido)
 - [ ] PDFs protegidos/scaneados (precisam OCR + limpeza)
 - [ ] Colunas com nomes inconsistentes entre editais (Nº vs N vs Item)
@@ -151,12 +143,7 @@ Desequilibrio Operacional e Dia Ineficiente. A jornada registrou quatorze por ce
 - [X] Performance Tracker: `arte_perf_tracker.py` (parseia logs, detecta falsos negativos)
 - [X] Métricas JSON: export automático em `arte_heavy/metrics/`
 - [X] Integrar tracker no daemon pulse ✅ (Step 5/5)
-
-### Arte_Heavy: Qualidade do Matching
-
-- [ ] Reprocessar 49 itens RATE_LIMITED da sessão de 03/03
 - [ ] Melhorar instruções do notebook para matching (prompt engineering)
-- [ ] Adicionar campo STATUS = "RATE_LIMITED" ao filtro de reprocessamento
 - [ ] Validar conformidade jurídica (PARECER_JURIDICO_IMPUGNACAO preenchido)
 - [ ] Validar conformidade técnica (JUSTIFICATIVA_TECNICA com substância)
 

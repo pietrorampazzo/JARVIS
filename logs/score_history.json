@@ -1,0 +1,34 @@
+{
+  "2026-03-14": {
+    "total_pts": 1725,
+    "metrics": {
+      "habilitados_count": 49,
+      "inventory_skipped": true,
+      "triados_count": 121,
+      "total_master": 130,
+      "items_ultra": 802,
+      "logs_count": 0
+    }
+  },
+  "2026-03-13": {
+    "total_pts": 1118,
+    "metrics": {
+      "habilitados_count": 49,
+      "novas_habilitadas": 49,
+      "inventory_skipped": true,
+      "triados_count": 121,
+      "total_master": 130,
+      "items_ultra": 126,
+      "logs_count": 0
+    }
+  },
+  "2026-03-12": {
+    "total_pts": 1743,
+    "metrics": {
+      "triados_count": 97,
+      "total_master": 130,
+      "items_ultra": 818,
+      "logs_count": 0
+    }
+  }
+}

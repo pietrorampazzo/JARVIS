@@ -1,0 +1,29 @@
+{
+  "MONITORED_GROUPS": {
+    "5511999174369-1626453617@g.us": {
+      "name": "MMBarsi Investimentos💼",
+      "purpose": "Monitorar eventos críticos entre assessores",
+      "area": "economic_output",
+      "category": "barsi_internal"
+    },
+    "120363285511518441@g.us": {
+      "name": "📬 Pie.invest A73953 | Barsi Investimentos 📊 (Canal 1)",
+      "purpose": "Canal de postagens para clientes e leads",
+      "area": "economic_output",
+      "category": "marketing"
+    },
+    "120363267758069028@g.us": {
+      "name": "📬 Pie.invest A73953 | Barsi Investimentos 📊 (Canal 2)",
+      "purpose": "Canal de postagens para clientes e leads",
+      "area": "economic_output",
+      "category": "marketing"
+    },
+    "120363420639134715@g.us": {
+      "name": "Arte Comercial Ltda.",
+      "purpose": "Monitoramento de licitações e empresa",
+      "area": "economic_output",
+      "category": "arte_comercial"
+    }
+  },
+  "MONITOR_PRIVATE": true
+}
