@@ -1,18 +1,18 @@
-# ☀️ Status do Dia: 14/03/2026
+# ☀️ Status do Dia: 19/03/2026
  
-> **Última atualização:** 11:24 | **Points:** 1725 pts | **Média (7d):** 1528.7 pts
-> **Performance:** 🔥 ⚖️ NA MÉDIA (1.13x)
+> **Última atualização:** 17:54 | **Points:** 1883 pts | **Média (7d):** 1617.2 pts
+> **Performance:** 🔥 ⚖️ NA MÉDIA (1.16x)
 
 # 📊 Resumo do Status:
  
-* Total de Tasks: 79
-* Concluídas: 37 (46%)
-* Pendentes: 42 (53%)
+* Total de Tasks: 72
+* Concluídas: 43 (59%)
+* Pendentes: 29 (40%)
  
 Resumo dia até agora:
  
 - 0 tasks concluidas hoje
-- Performance Relativa: 1.13x vs média móvel.
+- Performance Relativa: 1.16x vs média móvel.
 
 ## 1) 🏢 PIPELINE DE LICITAÇÕES: 98 Licitações
 
@@ -37,58 +37,20 @@ LISTA                        QTD   GOV   ESTÁGIO
 
 ### 📊 Inteligência de Planilhas (ARTE)
 
-**📋 master.xlsx** — `130` itens | `4` licitações | Potencial: `R$ 1.459.638,03`
-  - Processadas por mês: Mar/26: 4
-**🧠 master_heavy.xlsx** — `126` itens | `5` licitações | Pendentes: `4` | Potencial Edital: `R$ 1.329.813,08` | Proposta Total: `R$ 816.975,22`
-**⚡ master_heavy_ultra.xlsx** — `830` itens | `33` licitações | Potencial Edital: `R$ 13.509.745,73` | Preço Venda: `R$ 0,00`
-  - Status Matching: `Sem Candidatos`: 390 · `ATENDE COM RESSALVAS`: 361 · `NAO ATENDE`: 57 · `ATENDE`: 22
+**📋 master.xlsx** — `198` itens | `7` licitações | Potencial: `R$ 2.067.825,60`
+  - Processadas por mês: Mar/26: 7
+**🧠 master_heavy.xlsx** — `182` itens | `6` licitações | Pendentes: `16` | Potencial Edital: `R$ 1.882.098,63` | Proposta Total: `R$ 1.594.733,75`
+**⚡ master_heavy_ultra.xlsx** — `945` itens | `37` licitações | Potencial Edital: `R$ 14.958.473,26` | Preço Venda: `R$ 0,00`
+  - Status Matching: `ATENDE COM RESSALVAS`: 448 · `Sem Candidatos`: 390 · `NAO ATENDE`: 70 · `ATENDE`: 31
 
 ## 2) 👁️ MONITORAMENTO E INSIGHTS (Gerado por IA)
 
 > *Esta seção é reescrita automaticamente pela Engine JARVIS.*
 
-### 📊 Índice de Esforço
-- **Desenvolvimento Wappi**: Alto (Evidenciado por 6 commits e a conclusão de diversas fases cruciais do projeto).
-- **Infraestrutura JARVIS CORE**: Alto (103 arquivos modificados não commitados demonstram trabalho substancial em sua fundação).
-- **Refinamento do Sistema ARTE**: Médio (Muitas tarefas de desenvolvimento marcadas como concluídas na automação e qualidade, indicando esforço em otimização interna).
-
-### 🤖 Insights Operacionais ESTRATÉGICOS (Sintetizados)
-- **Pietro, o sistema não registrou *nenhum* evento produtivo direto para licitações hoje.** Este é um desvio crítico. Embora o desenvolvimento de infraestrutura seja vital e tenha consumido grande parte do seu tempo, o core do negócio depende de atividades operacionais registradas para avançar no funil de licitações. O esforço em desenvolvimento é um meio, não um fim.
-- Você tem **1 card em "Compras.Gov" e 3 cards em "PREPARANDO"** aguardando ação. Baixe o edital do Compras.Gov imediatamente. Para os cards em Preparando, sua prioridade deve ser o estudo orçamentário via `arte_heavy_notebook.py` e a análise da `master.xlsx` para definir os itens a orçar. **Estas são oportunidades que não devem ser negligenciadas.**
-- Observo um alto volume de trabalho em desenvolvimento, com 6 commits no Wappi e 103 arquivos não commitados no JARVIS CORE. É crucial que este foco em aprimoramento da infraestrutura se traduza em **ganhos de eficiência visíveis no pipeline de licitações, e não em uma paralisação das atividades operacionais**. As otimizações que você implementou em `Arte_Edital` e `Arte_Heavy` precisam ser aplicadas ativamente.
-- **Os 49 cards em "HABILITADO" são um excelente resultado do seu trabalho prévio, representando vitórias importantes e um sinal de que seus esforços passados estão colhendo frutos.** É fundamental manter o funil de entrada abastecido para sustentar e expandir esse sucesso, garantindo que novos cards avancem para essa coluna.
+⚠️ Erro: GEMINI_API_KEY não encontrada no arquivo `.env`.
 ## 3) 🦉 ORÁCULO (Dica da Memória Longa)
 
-> 🦉 As engrenagens do seu império ganharam nova estabilidade na forja, mas o rio da prosperidade permanecerá seco até que o arquiteto baixe os editais estagnados e cure a cegueira de seu oráculo.
-Avanço na Estabilidade e Risco de Infraestrutura. O ecossistema recebeu alto esforço técnico focado na estabilidade, com o projeto de comunicação registrando correções vitais que impedem agentes pausados ou não atribuídos de responder indevidamente
-1
-...
-. Em paralelo, a infraestrutura central de gerenciamento teve vinte e nove modificações
-1
-. O gargalo é que esse enorme volume de alterações na arquitetura precisa ser formalizado e salvo com urgência para evitar a perda do que foi construído
-1
-...
-.
-Paralisia do Funil e Cegueira da Inteligência. O braço de negócios e licitações acumula um enorme potencial, com quarenta e oito processos na fase de habilitados aguardando formalização
-6
-7
-. O gargalo crítico é que a geração de novas propostas estagnou por completo, havendo três editais travados aguardando prospecção inicial e um edital esperando processamento orçamentário
-6
-8
-. Agravando o cenário, os registros apontam uma falha crítica de integração que faz a inteligência artificial descartar itens instantaneamente por não reconhecer sua ferramenta de questionamento
-5
-...
-.
-Desequilíbrio Operacional e Ineficiência. A jornada registrou catorze por cento de esforço melhorado, sendo alavancado puramente pelas correções no código
-1
-11
-. Contudo, a inteligência do sistema manteve a classificação de dia ineficiente devido à ausência total de registros de produção na área comercial
-1
-...
-. O gargalo atual reside no foco excessivo e exclusivo na engenharia de software, e a ação imediata exigida pela inteligência é baixar e processar os editais parados para destravar o ciclo financeiro
-7
-8
-.
+> O Oráculo está em silêncio no momento. A névoa ainda não se dissipou.
 
 
 ## 4) 📌 TASKS EM ABERTO (Global)
@@ -156,7 +118,7 @@ Desequilíbrio Operacional e Ineficiência. A jornada registrou catorze por cent
 
 # 🚀 WAPPI — TODO & Roadmap
 
-> Atualizado em: 11/03/2026 — Baseado no estado atual do código.
+> Atualizado em: 15/03/2026 — Sincronizado com entregas de Pagamentos, Dashboard Real e CRM.
 
 ---
 
@@ -186,8 +148,10 @@ Desequilíbrio Operacional e Ineficiência. A jornada registrou catorze por cent
 - [x] `Agents.tsx` — Criar agente (insert no Supabase)
 - [x] `Agents.tsx` — Editar agente (update no Supabase)
 - [x] `Agents.tsx` — Arquivar/Excluir agente (status='archived')
-- [x] `Agents.tsx` — Toggle On/Off (status='active'/'offline')
+- [x] `Agents.tsx` — Toggle On/Off (status='active'/'paused') com Play/Pause UI
 - [x] `Contacts.tsx` — Dropdown de Proprietário sincronizado com agentes ativos
+- [x] `Contacts.tsx` — Atribuição em Massa de Agentes (Bulk Assign)
+- [x] `Settings.tsx` — Horário Comercial de Operação (Brasília Time)
 
 ## ✅ Fase 5: CRUD de Contatos (CONCLUÍDA)
 - [x] `Contacts.tsx` — Criar contato (insert no Supabase)
@@ -197,48 +161,25 @@ Desequilíbrio Operacional e Ineficiência. A jornada registrou catorze por cent
 - [x] `Contacts.tsx` — Limpar mensagens associadas ao excluir lead
 - [x] `Contacts.tsx` — Importação de Excel (.xlsx)
 
-## ✅ Fase 6: CRM Kanban (CONCLUÍDA)
-- [x] `Kanban.tsx` — 6 colunas (Lead → Cadência → Conectado → Qualificado → Ganho → Perdido)
-- [x] `Kanban.tsx` — Drag & Drop com persistência no Supabase
-- [x] `Kanban.tsx` — Modal de detalhes do lead (Trello-like)
-- [x] `Kanban.tsx` — Criação de lead no Kanban
-- [x] `Kanban.tsx` — Exclusão de lead no modal
+## 🗑️ Fase 6: CRM Kanban (REMOVIDA PARA SIMPLIFICAÇÃO)
+- [x] Funcionalidade removida do `App.tsx` e Navegação para focar em Inbox e Dashboard.
 
 ## ✅ Fase 7: Inbox / Conversas (CONCLUÍDA)
 - [x] `Inbox.tsx` — Chat centralizado com visual WhatsApp
 - [x] `Inbox.tsx` — Agrupamento de mensagens por lead/phone
 - [x] `Inbox.tsx` — Real-time subscription do Supabase
 
-## 🚨 BUGS CRÍTICOS — A CORRIGIR AGORA
-
-### 🤖 B1 — Agente "Pausado" ainda responde
-- **Problema:** Ao clicar no botão verde de "Pausar" na aba Agentes de IA, o motor Node.js continua processando e respondendo mensagens para aquele agente.
-- **Root-cause:** A CAMADA 2 do fallback não respeita o status offline do agente; o cache do motor não está sendo re-lido imediatamente após o sync. Além disso, a lógica na `CAMADA 1` (busca por owner do lead) também não verifica se o agente está `active` antes de injetar.
-- **Fix:** Verificar `status === 'active'` nas Camadas 0, 1 e 2 do `index.js`. Se o agente do lead estiver `offline`, não deve responder (tratá-lo como "sem agente").
-
-### 🔕 B2 — "Não Atribuído" ainda usa fallback para um agente
-- **Problema:** Ao trocar o proprietário de um contato para "Não Atribuído" nos Contatos, o motor ainda responde com o agente de fallback (Alice).
-- **Root-cause:** A CAMADA 2 do fallback existe justamente para pegar o primeiro agente disponível. Quando quiser silenciar completamente, precisamos de um estado explícito de "sem IA".
-- **Fix:** Se `owner === 'Nenhum'` ou `owner === null`, retornar sem chamar a IA (`agentData = null`), mesmo que exista uma CAMADA 2 com agente ativo. O lead "sem dono" deve ser silenciado.
-
 ---
 
-## 🚧 Fase 8: Testes & Fluidez (EM ANDAMENTO)
-- [x] **B1 Fix:** Respeitar status `active`/`offline` do agente nas Camadas 0, 1 e 2 do `whatsapp/src/index.js`
-- [x] **B2 Fix:** Silenciar completamente a IA quando `owner === 'Nenhum'` — não deve cair em fallback automático
-- [ ] Verificar sincronização Agents ↔ Contacts (dropdown de proprietário)
-- [ ] Testar fluxo E2E: Criar Agente → Criar Lead → Iniciar IA → Enviar MSG → Receber Resposta
+## ✅ Fase 8: Testes & Fluidez (CONCLUÍDA)
+- [x] **B1 Fix:** Respeitar status `active`/`paused` do agente no motor Node.js
+- [x] **B2 Fix:** Silenciar IA quando `owner === 'Nenhum'`
+- [x] Sincronização automática Agents ↔ Contacts
+- [x] Teste de fluxo E2E: Disparo via API → Resposta IA com Persona correta
 
 ### 📬 Conversas / Inbox
-- [ ] Mensagens aparecerem agrupadas por lead (cliente por cliente) com histórico correto
-- [ ] Verificar que exclusão de contato limpa o histórico da Inbox e Kanban
-
-### 📋 Kanban (Efeito Cascata Completo)
-- [ ] `Lead importado ou criado` → Aparece como card em **Kanban: Coluna "Lead"** automaticamente
-- [ ] `Envio de mensagem pelo Motor` → Card move-se para **Kanban: Coluna "Cadência"**
-- [ ] `Lead responde` → Card move-se para **Kanban: Coluna "Conectado"**
-- [ ] `Kanban.tsx` — Drag & Drop reflete a posição real (status do Supabase) e persiste
-- [ ] Garantir que mudanças feitas em Contatos refletem imediatamente no Kanban (status syncado)
+- [x] Mensagens agrupadas por lead com histórico resiliente
+- [x] Exclusão de contato limpa o histórico da Inbox automaticamente
 
 ## ⬜ Fase 9: Infraestrutura & DevOps (FUTURA)
 - [ ] Docker Compose para produção
@@ -246,18 +187,13 @@ Desequilíbrio Operacional e Ineficiência. A jornada registrou catorze por cent
 - [ ] Monitoramento de saúde (RAM/CPU/Logs)
 - [ ] Rate limiting e proteção de API
 - [ ] Backup automático do Supabase
+- [x] **Stripe Live:** Integração Embedded Checkout finalizada
+- [x] **Suporte:** Link WhatsApp integrado no Header
 
 ## ⬜ Fase 10: Melhorias UX (FUTURA)
 - [ ] Unified Inbox com WebSockets (sem F5)
 - [ ] Notificações push de novas mensagens
-- [ ] Dashboard com métricas reais (taxa de resposta, conversão)
-- [ ] Temas escuro/claro persistente
-- [ ] Mobile responsive completo
-
-### 💹 XP BARSI & Pie.Invest
-
-* Pendentes:
-
-  * [ ] Modelo de Importação Excel -> Trello (Templates/Etiquetas).
-  * [ ] Monitoramento proativo do Grupo BARSI + E-mails da XP.
-  * [ ] Gatilhos automáticos para oportunidades de Crédito e Seguros.
+- [x] Dashboard com métricas reais (leads, conversão, tokens)
+- [x] Temas escuro/claro persistente (Branding Premium)
+- [ ] Mobile responsive completo (Ajustes finos)
+- [ ] Reconstrução de histórico Real-time (Chat Resiliency Blueprint)

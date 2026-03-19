@@ -1,0 +1,2719 @@
+[
+  {
+    "timestamp": "2026-02-28T23:19:28.510661",
+    "period": {
+      "from": "2026-02-28T22:47:45.983182",
+      "to": "2026-02-28T23:19:13.497634"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 4004,
+        "new_size": 5088,
+        "old_modified": "2026-02-28T22:16:48.802304",
+        "new_modified": "2026-02-28T22:48:06.357171"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 2677,
+        "new_size": 3195,
+        "old_modified": "2026-02-28T22:16:52.090833",
+        "new_modified": "2026-02-28T22:48:09.314711"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172670,
+        "new_size": 172670,
+        "old_modified": "2026-02-28T22:16:48.867455",
+        "new_modified": "2026-02-28T22:48:06.405993"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-02-28T23:50:30.895795",
+    "period": {
+      "from": "2026-02-28T23:19:13.497634",
+      "to": "2026-02-28T23:50:15.183745"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 5088,
+        "new_size": 6172,
+        "old_modified": "2026-02-28T22:48:06.357171",
+        "new_modified": "2026-02-28T23:19:28.522521"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 3195,
+        "new_size": 3713,
+        "old_modified": "2026-02-28T22:48:09.314711",
+        "new_modified": "2026-02-28T23:19:30.936183"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172670,
+        "new_size": 172670,
+        "old_modified": "2026-02-28T22:48:06.405993",
+        "new_modified": "2026-02-28T23:19:28.563280"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-01T00:21:29.973077",
+    "period": {
+      "from": "2026-02-28T23:50:15.183745",
+      "to": "2026-03-01T00:21:16.932002"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 6172,
+        "new_size": 7256,
+        "old_modified": "2026-02-28T23:19:28.522521",
+        "new_modified": "2026-02-28T23:50:30.906131"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 3713,
+        "new_size": 4231,
+        "old_modified": "2026-02-28T23:19:30.936183",
+        "new_modified": "2026-02-28T23:50:32.716046"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172670,
+        "new_size": 172670,
+        "old_modified": "2026-02-28T23:19:28.563280",
+        "new_modified": "2026-02-28T23:50:30.952526"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-01T00:52:40.393342",
+    "period": {
+      "from": "2026-03-01T00:21:16.932002",
+      "to": "2026-03-01T00:52:12.115625"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 7256,
+        "new_size": 8340,
+        "old_modified": "2026-02-28T23:50:30.906131",
+        "new_modified": "2026-03-01T00:21:29.988691"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 4231,
+        "new_size": 4749,
+        "old_modified": "2026-02-28T23:50:32.716046",
+        "new_modified": "2026-03-01T00:21:32.237962"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172670,
+        "new_size": 172670,
+        "old_modified": "2026-02-28T23:50:30.952526",
+        "new_modified": "2026-03-01T00:21:30.037339"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-01T01:24:48.728533",
+    "period": {
+      "from": "2026-03-01T00:52:12.115625",
+      "to": "2026-03-01T01:24:25.079524"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 8340,
+        "new_size": 9424,
+        "old_modified": "2026-03-01T00:21:29.988691",
+        "new_modified": "2026-03-01T00:52:40.427188"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 4749,
+        "new_size": 5267,
+        "old_modified": "2026-03-01T00:21:32.237962",
+        "new_modified": "2026-03-01T00:52:42.882028"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172670,
+        "new_size": 172670,
+        "old_modified": "2026-03-01T00:21:30.037339",
+        "new_modified": "2026-03-01T00:52:40.456738"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-01T17:37:02.024106",
+    "period": {
+      "from": "2026-03-01T01:24:25.079524",
+      "to": "2026-03-01T17:36:49.399236"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 9424,
+        "new_size": 10508,
+        "old_modified": "2026-03-01T00:52:40.427188",
+        "new_modified": "2026-03-01T01:24:48.738328"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 5267,
+        "new_size": 5785,
+        "old_modified": "2026-03-01T00:52:42.882028",
+        "new_modified": "2026-03-01T01:24:50.920322"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172670,
+        "new_size": 172670,
+        "old_modified": "2026-03-01T00:52:40.456738",
+        "new_modified": "2026-03-01T01:24:48.774431"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-01T18:08:18.388525",
+    "period": {
+      "from": "2026-03-01T17:36:49.399236",
+      "to": "2026-03-01T18:08:04.847214"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 10508,
+        "new_size": 11593,
+        "old_modified": "2026-03-01T01:24:48.738328",
+        "new_modified": "2026-03-01T17:37:02.026841"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 5785,
+        "new_size": 6303,
+        "old_modified": "2026-03-01T01:24:50.920322",
+        "new_modified": "2026-03-01T17:37:02.860258"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172670,
+        "new_size": 172671,
+        "old_modified": "2026-03-01T01:24:48.774431",
+        "new_modified": "2026-03-01T17:37:02.040668"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-01T18:39:34.324810",
+    "period": {
+      "from": "2026-03-01T18:08:04.847214",
+      "to": "2026-03-01T18:39:17.914032"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 11593,
+        "new_size": 12679,
+        "old_modified": "2026-03-01T17:37:02.026841",
+        "new_modified": "2026-03-01T18:08:18.401819"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 6303,
+        "new_size": 6821,
+        "old_modified": "2026-03-01T17:37:02.860258",
+        "new_modified": "2026-03-01T18:08:19.832925"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172671,
+        "new_size": 172671,
+        "old_modified": "2026-03-01T17:37:02.040668",
+        "new_modified": "2026-03-01T18:08:18.433786"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-01T19:11:48.834060",
+    "period": {
+      "from": "2026-03-01T18:39:17.914032",
+      "to": "2026-03-01T19:11:34.895405"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 12679,
+        "new_size": 13765,
+        "old_modified": "2026-03-01T18:08:18.401819",
+        "new_modified": "2026-03-01T18:39:34.407736"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 6821,
+        "new_size": 7339,
+        "old_modified": "2026-03-01T18:08:19.832925",
+        "new_modified": "2026-03-01T18:39:37.577702"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172671,
+        "new_size": 172671,
+        "old_modified": "2026-03-01T18:08:18.433786",
+        "new_modified": "2026-03-01T18:39:34.468302"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-01T19:43:20.347615",
+    "period": {
+      "from": "2026-03-01T19:11:34.895405",
+      "to": "2026-03-01T19:42:56.035283"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 13765,
+        "new_size": 14851,
+        "old_modified": "2026-03-01T18:39:34.407736",
+        "new_modified": "2026-03-01T19:11:48.848825"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 7339,
+        "new_size": 7857,
+        "old_modified": "2026-03-01T18:39:37.577702",
+        "new_modified": "2026-03-01T19:11:51.142954"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172671,
+        "new_size": 172671,
+        "old_modified": "2026-03-01T18:39:34.468302",
+        "new_modified": "2026-03-01T19:11:48.891155"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-01T20:15:28.333269",
+    "period": {
+      "from": "2026-03-01T19:42:56.035283",
+      "to": "2026-03-01T20:14:51.405057"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 14851,
+        "new_size": 15937,
+        "old_modified": "2026-03-01T19:11:48.848825",
+        "new_modified": "2026-03-01T19:43:20.375868"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 7857,
+        "new_size": 8375,
+        "old_modified": "2026-03-01T19:11:51.142954",
+        "new_modified": "2026-03-01T19:43:25.356239"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172671,
+        "new_size": 172671,
+        "old_modified": "2026-03-01T19:11:48.891155",
+        "new_modified": "2026-03-01T19:43:20.415282"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-01T20:47:04.366845",
+    "period": {
+      "from": "2026-03-01T20:14:51.405057",
+      "to": "2026-03-01T20:46:45.742880"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 15937,
+        "new_size": 17023,
+        "old_modified": "2026-03-01T19:43:20.375868",
+        "new_modified": "2026-03-01T20:15:28.347847"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 8375,
+        "new_size": 8893,
+        "old_modified": "2026-03-01T19:43:25.356239",
+        "new_modified": "2026-03-01T20:15:31.101858"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172671,
+        "new_size": 172671,
+        "old_modified": "2026-03-01T19:43:20.415282",
+        "new_modified": "2026-03-01T20:15:28.384132"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-01T21:18:06.906212",
+    "period": {
+      "from": "2026-03-01T20:46:45.742880",
+      "to": "2026-03-01T21:17:58.807807"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 17023,
+        "new_size": 18109,
+        "old_modified": "2026-03-01T20:15:28.347847",
+        "new_modified": "2026-03-01T20:47:04.380494"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 8893,
+        "new_size": 9411,
+        "old_modified": "2026-03-01T20:15:31.101858",
+        "new_modified": "2026-03-01T20:47:09.401274"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172671,
+        "new_size": 172671,
+        "old_modified": "2026-03-01T20:15:28.384132",
+        "new_modified": "2026-03-01T20:47:04.437181"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-01T21:48:58.213878",
+    "period": {
+      "from": "2026-03-01T21:17:58.807807",
+      "to": "2026-03-01T21:48:31.723220"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 18109,
+        "new_size": 19195,
+        "old_modified": "2026-03-01T20:47:04.380494",
+        "new_modified": "2026-03-01T21:18:06.919998"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 9411,
+        "new_size": 9929,
+        "old_modified": "2026-03-01T20:47:09.401274",
+        "new_modified": "2026-03-01T21:18:07.994636"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172671,
+        "new_size": 172671,
+        "old_modified": "2026-03-01T20:47:04.437181",
+        "new_modified": "2026-03-01T21:18:06.951873"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-01T22:20:10.478085",
+    "period": {
+      "from": "2026-03-01T21:48:31.723220",
+      "to": "2026-03-01T22:19:49.345045"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 19195,
+        "new_size": 20281,
+        "old_modified": "2026-03-01T21:18:06.919998",
+        "new_modified": "2026-03-01T21:48:58.243906"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 9929,
+        "new_size": 10447,
+        "old_modified": "2026-03-01T21:18:07.994636",
+        "new_modified": "2026-03-01T21:48:59.832049"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172671,
+        "new_size": 172671,
+        "old_modified": "2026-03-01T21:18:06.951873",
+        "new_modified": "2026-03-01T21:48:58.275099"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-01T22:51:50.035646",
+    "period": {
+      "from": "2026-03-01T22:19:49.345045",
+      "to": "2026-03-01T22:51:19.243812"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 20281,
+        "new_size": 21368,
+        "old_modified": "2026-03-01T21:48:58.243906",
+        "new_modified": "2026-03-01T22:20:10.494784"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 10447,
+        "new_size": 10965,
+        "old_modified": "2026-03-01T21:48:59.832049",
+        "new_modified": "2026-03-01T22:20:11.926498"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172671,
+        "new_size": 172672,
+        "old_modified": "2026-03-01T21:48:58.275099",
+        "new_modified": "2026-03-01T22:20:10.538948"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-01T23:23:06.070158",
+    "period": {
+      "from": "2026-03-01T22:51:19.243812",
+      "to": "2026-03-01T23:22:54.448741"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 21368,
+        "new_size": 22456,
+        "old_modified": "2026-03-01T22:20:10.494784",
+        "new_modified": "2026-03-01T22:51:50.055662"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 10965,
+        "new_size": 11483,
+        "old_modified": "2026-03-01T22:20:11.926498",
+        "new_modified": "2026-03-01T22:51:52.178976"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172672,
+        "new_size": 172672,
+        "old_modified": "2026-03-01T22:20:10.538948",
+        "new_modified": "2026-03-01T22:51:50.097597"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-01T23:53:59.414567",
+    "period": {
+      "from": "2026-03-01T23:22:54.448741",
+      "to": "2026-03-01T23:53:54.586272"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 22456,
+        "new_size": 23544,
+        "old_modified": "2026-03-01T22:51:50.055662",
+        "new_modified": "2026-03-01T23:23:06.090322"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 11483,
+        "new_size": 12001,
+        "old_modified": "2026-03-01T22:51:52.178976",
+        "new_modified": "2026-03-01T23:23:16.047948"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172672,
+        "new_size": 172672,
+        "old_modified": "2026-03-01T22:51:50.097597",
+        "new_modified": "2026-03-01T23:23:06.140697"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-02T00:24:30.819343",
+    "period": {
+      "from": "2026-03-01T23:53:54.586272",
+      "to": "2026-03-02T00:24:19.839968"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 23544,
+        "new_size": 24632,
+        "old_modified": "2026-03-01T23:23:06.090322",
+        "new_modified": "2026-03-01T23:53:59.426989"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 12001,
+        "new_size": 12519,
+        "old_modified": "2026-03-01T23:23:16.047948",
+        "new_modified": "2026-03-01T23:54:00.004113"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172672,
+        "new_size": 172672,
+        "old_modified": "2026-03-01T23:23:06.140697",
+        "new_modified": "2026-03-01T23:53:59.446857"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-02T00:54:59.068576",
+    "period": {
+      "from": "2026-03-02T00:24:19.839968",
+      "to": "2026-03-02T00:54:56.653176"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 24632,
+        "new_size": 25720,
+        "old_modified": "2026-03-01T23:53:59.426989",
+        "new_modified": "2026-03-02T00:24:30.832247"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 12519,
+        "new_size": 13037,
+        "old_modified": "2026-03-01T23:54:00.004113",
+        "new_modified": "2026-03-02T00:24:31.834920"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172672,
+        "new_size": 172672,
+        "old_modified": "2026-03-01T23:53:59.446857",
+        "new_modified": "2026-03-02T00:24:30.860318"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-02T01:25:15.464201",
+    "period": {
+      "from": "2026-03-02T00:54:56.653176",
+      "to": "2026-03-02T01:25:10.154085"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 25720,
+        "new_size": 26808,
+        "old_modified": "2026-03-02T00:24:30.832247",
+        "new_modified": "2026-03-02T00:54:59.070838"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 13037,
+        "new_size": 13555,
+        "old_modified": "2026-03-02T00:24:31.834920",
+        "new_modified": "2026-03-02T00:54:59.427313"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172672,
+        "new_size": 172672,
+        "old_modified": "2026-03-02T00:24:30.860318",
+        "new_modified": "2026-03-02T00:54:59.077013"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-02T01:56:44.095475",
+    "period": {
+      "from": "2026-03-02T01:25:10.154085",
+      "to": "2026-03-02T01:55:53.666127"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 26808,
+        "new_size": 27896,
+        "old_modified": "2026-03-02T00:54:59.070838",
+        "new_modified": "2026-03-02T01:25:15.471617"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 13555,
+        "new_size": 13938,
+        "old_modified": "2026-03-02T00:54:59.427313",
+        "new_modified": "2026-03-02T01:25:15.884758"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172672,
+        "new_size": 172672,
+        "old_modified": "2026-03-02T00:54:59.077013",
+        "new_modified": "2026-03-02T01:25:15.487359"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-02T09:54:40.705913",
+    "period": {
+      "from": "2026-03-02T01:55:53.666127",
+      "to": "2026-03-02T02:36:07.909084"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 27896,
+        "new_size": 28984,
+        "old_modified": "2026-03-02T01:25:15.471617",
+        "new_modified": "2026-03-02T01:56:44.135470"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 13938,
+        "new_size": 14456,
+        "old_modified": "2026-03-02T01:25:15.884758",
+        "new_modified": "2026-03-02T01:56:55.192300"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172672,
+        "new_size": 172672,
+        "old_modified": "2026-03-02T01:25:15.487359",
+        "new_modified": "2026-03-02T01:56:44.214254"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-02T10:25:20.791262",
+    "period": {
+      "from": "2026-03-02T02:36:07.909084",
+      "to": "2026-03-02T10:25:18.055043"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 28984,
+        "new_size": 30072,
+        "old_modified": "2026-03-02T01:56:44.135470",
+        "new_modified": "2026-03-02T09:54:40.717285"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 14456,
+        "new_size": 14974,
+        "old_modified": "2026-03-02T01:56:55.192300",
+        "new_modified": "2026-03-02T09:54:41.143677"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172672,
+        "new_size": 172672,
+        "old_modified": "2026-03-02T01:56:44.214254",
+        "new_modified": "2026-03-02T09:54:40.736919"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 837
+    }
+  },
+  {
+    "timestamp": "2026-03-02T10:55:50.537063",
+    "period": {
+      "from": "2026-03-02T10:25:18.055043",
+      "to": "2026-03-02T10:55:37.950167"
+    },
+    "created": [
+      {
+        "path": "DOWNLOADS/EDITAIS/153038_900172025/15303805900172025000.zip",
+        "size": 1198401,
+        "type": ".zip"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/160443_612025/TR160443_000007_2026.pdf",
+        "size": 206130,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/180153_752026/5-Aviso+PDF.pdf",
+        "size": 340254,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/180153_752026/6-Despacho+Autorizador+PDF.pdf",
+        "size": 28853,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/450522_900102026/45052205900102026000.zip",
+        "size": 2647023,
+        "type": ".zip"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/925443_908532025/92544305908532025000.zip",
+        "size": 860837,
+        "type": ".zip"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/986249_904322025/98624905904322025000.zip",
+        "size": 850139,
+        "type": ".zip"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/987445_900122026/98744505900122026000.zip",
+        "size": 2494211,
+        "type": ".zip"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/987995_900112026/98799505900112026000.zip",
+        "size": 15144801,
+        "type": ".zip"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/988157_900092026/98815705900092026000.zip",
+        "size": 749884,
+        "type": ".zip"
+      }
+    ],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 30072,
+        "new_size": 31160,
+        "old_modified": "2026-03-02T09:54:40.717285",
+        "new_modified": "2026-03-02T10:25:20.795732"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 14974,
+        "new_size": 15492,
+        "old_modified": "2026-03-02T09:54:41.143677",
+        "new_modified": "2026-03-02T10:25:24.832110"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172672,
+        "new_size": 172672,
+        "old_modified": "2026-03-02T09:54:40.736919",
+        "new_modified": "2026-03-02T10:25:20.806025"
+      }
+    ],
+    "deleted": [
+      {
+        "path": "DOWNLOADS/EDITAIS/988157_900092026/Edital.pdf",
+        "last_size": 749884
+      }
+    ],
+    "summary": {
+      "created_count": 10,
+      "modified_count": 3,
+      "deleted_count": 1,
+      "total_changes": 14,
+      "total_files_now": 846
+    }
+  },
+  {
+    "timestamp": "2026-03-02T11:29:37.220672",
+    "period": {
+      "from": "2026-03-02T10:55:37.950167",
+      "to": "2026-03-02T11:29:28.509820"
+    },
+    "created": [
+      {
+        "path": "DOWNLOADS/EDITAIS/153038_900172025/153038_900172025_itens.xlsx",
+        "size": 7853,
+        "type": ".xlsx"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/153038_900172025/6-_ETP_153038-000173-2025.pdf",
+        "size": 70015,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/153038_900172025/RelacaoItens15303805900172025000.pdf",
+        "size": 71820,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/160443_612025/termo_referencia.pdf",
+        "size": 92603,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/450522_900102026/450522_900102026_itens.xlsx",
+        "size": 13228,
+        "type": ".xlsx"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/450522_900102026/RelacaoItens45052205900102026000.pdf",
+        "size": 99599,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/450522_900102026/termo_referencia.pdf",
+        "size": 366601,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/925443_908532025/925443_908532025_itens.xlsx",
+        "size": 5657,
+        "type": ".xlsx"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/925443_908532025/RelacaoItens92544305908532025000.pdf",
+        "size": 50867,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/925443_908532025/termo_referencia.pdf",
+        "size": 225442,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/986249_904322025/986249_904322025_itens.xlsx",
+        "size": 6323,
+        "type": ".xlsx"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/986249_904322025/RelacaoItens98624905904322025000.pdf",
+        "size": 62433,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/986249_904322025/termo_referencia.pdf",
+        "size": 297527,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/987445_900122026/987445_900122026_itens.xlsx",
+        "size": 9989,
+        "type": ".xlsx"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/987445_900122026/EDITAL MATERIAIS esportivos.pdf",
+        "size": 406887,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/987445_900122026/RelacaoItens98744505900122026000.pdf",
+        "size": 98559,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/987995_900112026/987995_900112026_itens.xlsx",
+        "size": 11167,
+        "type": ".xlsx"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/987995_900112026/Pregao 011 - Materiais, equipamentos e brinquedos.docx",
+        "size": 15114734,
+        "type": ".docx"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/987995_900112026/RelacaoItens98799505900112026000.pdf",
+        "size": 90663,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/988157_900092026/988157_900092026_itens.xlsx",
+        "size": 5761,
+        "type": ".xlsx"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/988157_900092026/RelacaoItens98815705900092026000.pdf",
+        "size": 53106,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/988157_900092026/termo_referencia.pdf",
+        "size": 370692,
+        "type": ".pdf"
+      }
+    ],
+    "modified": [
+      {
+        "path": "DOWNLOADS/EDITAIS/120064_900692025/120064_900692025_itens.xlsx",
+        "old_size": 6853,
+        "new_size": 6853,
+        "old_modified": "2026-02-13T12:44:41.725227",
+        "new_modified": "2026-03-02T11:17:02.740133"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/158009_900142025/158009_900142025_itens.xlsx",
+        "old_size": 20969,
+        "new_size": 20969,
+        "old_modified": "2026-02-13T12:44:42.599563",
+        "new_modified": "2026-03-02T11:17:03.849739"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/160145_900022026/160145_900022026_itens.xlsx",
+        "old_size": 13639,
+        "new_size": 13639,
+        "old_modified": "2026-02-13T12:44:43.483829",
+        "new_modified": "2026-03-02T11:17:04.232468"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/160147_900022026/160147_900022026_itens.xlsx",
+        "old_size": 8342,
+        "new_size": 8342,
+        "old_modified": "2026-02-13T12:44:43.856154",
+        "new_modified": "2026-03-02T11:17:04.396559"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/453405_900192026/453405_900192026_itens.xlsx",
+        "old_size": 9065,
+        "new_size": 9065,
+        "old_modified": "2026-02-13T12:44:44.173745",
+        "new_modified": "2026-03-02T11:17:04.961997"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/926697_900062026/926697_900062026_itens.xlsx",
+        "old_size": 8660,
+        "new_size": 8660,
+        "old_modified": "2026-02-13T12:44:44.452553",
+        "new_modified": "2026-03-02T11:17:05.332383"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/927812_900022026/927812_900022026_itens.xlsx",
+        "old_size": 8582,
+        "new_size": 8582,
+        "old_modified": "2026-02-13T12:44:44.773254",
+        "new_modified": "2026-03-02T11:17:05.500452"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/927862_900182026/927862_900182026_itens.xlsx",
+        "old_size": 9426,
+        "new_size": 9425,
+        "old_modified": "2026-02-13T12:44:45.093515",
+        "new_modified": "2026-03-02T11:17:05.693567"
+      },
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 31160,
+        "new_size": 33846,
+        "old_modified": "2026-03-02T10:25:20.795732",
+        "new_modified": "2026-03-02T10:55:50.559005"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 15492,
+        "new_size": 16552,
+        "old_modified": "2026-03-02T10:25:24.832110",
+        "new_modified": "2026-03-02T10:56:02.019530"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172672,
+        "new_size": 174485,
+        "old_modified": "2026-03-02T10:25:20.806025",
+        "new_modified": "2026-03-02T10:55:50.625383"
+      }
+    ],
+    "deleted": [
+      {
+        "path": "requirements-LenovoPetrus.txt",
+        "last_size": 3099
+      },
+      {
+        "path": "arte_code/arte_edital-LenovoPetrus.py",
+        "last_size": 62508
+      },
+      {
+        "path": "arte_code/arte_heavy-LenovoPetrus.py",
+        "last_size": 35090
+      },
+      {
+        "path": "arte_edital/01_ingestao_edital-LenovoPetrus.py",
+        "last_size": 9926
+      },
+      {
+        "path": "arte_edital/03_extracao_tabelas-LenovoPetrus.py",
+        "last_size": 2751
+      },
+      {
+        "path": "arte_edital/04_leitura_ia_edital-LenovoPetrus.py",
+        "last_size": 8666
+      },
+      {
+        "path": "arte_edital/05_joint_master-LenovoPetrus.py",
+        "last_size": 16096
+      },
+      {
+        "path": "arte_heavy/arte_heavy_A_gemini-LenovoPetrus.py",
+        "last_size": 14332
+      },
+      {
+        "path": "arte_heavy/arte_heavy_A_xai-LenovoPetrus.py",
+        "last_size": 13926
+      },
+      {
+        "path": "arte_heavy/arte_heavy_B-LenovoPetrus.py",
+        "last_size": 49920
+      },
+      {
+        "path": "arte_heavy/arte_heavy_notebook-LenovoPetrus.py",
+        "last_size": 15856
+      },
+      {
+        "path": "arte_metadados/arte_metadados-LenovoPetrus.py",
+        "last_size": 15002
+      },
+      {
+        "path": "arte_metadados/arte_metadados_excel-LenovoPetrus.py",
+        "last_size": 20307
+      },
+      {
+        "path": "arte_metadados/arte_metadados_grok-LenovoPetrus.py",
+        "last_size": 7031
+      },
+      {
+        "path": "arte_notebooks/tools/check_mcp-LenovoPetrus.py",
+        "last_size": 1643
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/153038_900172025/15303805900172025000.zip",
+        "last_size": 1198401
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/160443_612025/TR160443_000007_2026.pdf",
+        "last_size": 206130
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/450522_900102026/45052205900102026000.zip",
+        "last_size": 2647023
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/925443_908532025/92544305908532025000.zip",
+        "last_size": 860837
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/986249_904322025/98624905904322025000.zip",
+        "last_size": 850139
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/987445_900122026/98744505900122026000.zip",
+        "last_size": 2494211
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/987995_900112026/98799505900112026000.zip",
+        "last_size": 15144801
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/988157_900092026/98815705900092026000.zip",
+        "last_size": 749884
+      },
+      {
+        "path": "ml_models/json/especificacoes_tecnicas-LenovoPetrus.json",
+        "last_size": 63284
+      },
+      {
+        "path": "ml_models/json/ledger_system/ledger_canonize_gemini-LenovoPetrus.py",
+        "last_size": 14215
+      },
+      {
+        "path": "ml_models/json/ledger_system/ledger_compose-LenovoPetrus.py",
+        "last_size": 4512
+      },
+      {
+        "path": "ml_models/json/ledger_system/ledger_compose_adicionais-LenovoPetrus.py",
+        "last_size": 7149
+      },
+      {
+        "path": "ml_models/json/ledger_system/ledger_compose_master-LenovoPetrus.py",
+        "last_size": 7376
+      },
+      {
+        "path": "ml_models/json/ledger_system/ledger_unique-LenovoPetrus.py",
+        "last_size": 6713
+      },
+      {
+        "path": "ml_models/json/ledger_system/migrate_specs-LenovoPetrus.py",
+        "last_size": 5383
+      },
+      {
+        "path": "ml_models/knowledge_base/learned_matches-LenovoPetrus.csv",
+        "last_size": 135812
+      },
+      {
+        "path": "scripts/prompts_AI/check_api_status-LenovoPetrus.py",
+        "last_size": 4102
+      },
+      {
+        "path": "scripts/prompts_AI/check_models-LenovoPetrus.py",
+        "last_size": 519
+      }
+    ],
+    "summary": {
+      "created_count": 22,
+      "modified_count": 11,
+      "deleted_count": 33,
+      "total_changes": 66,
+      "total_files_now": 835
+    }
+  },
+  {
+    "timestamp": "2026-03-02T12:00:06.801969",
+    "period": {
+      "from": "2026-03-02T11:29:28.509820",
+      "to": "2026-03-02T12:00:02.516560"
+    },
+    "created": [
+      {
+        "path": "DOWNLOADS/EDITAIS/120064_900692025/termo_referencia_limpo.pdf",
+        "size": 164070,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/160145_900022026/termo_referencia_limpo.pdf",
+        "size": 1188482,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/160147_900022026/termo_referencia_limpo.pdf",
+        "size": 684044,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/160443_612025/termo_referencia_limpo.pdf",
+        "size": 223846,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/450522_900102026/termo_referencia_limpo.pdf",
+        "size": 2690173,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/453405_900192026/termo_referencia_limpo.pdf",
+        "size": 1126717,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/925443_908532025/termo_referencia_limpo.pdf",
+        "size": 563466,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/926697_900062026/termo_referencia_limpo.pdf",
+        "size": 927381,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/927862_900182026/termo_referencia_limpo.pdf",
+        "size": 600900,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/986249_904322025/termo_referencia_limpo.pdf",
+        "size": 446547,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/988157_900092026/termo_referencia_limpo.pdf",
+        "size": 530502,
+        "type": ".pdf"
+      }
+    ],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 33846,
+        "new_size": 44395,
+        "old_modified": "2026-03-02T10:55:50.559005",
+        "new_modified": "2026-03-02T11:29:37.265603"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 16552,
+        "new_size": 19596,
+        "old_modified": "2026-03-02T10:56:02.019530",
+        "new_modified": "2026-03-02T11:29:38.493000"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 174485,
+        "new_size": 172835,
+        "old_modified": "2026-03-02T10:55:50.625383",
+        "new_modified": "2026-03-02T11:29:37.319476"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 11,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 14,
+      "total_files_now": 846
+    }
+  },
+  {
+    "timestamp": "2026-03-02T12:30:45.999443",
+    "period": {
+      "from": "2026-03-02T12:00:02.516560",
+      "to": "2026-03-02T12:30:34.443261"
+    },
+    "created": [
+      {
+        "path": "arte_edital/04_pipeline_extracao.py",
+        "size": 8602,
+        "type": ".py"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/153038_900172025/153038_900172025_referencia.xlsx",
+        "size": 9164,
+        "type": ".xlsx"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/153038_900172025/6-_ETP_153038-000173-2025_limpo.pdf",
+        "size": 190349,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/160443_612025/160443_612025_referencia.xlsx",
+        "size": 7986,
+        "type": ".xlsx"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/180153_752026/180153_752026_referencia.xlsx",
+        "size": 5379,
+        "type": ".xlsx"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/180153_752026/5-Aviso+PDF_limpo.pdf",
+        "size": 2122984,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/450522_900102026/450522_900102026_referencia.xlsx",
+        "size": 25284,
+        "type": ".xlsx"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/925443_908532025/925443_908532025_referencia.xlsx",
+        "size": 6606,
+        "type": ".xlsx"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/986249_904322025/986249_904322025_referencia.xlsx",
+        "size": 7401,
+        "type": ".xlsx"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/987445_900122026/987445_900122026_referencia.xlsx",
+        "size": 11630,
+        "type": ".xlsx"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/987445_900122026/EDITAL MATERIAIS esportivos_limpo.pdf",
+        "size": 909913,
+        "type": ".pdf"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/988157_900092026/988157_900092026_referencia.xlsx",
+        "size": 5664,
+        "type": ".xlsx"
+      }
+    ],
+    "modified": [
+      {
+        "path": "arte_edital/03_extracao_tabelas.py",
+        "old_size": 2658,
+        "new_size": 2667,
+        "old_modified": "2026-02-13T13:02:32.420791",
+        "new_modified": "2026-03-02T12:05:05.487243"
+      },
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 44395,
+        "new_size": 47140,
+        "old_modified": "2026-03-02T11:29:37.265603",
+        "new_modified": "2026-03-02T12:00:06.811567"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 19596,
+        "new_size": 20687,
+        "old_modified": "2026-03-02T11:29:38.493000",
+        "new_modified": "2026-03-02T12:00:07.249537"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 172835,
+        "new_size": 175057,
+        "old_modified": "2026-03-02T11:29:37.319476",
+        "new_modified": "2026-03-02T12:00:06.837616"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 12,
+      "modified_count": 4,
+      "deleted_count": 0,
+      "total_changes": 16,
+      "total_files_now": 858
+    }
+  },
+  {
+    "timestamp": "2026-03-02T13:04:11.179025",
+    "period": {
+      "from": "2026-03-02T12:30:34.443261",
+      "to": "2026-03-02T13:04:00.214122"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "DOWNLOADS/EDITAIS/450522_900102026/450522_900102026_referencia.xlsx",
+        "old_size": 25284,
+        "new_size": 88236,
+        "old_modified": "2026-03-02T12:27:26.581149",
+        "new_modified": "2026-03-02T13:03:53.187861"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/925443_908532025/925443_908532025_referencia.xlsx",
+        "old_size": 6606,
+        "new_size": 9254,
+        "old_modified": "2026-03-02T12:27:34.342243",
+        "new_modified": "2026-03-02T13:03:17"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/986249_904322025/986249_904322025_referencia.xlsx",
+        "old_size": 7401,
+        "new_size": 24451,
+        "old_modified": "2026-03-02T12:27:42.082752",
+        "new_modified": "2026-03-02T13:01:13.725800"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/987445_900122026/987445_900122026_referencia.xlsx",
+        "old_size": 11630,
+        "new_size": 40117,
+        "old_modified": "2026-03-02T12:28:12.065638",
+        "new_modified": "2026-03-02T13:00:22.807916"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/988157_900092026/988157_900092026_referencia.xlsx",
+        "old_size": 5664,
+        "new_size": 17148,
+        "old_modified": "2026-03-02T12:28:17.100126",
+        "new_modified": "2026-03-02T13:00:50.925339"
+      },
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 47140,
+        "new_size": 50286,
+        "old_modified": "2026-03-02T12:00:06.811567",
+        "new_modified": "2026-03-02T12:30:46.026228"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 20687,
+        "new_size": 21988,
+        "old_modified": "2026-03-02T12:00:07.249537",
+        "new_modified": "2026-03-02T12:30:47.619818"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 175057,
+        "new_size": 177488,
+        "old_modified": "2026-03-02T12:00:06.837616",
+        "new_modified": "2026-03-02T12:30:46.065645"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 8,
+      "deleted_count": 0,
+      "total_changes": 8,
+      "total_files_now": 858
+    }
+  },
+  {
+    "timestamp": "2026-03-02T13:34:55.430791",
+    "period": {
+      "from": "2026-03-02T13:04:00.214122",
+      "to": "2026-03-02T13:34:42.696646"
+    },
+    "created": [
+      {
+        "path": "DOWNLOADS/EDITAIS/153038_900172025/153038_900172025_master.xlsx",
+        "size": 10420,
+        "type": ".xlsx"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/450522_900102026/450522_900102026_master.xlsx",
+        "size": 29250,
+        "type": ".xlsx"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/925443_908532025/925443_908532025_master.xlsx",
+        "size": 16806,
+        "type": ".xlsx"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/986249_904322025/986249_904322025_master.xlsx",
+        "size": 7912,
+        "type": ".xlsx"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/987445_900122026/987445_900122026_master.xlsx",
+        "size": 13893,
+        "type": ".xlsx"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/987995_900112026/987995_900112026_master.xlsx",
+        "size": 11436,
+        "type": ".xlsx"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/988157_900092026/988157_900092026_master.xlsx",
+        "size": 6097,
+        "type": ".xlsx"
+      }
+    ],
+    "modified": [
+      {
+        "path": "DOWNLOADS/master.xlsx",
+        "old_size": 93688,
+        "new_size": 108728,
+        "old_modified": "2026-02-17T23:25:22",
+        "new_modified": "2026-03-02T13:24:49.087238"
+      },
+      {
+        "path": "DOWNLOADS/summary.xlsx",
+        "old_size": 134584,
+        "new_size": 156527,
+        "old_modified": "2026-02-18T20:16:10.577084",
+        "new_modified": "2026-03-02T13:20:45.416914"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/153038_900172025/153038_900172025_referencia.xlsx",
+        "old_size": 9164,
+        "new_size": 29512,
+        "old_modified": "2026-03-02T12:05:30.890333",
+        "new_modified": "2026-03-02T13:05:09.652139"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/160443_612025/160443_612025_referencia.xlsx",
+        "old_size": 7986,
+        "new_size": 27625,
+        "old_modified": "2026-03-02T12:24:35.442291",
+        "new_modified": "2026-03-02T13:04:45.730532"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/180153_752026/180153_752026_referencia.xlsx",
+        "old_size": 5379,
+        "new_size": 16114,
+        "old_modified": "2026-03-02T12:25:49.850042",
+        "new_modified": "2026-03-02T13:18:20.265237"
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/987445_900122026/987445_900122026_referencia.xlsx",
+        "old_size": 40117,
+        "new_size": 15527,
+        "old_modified": "2026-03-02T13:00:22.807916",
+        "new_modified": "2026-03-02T13:13:40"
+      },
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 50286,
+        "new_size": 52723,
+        "old_modified": "2026-03-02T12:30:46.026228",
+        "new_modified": "2026-03-02T13:04:11.212914"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 21988,
+        "new_size": 22863,
+        "old_modified": "2026-03-02T12:30:47.619818",
+        "new_modified": "2026-03-02T13:04:12.452701"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 177488,
+        "new_size": 177483,
+        "old_modified": "2026-03-02T12:30:46.065645",
+        "new_modified": "2026-03-02T13:04:11.254543"
+      }
+    ],
+    "deleted": [
+      {
+        "path": "DOWNLOADS/EDITAIS/987445_900122026/EDITAL MATERIAIS esportivos.pdf",
+        "last_size": 406887
+      }
+    ],
+    "summary": {
+      "created_count": 7,
+      "modified_count": 9,
+      "deleted_count": 1,
+      "total_changes": 17,
+      "total_files_now": 864
+    }
+  },
+  {
+    "timestamp": "2026-03-02T14:05:34.848114",
+    "period": {
+      "from": "2026-03-02T13:34:42.696646",
+      "to": "2026-03-02T14:05:25.205972"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 52723,
+        "new_size": 56534,
+        "old_modified": "2026-03-02T13:04:11.212914",
+        "new_modified": "2026-03-02T13:34:55.466499"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 22863,
+        "new_size": 24220,
+        "old_modified": "2026-03-02T13:04:12.452701",
+        "new_modified": "2026-03-02T13:34:56.302782"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 177483,
+        "new_size": 178699,
+        "old_modified": "2026-03-02T13:04:11.254543",
+        "new_modified": "2026-03-02T13:34:55.533744"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 864
+    }
+  },
+  {
+    "timestamp": "2026-03-02T14:36:52.981999",
+    "period": {
+      "from": "2026-03-02T14:05:25.205972",
+      "to": "2026-03-02T14:36:00.614590"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 56534,
+        "new_size": 57622,
+        "old_modified": "2026-03-02T13:34:55.466499",
+        "new_modified": "2026-03-02T14:05:34.872194"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 24220,
+        "new_size": 24743,
+        "old_modified": "2026-03-02T13:34:56.302782",
+        "new_modified": "2026-03-02T14:05:35.719067"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 178699,
+        "new_size": 178699,
+        "old_modified": "2026-03-02T13:34:55.533744",
+        "new_modified": "2026-03-02T14:05:34.910389"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 864
+    }
+  },
+  {
+    "timestamp": "2026-03-02T15:07:31.232916",
+    "period": {
+      "from": "2026-03-02T14:36:00.614590",
+      "to": "2026-03-02T15:07:23.566581"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 57622,
+        "new_size": 58710,
+        "old_modified": "2026-03-02T14:05:34.872194",
+        "new_modified": "2026-03-02T14:36:53.002396"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 24743,
+        "new_size": 25266,
+        "old_modified": "2026-03-02T14:05:35.719067",
+        "new_modified": "2026-03-02T14:36:54.147237"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 178699,
+        "new_size": 178699,
+        "old_modified": "2026-03-02T14:05:34.910389",
+        "new_modified": "2026-03-02T14:36:53.043288"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 864
+    }
+  },
+  {
+    "timestamp": "2026-03-02T15:39:48.348406",
+    "period": {
+      "from": "2026-03-02T15:07:23.566581",
+      "to": "2026-03-02T15:39:41.459805"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 58710,
+        "new_size": 59798,
+        "old_modified": "2026-03-02T14:36:53.002396",
+        "new_modified": "2026-03-02T15:07:31.251373"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 25266,
+        "new_size": 25789,
+        "old_modified": "2026-03-02T14:36:54.147237",
+        "new_modified": "2026-03-02T15:07:39.619565"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 178699,
+        "new_size": 178699,
+        "old_modified": "2026-03-02T14:36:53.043288",
+        "new_modified": "2026-03-02T15:07:31.278901"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 864
+    }
+  },
+  {
+    "timestamp": "2026-03-02T16:10:14.482381",
+    "period": {
+      "from": "2026-03-02T15:39:41.459805",
+      "to": "2026-03-02T16:10:07.693147"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 59798,
+        "new_size": 60886,
+        "old_modified": "2026-03-02T15:07:31.251373",
+        "new_modified": "2026-03-02T15:39:48.361887"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 25789,
+        "new_size": 26312,
+        "old_modified": "2026-03-02T15:07:39.619565",
+        "new_modified": "2026-03-02T15:39:48.912028"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 178699,
+        "new_size": 178699,
+        "old_modified": "2026-03-02T15:07:31.278901",
+        "new_modified": "2026-03-02T15:39:48.389078"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 864
+    }
+  },
+  {
+    "timestamp": "2026-03-02T16:40:44.762837",
+    "period": {
+      "from": "2026-03-02T16:10:07.693147",
+      "to": "2026-03-02T16:40:33.814321"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 60886,
+        "new_size": 61974,
+        "old_modified": "2026-03-02T15:39:48.361887",
+        "new_modified": "2026-03-02T16:10:14.499064"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 26312,
+        "new_size": 26835,
+        "old_modified": "2026-03-02T15:39:48.912028",
+        "new_modified": "2026-03-02T16:10:15.053984"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 178699,
+        "new_size": 178699,
+        "old_modified": "2026-03-02T15:39:48.389078",
+        "new_modified": "2026-03-02T16:10:14.525295"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 864
+    }
+  },
+  {
+    "timestamp": "2026-03-02T17:11:16.976118",
+    "period": {
+      "from": "2026-03-02T16:40:33.814321",
+      "to": "2026-03-02T17:11:10.070765"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 61974,
+        "new_size": 63062,
+        "old_modified": "2026-03-02T16:10:14.499064",
+        "new_modified": "2026-03-02T16:40:44.781666"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 26835,
+        "new_size": 27358,
+        "old_modified": "2026-03-02T16:10:15.053984",
+        "new_modified": "2026-03-02T16:40:45.727216"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 178699,
+        "new_size": 178699,
+        "old_modified": "2026-03-02T16:10:14.525295",
+        "new_modified": "2026-03-02T16:40:44.812330"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 864
+    }
+  },
+  {
+    "timestamp": "2026-03-02T17:41:41.564343",
+    "period": {
+      "from": "2026-03-02T17:11:10.070765",
+      "to": "2026-03-02T17:41:32.039307"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "TODO.md",
+        "old_size": 546,
+        "new_size": 1330,
+        "old_modified": "2026-02-07T16:11:18.505648",
+        "new_modified": "2026-03-02T17:27:21.645850"
+      },
+      {
+        "path": "JARVIS/MANIFEST.md",
+        "old_size": 3371,
+        "new_size": 3219,
+        "old_modified": "2026-02-28T15:05:50.397553",
+        "new_modified": "2026-03-02T17:27:15.301215"
+      },
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 63062,
+        "new_size": 64150,
+        "old_modified": "2026-03-02T16:40:44.781666",
+        "new_modified": "2026-03-02T17:11:16.996879"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 27358,
+        "new_size": 27881,
+        "old_modified": "2026-03-02T16:40:45.727216",
+        "new_modified": "2026-03-02T17:11:17.589604"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 178699,
+        "new_size": 178699,
+        "old_modified": "2026-03-02T16:40:44.812330",
+        "new_modified": "2026-03-02T17:11:17.023444"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 5,
+      "deleted_count": 0,
+      "total_changes": 5,
+      "total_files_now": 864
+    }
+  },
+  {
+    "timestamp": "2026-03-02T18:12:21.973182",
+    "period": {
+      "from": "2026-03-02T17:41:32.039307",
+      "to": "2026-03-02T18:12:10.221071"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 64150,
+        "new_size": 65668,
+        "old_modified": "2026-03-02T17:11:16.996879",
+        "new_modified": "2026-03-02T17:41:41.593412"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 27881,
+        "new_size": 28404,
+        "old_modified": "2026-03-02T17:11:17.589604",
+        "new_modified": "2026-03-02T17:41:42.446525"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 178699,
+        "new_size": 178700,
+        "old_modified": "2026-03-02T17:11:17.023444",
+        "new_modified": "2026-03-02T17:41:41.625161"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 864
+    }
+  },
+  {
+    "timestamp": "2026-03-02T18:43:18.926223",
+    "period": {
+      "from": "2026-03-02T18:12:10.221071",
+      "to": "2026-03-02T18:43:06.752205"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 65668,
+        "new_size": 66756,
+        "old_modified": "2026-03-02T17:41:41.593412",
+        "new_modified": "2026-03-02T18:12:22.004926"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 28404,
+        "new_size": 28927,
+        "old_modified": "2026-03-02T17:41:42.446525",
+        "new_modified": "2026-03-02T18:12:23.281120"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 178700,
+        "new_size": 178700,
+        "old_modified": "2026-03-02T17:41:41.625161",
+        "new_modified": "2026-03-02T18:12:22.056744"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 864
+    }
+  },
+  {
+    "timestamp": "2026-03-02T19:14:04.558839",
+    "period": {
+      "from": "2026-03-02T18:43:06.752205",
+      "to": "2026-03-02T19:13:50.480336"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 66756,
+        "new_size": 67844,
+        "old_modified": "2026-03-02T18:12:22.004926",
+        "new_modified": "2026-03-02T18:43:18.950893"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 28927,
+        "new_size": 29450,
+        "old_modified": "2026-03-02T18:12:23.281120",
+        "new_modified": "2026-03-02T18:43:19.759254"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 178700,
+        "new_size": 178700,
+        "old_modified": "2026-03-02T18:12:22.056744",
+        "new_modified": "2026-03-02T18:43:18.993057"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 864
+    }
+  },
+  {
+    "timestamp": "2026-03-02T19:44:53.253233",
+    "period": {
+      "from": "2026-03-02T19:13:50.480336",
+      "to": "2026-03-02T19:44:36.199711"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 67844,
+        "new_size": 68932,
+        "old_modified": "2026-03-02T18:43:18.950893",
+        "new_modified": "2026-03-02T19:14:04.586452"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 29450,
+        "new_size": 29973,
+        "old_modified": "2026-03-02T18:43:19.759254",
+        "new_modified": "2026-03-02T19:14:05.683013"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 178700,
+        "new_size": 178700,
+        "old_modified": "2026-03-02T18:43:18.993057",
+        "new_modified": "2026-03-02T19:14:04.629748"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 864
+    }
+  },
+  {
+    "timestamp": "2026-03-02T20:15:26.726322",
+    "period": {
+      "from": "2026-03-02T19:44:36.199711",
+      "to": "2026-03-02T20:15:18.864228"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 68932,
+        "new_size": 70020,
+        "old_modified": "2026-03-02T19:14:04.586452",
+        "new_modified": "2026-03-02T19:44:53.274390"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 29973,
+        "new_size": 30496,
+        "old_modified": "2026-03-02T19:14:05.683013",
+        "new_modified": "2026-03-02T19:44:53.961538"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 178700,
+        "new_size": 178700,
+        "old_modified": "2026-03-02T19:14:04.629748",
+        "new_modified": "2026-03-02T19:44:53.307728"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 864
+    }
+  },
+  {
+    "timestamp": "2026-03-02T20:47:56.285553",
+    "period": {
+      "from": "2026-03-02T20:15:18.864228",
+      "to": "2026-03-02T20:47:40.719300"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "DOWNLOADS/master_heavy_ultra.xlsx",
+        "old_size": 850787,
+        "new_size": 1310162,
+        "old_modified": "2026-02-24T19:28:53",
+        "new_modified": "2026-03-02T20:46:33.062721"
+      },
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 70020,
+        "new_size": 71108,
+        "old_modified": "2026-03-02T19:44:53.274390",
+        "new_modified": "2026-03-02T20:15:26.749254"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 30496,
+        "new_size": 31019,
+        "old_modified": "2026-03-02T19:44:53.961538",
+        "new_modified": "2026-03-02T20:15:34.916164"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 178700,
+        "new_size": 178700,
+        "old_modified": "2026-03-02T19:44:53.307728",
+        "new_modified": "2026-03-02T20:15:26.784482"
+      },
+      {
+        "path": "scripts/trello/concatenar_trello.py",
+        "old_size": 6297,
+        "new_size": 6380,
+        "old_modified": "2026-02-24T17:36:08.907115",
+        "new_modified": "2026-03-02T20:47:21.002921"
+      }
+    ],
+    "deleted": [
+      {
+        "path": "DOWNLOADS/EDITAIS/120064_900692025/120064_900692025_itens.xlsx",
+        "last_size": 6853
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/120064_900692025/120064_900692025_master.xlsx",
+        "last_size": 8382
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/120064_900692025/120064_900692025_referencia.xlsx",
+        "last_size": 24337
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/120064_900692025/RelacaoItens12006405900692025000.pdf",
+        "last_size": 64165
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/120064_900692025/termo_referencia.pdf",
+        "last_size": 60933
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/120064_900692025/termo_referencia_limpo.pdf",
+        "last_size": 164070
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/158009_900142025/158009_900142025_itens.xlsx",
+        "last_size": 20969
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/158009_900142025/158009_900142025_master.xlsx",
+        "last_size": 59304
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/158009_900142025/158009_900142025_referencia.xlsx",
+        "last_size": 42916
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/158009_900142025/RelacaoItens15800905900142025000.pdf",
+        "last_size": 165640
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/158009_900142025/termo_referencia.pdf",
+        "last_size": 249717
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/158009_900142025/termo_referencia_limpo.pdf",
+        "last_size": 1057730
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/160145_900022026/160145_900022026_itens.xlsx",
+        "last_size": 13639
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/160145_900022026/160145_900022026_master.xlsx",
+        "last_size": 33599
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/160145_900022026/160145_900022026_referencia.xlsx",
+        "last_size": 113602
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/160145_900022026/RelacaoItens16014505900022026000.pdf",
+        "last_size": 120023
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/160145_900022026/termo_referencia.pdf",
+        "last_size": 264045
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/160145_900022026/termo_referencia_limpo.pdf",
+        "last_size": 1188482
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/160147_900022026/160147_900022026_itens.xlsx",
+        "last_size": 8342
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/160147_900022026/160147_900022026_master.xlsx",
+        "last_size": 13400
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/160147_900022026/160147_900022026_referencia.xlsx",
+        "last_size": 40509
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/160147_900022026/RelacaoItens16014705900022026000.pdf",
+        "last_size": 75816
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/160147_900022026/termo_referencia.pdf",
+        "last_size": 240019
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/160147_900022026/termo_referencia_limpo.pdf",
+        "last_size": 684044
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/926697_900062026/926697_900062026_itens.xlsx",
+        "last_size": 8660
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/926697_900062026/926697_900062026_master.xlsx",
+        "last_size": 16802
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/926697_900062026/926697_900062026_referencia.xlsx",
+        "last_size": 41628
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/926697_900062026/RelacaoItens92669705900062026000.pdf",
+        "last_size": 75711
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/926697_900062026/termo_referencia.pdf",
+        "last_size": 355819
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/926697_900062026/termo_referencia_limpo.pdf",
+        "last_size": 927381
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/927812_900022026/927812_900022026_itens.xlsx",
+        "last_size": 8582
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/927812_900022026/927812_900022026_master.xlsx",
+        "last_size": 11534
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/927812_900022026/927812_900022026_referencia.xlsx",
+        "last_size": 29338
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/927812_900022026/RelacaoItens92781205900022026000.pdf",
+        "last_size": 79715
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/927812_900022026/termo_referencia.pdf",
+        "last_size": 353533
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/927812_900022026/termo_referencia_limpo.pdf",
+        "last_size": 676529
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/927862_900182026/927862_900182026_itens.xlsx",
+        "last_size": 9425
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/927862_900182026/927862_900182026_master.xlsx",
+        "last_size": 15213
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/927862_900182026/927862_900182026_referencia.xlsx",
+        "last_size": 37469
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/927862_900182026/RelacaoItens92786205900182026000.pdf",
+        "last_size": 80532
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/927862_900182026/termo_referencia.pdf",
+        "last_size": 98261
+      },
+      {
+        "path": "DOWNLOADS/EDITAIS/927862_900182026/termo_referencia_limpo.pdf",
+        "last_size": 600900
+      }
+    ],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 5,
+      "deleted_count": 42,
+      "total_changes": 47,
+      "total_files_now": 822
+    }
+  },
+  {
+    "timestamp": "2026-03-02T21:18:59.552545",
+    "period": {
+      "from": "2026-03-02T20:47:40.719300",
+      "to": "2026-03-02T21:18:49.004299"
+    },
+    "created": [
+      {
+        "path": "DOWNLOADS/master_heavy.xlsx",
+        "size": 18282,
+        "type": ".xlsx"
+      }
+    ],
+    "modified": [
+      {
+        "path": "arte_heavy/arte_heavy_notebook.py",
+        "old_size": 19285,
+        "new_size": 19261,
+        "old_modified": "2026-02-27T04:14:10.918677",
+        "new_modified": "2026-03-02T20:54:40.308520"
+      },
+      {
+        "path": "DOWNLOADS/master.xlsx",
+        "old_size": 108728,
+        "new_size": 25788,
+        "old_modified": "2026-03-02T13:24:49.087238",
+        "new_modified": "2026-03-02T20:49:14"
+      },
+      {
+        "path": "DOWNLOADS/summary.xlsx",
+        "old_size": 156527,
+        "new_size": 55264,
+        "old_modified": "2026-03-02T13:20:45.416914",
+        "new_modified": "2026-03-02T20:48:26.569420"
+      },
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 71108,
+        "new_size": 77333,
+        "old_modified": "2026-03-02T20:15:26.749254",
+        "new_modified": "2026-03-02T20:47:56.320071"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 31019,
+        "new_size": 33619,
+        "old_modified": "2026-03-02T20:15:34.916164",
+        "new_modified": "2026-03-02T20:48:09.227210"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 178700,
+        "new_size": 170171,
+        "old_modified": "2026-03-02T20:15:26.784482",
+        "new_modified": "2026-03-02T20:47:56.365961"
+      },
+      {
+        "path": "scripts/trello/concatenar_trello.py",
+        "old_size": 6380,
+        "new_size": 6540,
+        "old_modified": "2026-03-02T20:47:21.002921",
+        "new_modified": "2026-03-02T20:48:47.916728"
+      }
+    ],
+    "deleted": [
+      {
+        "path": "DOWNLOADS/master_heavy_2.xlsx",
+        "last_size": 180657
+      },
+      {
+        "path": "DOWNLOADS/master_heavy_3.xlsx",
+        "last_size": 916732
+      }
+    ],
+    "summary": {
+      "created_count": 1,
+      "modified_count": 7,
+      "deleted_count": 2,
+      "total_changes": 10,
+      "total_files_now": 821
+    }
+  },
+  {
+    "timestamp": "2026-03-02T21:52:53.975851",
+    "period": {
+      "from": "2026-03-02T21:18:49.004299",
+      "to": "2026-03-02T21:52:39.970465"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "DOWNLOADS/master_heavy.xlsx",
+        "old_size": 18282,
+        "new_size": 0,
+        "old_modified": "2026-03-02T21:17:51.595572",
+        "new_modified": "2026-03-02T21:22:08.615439"
+      },
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 77333,
+        "new_size": 78696,
+        "old_modified": "2026-03-02T20:47:56.320071",
+        "new_modified": "2026-03-02T21:18:59.576820"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 33619,
+        "new_size": 34712,
+        "old_modified": "2026-03-02T20:48:09.227210",
+        "new_modified": "2026-03-02T21:19:10.701370"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 170171,
+        "new_size": 169996,
+        "old_modified": "2026-03-02T20:47:56.365961",
+        "new_modified": "2026-03-02T21:18:59.614510"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 4,
+      "deleted_count": 0,
+      "total_changes": 4,
+      "total_files_now": 821
+    }
+  },
+  {
+    "timestamp": "2026-03-02T22:27:11.253314",
+    "period": {
+      "from": "2026-03-02T21:52:39.970465",
+      "to": "2026-03-02T22:26:59.128197"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 78696,
+        "new_size": 78929,
+        "old_modified": "2026-03-02T21:18:59.576820",
+        "new_modified": "2026-03-02T21:52:54.014647"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 34712,
+        "new_size": 35248,
+        "old_modified": "2026-03-02T21:19:10.701370",
+        "new_modified": "2026-03-02T21:53:06.122543"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 169996,
+        "new_size": 169992,
+        "old_modified": "2026-03-02T21:18:59.614510",
+        "new_modified": "2026-03-02T21:52:54.073521"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 821
+    }
+  },
+  {
+    "timestamp": "2026-03-02T22:58:10.464598",
+    "period": {
+      "from": "2026-03-02T22:26:59.128197",
+      "to": "2026-03-02T22:57:52.033164"
+    },
+    "created": [],
+    "modified": [
+      {
+        "path": "JARVIS/logs/diffs.json",
+        "old_size": 78929,
+        "new_size": 78933,
+        "old_modified": "2026-03-02T21:52:54.014647",
+        "new_modified": "2026-03-02T22:27:11.281212"
+      },
+      {
+        "path": "JARVIS/logs/health.json",
+        "old_size": 35248,
+        "new_size": 35615,
+        "old_modified": "2026-03-02T21:53:06.122543",
+        "new_modified": "2026-03-02T22:27:12.472148"
+      },
+      {
+        "path": "JARVIS/logs/snapshot.json",
+        "old_size": 169992,
+        "new_size": 169992,
+        "old_modified": "2026-03-02T21:52:54.073521",
+        "new_modified": "2026-03-02T22:27:11.320558"
+      }
+    ],
+    "deleted": [],
+    "summary": {
+      "created_count": 0,
+      "modified_count": 3,
+      "deleted_count": 0,
+      "total_changes": 3,
+      "total_files_now": 821
+    }
+  }
+]

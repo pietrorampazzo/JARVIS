@@ -1,0 +1,179 @@
+{
+  "timestamp": "2026-03-04T02:21:44.759156",
+  "total_editais": 10,
+  "editais": [
+    {
+      "nome": "153038_900172025",
+      "pdfs": 3,
+      "relacao_itens": true,
+      "termo_referencia": false,
+      "itens_xlsx": true,
+      "referencia_xlsx": true,
+      "master_xlsx": true,
+      "ref_quality": {
+        "total_rows": 32,
+        "empty_refs": 0,
+        "completude_pct": 100.0
+      },
+      "bugs": []
+    },
+    {
+      "nome": "160443_612025",
+      "pdfs": 2,
+      "relacao_itens": false,
+      "termo_referencia": true,
+      "itens_xlsx": false,
+      "referencia_xlsx": true,
+      "master_xlsx": false,
+      "ref_quality": {
+        "total_rows": 10,
+        "empty_refs": 0,
+        "completude_pct": 100.0
+      },
+      "bugs": [
+        "SEM_RELACAO_ITENS",
+        "REFERENCIA_SEM_ITENS"
+      ]
+    },
+    {
+      "nome": "180153_752026",
+      "pdfs": 3,
+      "relacao_itens": false,
+      "termo_referencia": false,
+      "itens_xlsx": false,
+      "referencia_xlsx": true,
+      "master_xlsx": false,
+      "ref_quality": {
+        "total_rows": 1,
+        "empty_refs": 0,
+        "completude_pct": 100.0
+      },
+      "bugs": [
+        "SEM_RELACAO_ITENS",
+        "REFERENCIA_SEM_ITENS"
+      ]
+    },
+    {
+      "nome": "450522_900102026",
+      "pdfs": 3,
+      "relacao_itens": true,
+      "termo_referencia": true,
+      "itens_xlsx": true,
+      "referencia_xlsx": true,
+      "master_xlsx": true,
+      "ref_quality": {
+        "total_rows": 71,
+        "empty_refs": 0,
+        "completude_pct": 100.0
+      },
+      "bugs": []
+    },
+    {
+      "nome": "453405_900192026",
+      "pdfs": 3,
+      "relacao_itens": true,
+      "termo_referencia": true,
+      "itens_xlsx": true,
+      "referencia_xlsx": true,
+      "master_xlsx": true,
+      "ref_quality": {
+        "total_rows": 47,
+        "empty_refs": 0,
+        "completude_pct": 100.0
+      },
+      "bugs": []
+    },
+    {
+      "nome": "925443_908532025",
+      "pdfs": 3,
+      "relacao_itens": true,
+      "termo_referencia": true,
+      "itens_xlsx": true,
+      "referencia_xlsx": true,
+      "master_xlsx": true,
+      "ref_quality": {
+        "total_rows": 9,
+        "empty_refs": 0,
+        "completude_pct": 100.0
+      },
+      "bugs": []
+    },
+    {
+      "nome": "986249_904322025",
+      "pdfs": 3,
+      "relacao_itens": true,
+      "termo_referencia": true,
+      "itens_xlsx": true,
+      "referencia_xlsx": true,
+      "master_xlsx": true,
+      "ref_quality": {
+        "total_rows": 20,
+        "empty_refs": 0,
+        "completude_pct": 100.0
+      },
+      "bugs": []
+    },
+    {
+      "nome": "987445_900122026",
+      "pdfs": 2,
+      "relacao_itens": true,
+      "termo_referencia": false,
+      "itens_xlsx": true,
+      "referencia_xlsx": true,
+      "master_xlsx": true,
+      "ref_quality": {
+        "total_rows": 65,
+        "empty_refs": 0,
+        "completude_pct": 100.0
+      },
+      "bugs": []
+    },
+    {
+      "nome": "987995_900112026",
+      "pdfs": 1,
+      "relacao_itens": true,
+      "termo_referencia": false,
+      "itens_xlsx": true,
+      "referencia_xlsx": false,
+      "master_xlsx": true,
+      "ref_quality": null,
+      "bugs": [
+        "SEM_TERMO_REFERENCIA",
+        "ITENS_SEM_REFERENCIA"
+      ]
+    },
+    {
+      "nome": "988157_900092026",
+      "pdfs": 3,
+      "relacao_itens": true,
+      "termo_referencia": true,
+      "itens_xlsx": true,
+      "referencia_xlsx": true,
+      "master_xlsx": true,
+      "ref_quality": {
+        "total_rows": 3,
+        "empty_refs": 0,
+        "completude_pct": 100.0
+      },
+      "bugs": []
+    }
+  ],
+  "totals": {
+    "com_relacao_itens": 8,
+    "com_termo_referencia": 6,
+    "com_itens_xlsx": 8,
+    "com_referencia_xlsx": 9,
+    "com_master_xlsx": 8,
+    "bugs": [
+      "SEM_RELACAO_ITENS",
+      "REFERENCIA_SEM_ITENS",
+      "SEM_RELACAO_ITENS",
+      "REFERENCIA_SEM_ITENS",
+      "SEM_TERMO_REFERENCIA",
+      "ITENS_SEM_REFERENCIA"
+    ]
+  },
+  "taxa_tr": 60.0,
+  "taxa_master": 80.0,
+  "total_itens": 8
+}
