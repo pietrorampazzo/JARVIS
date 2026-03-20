@@ -1,0 +1,1936 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Natalia Sversut — Diagnóstico Estrutural de Liderança e Negócios</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --black: #080808;
+      --deep: #0f0f0f;
+      --card: #141414;
+      --border: #1e1e1e;
+      --gold: #c9a96e;
+      --gold-light: #e8d5b0;
+      --gold-dim: #7a5f35;
+      --white: #f5f0e8;
+      --gray: #555;
+      --light-gray: #888;
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      cursor: default;
+    }
+
+    /* ─── NOISE OVERLAY ─── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.4;
+    }
+
+    /* ─── TYPOGRAPHY ─── */
+    .serif {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes lineGrow {
+      from {
+        transform: scaleX(0);
+      }
+
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    @keyframes shimmer {
+
+      0%,
+      100% {
+        opacity: 0.6;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 0.4s;
+    }
+
+    .reveal-delay-5 {
+      transition-delay: 0.5s;
+    }
+
+    /* ─── NAVBAR ─── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 60px;
+      background: linear-gradient(to bottom, rgba(8, 8, 8, 0.95) 0%, transparent 100%);
+      backdrop-filter: blur(0px);
+      transition: all 0.4s ease;
+    }
+
+    nav.scrolled {
+      background: rgba(8, 8, 8, 0.97);
+      backdrop-filter: blur(20px);
+      padding: 16px 60px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--white);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .nav-logo span {
+      color: var(--gold);
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .nav-link {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--gray);
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 8px 0;
+    }
+
+    .nav-link:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-link.active {
+      color: var(--white);
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--gold);
+      animation: lineGrow 0.6s ease forwards;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 60px 80px;
+    }
+
+    /* Radial glow */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(ellipse, rgba(201, 169, 110, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Decorative lines */
+    .hero-line-left {
+      position: absolute;
+      left: 40px;
+      top: 20%;
+      bottom: 20%;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--gold-dim), transparent);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hero-line-right {
+      position: absolute;
+      right: 40px;
+      top: 25%;
+      bottom: 25%;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--gold-dim), transparent);
+      animation: float 6s ease-in-out infinite 1s;
+    }
+
+    .hero-inner {
+      max-width: 900px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-label {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 32px;
+      animation: fadeIn 1s ease 0.2s both;
+    }
+
+    .hero-label::before,
+    .hero-label::after {
+      content: '——';
+      margin: 0 12px;
+      opacity: 0.5;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 7vw, 82px);
+      font-weight: 300;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      margin-bottom: 16px;
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(18px, 2.5vw, 26px);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--light-gray);
+      margin-bottom: 48px;
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
+    }
+
+    .hero-divider {
+      width: 80px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 48px;
+      animation: fadeIn 1s ease 0.6s both;
+    }
+
+    .hero-body {
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--light-gray);
+      max-width: 640px;
+      margin: 0 auto 60px;
+      font-weight: 300;
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+    }
+
+    .hero-body strong {
+      color: var(--white);
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--black);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 18px 40px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateX(-100%);
+      transition: transform 0.4s ease;
+    }
+
+    .btn-primary:hover::after {
+      transform: translateX(0);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(201, 169, 110, 0.25);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 18px 40px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold-dim);
+      color: var(--gold-light);
+    }
+
+    /* Scroll indicator */
+    .scroll-hint {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      animation: fadeIn 2s ease 1.5s both;
+    }
+
+    .scroll-hint span {
+      font-size: 8px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold-dim), transparent);
+      animation: float 2s ease-in-out infinite;
+    }
+
+    /* ─── SECTIONS COMMON ─── */
+    section {
+      padding: 120px 60px;
+    }
+
+    .section-label {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      max-width: 60px;
+      height: 1px;
+      background: var(--gold-dim);
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    /* ─── PROBLEM ─── */
+    .problem {
+      background: var(--deep);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+
+
+    .problem-intro {
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--light-gray);
+      margin-bottom: 40px;
+    }
+
+    .problem-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.5;
+      padding-left: 24px;
+      border-left: 2px solid var(--gold);
+    }
+
+
+
+    .problem-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .problem-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    .problem-item:last-child {
+      border-bottom: none;
+    }
+
+    .problem-item:hover .problem-num {
+      color: var(--gold);
+    }
+
+    .problem-item:hover .problem-text {
+      color: var(--white);
+    }
+
+    .problem-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      color: var(--gold-dim);
+      min-width: 28px;
+      padding-top: 3px;
+      transition: color 0.3s;
+    }
+
+    .problem-text {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--light-gray);
+      transition: color 0.3s;
+    }
+
+    .problem-text strong {
+      color: var(--white);
+      font-weight: 500;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* ─── TOOLS ─── */
+    .tools {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .tools-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .tools-header .section-label {
+      justify-content: center;
+    }
+
+    .tools-header .section-label::after {
+      display: none;
+    }
+
+    .tools-header .section-label::before {
+      content: '';
+      flex: 1;
+      max-width: 60px;
+      height: 1px;
+      background: var(--gold-dim);
+    }
+
+    .tools-subtitle {
+      font-size: 14px;
+      color: var(--light-gray);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .tool-card {
+      background: var(--black);
+      padding: 32px 28px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tool-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .tool-card:hover {
+      background: var(--card);
+    }
+
+    .tool-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .tool-icon {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .tool-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .tool-desc {
+      font-size: 12px;
+      line-height: 1.7;
+      color: var(--gray);
+      transition: color 0.3s;
+    }
+
+    .tool-card:hover .tool-desc {
+      color: var(--light-gray);
+    }
+
+    /* ─── BUSINESS ─── */
+    .business {
+      background: var(--deep);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .business-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .business-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 60px;
+      background: var(--border);
+    }
+
+    .business-card {
+      background: var(--black);
+      padding: 48px 40px;
+      transition: background 0.3s;
+    }
+
+    .business-card:hover {
+      background: var(--card);
+    }
+
+    .business-card-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      color: var(--border);
+      line-height: 1;
+      margin-bottom: 20px;
+      transition: color 0.3s;
+    }
+
+    .business-card:hover .business-card-num {
+      color: var(--gold-dim);
+    }
+
+    .business-card-title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .business-card-title-main {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    .business-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .business-list li {
+      font-size: 13px;
+      color: var(--light-gray);
+      line-height: 1.6;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .business-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold-dim);
+    }
+
+    /* ─── PROCESS ─── */
+    .process {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .process-header {
+      margin-bottom: 80px;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(100% / 6);
+      right: calc(100% / 6);
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-dim), var(--gold-dim), transparent);
+    }
+
+    .process-step {
+      padding: 0 32px 48px;
+      text-align: center;
+      position: relative;
+    }
+
+    .process-step:nth-child(4),
+    .process-step:nth-child(5),
+    .process-step:nth-child(6) {
+      padding-top: 40px;
+    }
+
+    .step-circle {
+      width: 56px;
+      height: 56px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      background: var(--black);
+      position: relative;
+      z-index: 1;
+      transition: all 0.3s ease;
+    }
+
+    .process-step:hover .step-circle {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      color: var(--gold);
+      transition: color 0.3s;
+    }
+
+    .process-step:hover .step-num {
+      color: var(--black);
+    }
+
+    .step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .step-desc {
+      font-size: 12px;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* ─── CASES ─── */
+    .cases {
+      background: var(--deep);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cases-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .case-card {
+      border: 1px solid var(--border);
+      padding: 40px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .case-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s ease;
+    }
+
+    .case-card:hover {
+      border-color: var(--gold-dim);
+      background: var(--card);
+    }
+
+    .case-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .case-tag {
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(201, 169, 110, 0.08);
+      border: 1px solid rgba(201, 169, 110, 0.2);
+      padding: 6px 12px;
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+
+    .case-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .case-body {
+      font-size: 13px;
+      color: var(--light-gray);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .case-result {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      font-style: italic;
+      color: var(--gold-light);
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ─── FOR WHOM ─── */
+    .forwhom {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .forwhom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 60px;
+      background: var(--border);
+    }
+
+    .forwhom-col {
+      background: var(--black);
+      padding: 48px 40px;
+    }
+
+    .forwhom-col-title {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .forwhom-col.yes .forwhom-col-title {
+      color: var(--gold);
+    }
+
+    .forwhom-col.no .forwhom-col-title {
+      color: var(--gray);
+    }
+
+    .forwhom-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .forwhom-list li {
+      font-size: 14px;
+      line-height: 1.6;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .forwhom-col.yes .forwhom-list li {
+      color: var(--white);
+    }
+
+    .forwhom-col.no .forwhom-list li {
+      color: var(--gray);
+    }
+
+    .check {
+      color: var(--gold);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .cross {
+      color: var(--gray);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    /* ─── INVESTMENT ─── */
+    .investment {
+      background: var(--deep);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .investment-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .investment-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(60px, 10vw, 100px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1;
+      margin: 40px 0 8px;
+    }
+
+    .investment-amount span {
+      color: var(--gold);
+    }
+
+    .investment-note {
+      font-size: 12px;
+      color: var(--gray);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+
+    .investment-divider {
+      width: 60px;
+      height: 1px;
+      background: var(--gold-dim);
+      margin: 0 auto 40px;
+    }
+
+    .investment-includes {
+      display: flex;
+      gap: 0;
+      margin-bottom: 60px;
+      background: var(--border);
+    }
+
+    .inv-item {
+      flex: 1;
+      background: var(--black);
+      padding: 24px 20px;
+      font-size: 12px;
+      color: var(--light-gray);
+      line-height: 1.5;
+      border-right: 1px solid var(--border);
+    }
+
+    .inv-item:last-child {
+      border-right: none;
+    }
+
+    .inv-item strong {
+      display: block;
+      color: var(--white);
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    /* ─── ABOUT ─── */
+    .about {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+      margin-top: 60px;
+    }
+
+    .about-img-wrap {
+      position: relative;
+    }
+
+    .about-img-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--card);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-img-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(201, 169, 110, 0.05) 0%, transparent 60%);
+    }
+
+    .about-img-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(20%);
+    }
+
+    .about-img-label {
+      position: absolute;
+      bottom: -12px;
+      right: -12px;
+      background: var(--gold);
+      color: var(--black);
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 10px 16px;
+    }
+
+
+
+    .about-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .about-role {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 32px;
+    }
+
+    .about-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--gold-dim);
+      margin-bottom: 32px;
+    }
+
+    .about-bio {
+      font-size: 15px;
+      line-height: 2;
+      color: var(--light-gray);
+      margin-bottom: 20px;
+    }
+
+    .about-bio strong {
+      color: var(--white);
+      font-weight: 400;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+      padding-top: 48px;
+      border-top: 1px solid var(--border);
+    }
+
+    .about-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+
+    .about-stat-label {
+      font-size: 10px;
+      color: var(--gray);
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ─── FORM ─── */
+    .form-section {
+      background: var(--deep);
+      border-top: 1px solid var(--border);
+    }
+
+    .form-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .form-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .form-subtitle {
+      font-size: 14px;
+      color: var(--light-gray);
+      margin-bottom: 60px;
+      line-height: 1.8;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      text-align: left;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-label {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      background: var(--black);
+      border: 1px solid var(--border);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      padding: 16px 20px;
+      outline: none;
+      transition: border-color 0.3s ease;
+      width: 100%;
+      appearance: none;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--gold-dim);
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: var(--gray);
+    }
+
+    .form-select {
+      cursor: pointer;
+    }
+
+    .form-select option {
+      background: var(--black);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-note {
+      font-size: 11px;
+      color: var(--gray);
+      text-align: center;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .form-submit {
+      background: var(--gold);
+      color: var(--black);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 20px 60px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      align-self: center;
+      margin-top: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .form-submit::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateX(-100%);
+      transition: transform 0.4s ease;
+    }
+
+    .form-submit:hover::after {
+      transform: translateX(0);
+    }
+
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(201, 169, 110, 0.3);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding: 40px 60px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      color: var(--white);
+    }
+
+    .footer-logo span {
+      color: var(--gold);
+    }
+
+    .footer-text {
+      font-size: 10px;
+      color: var(--gray);
+      letter-spacing: 0.1em;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      nav {
+        padding: 20px 24px;
+      }
+
+      nav.scrolled {
+        padding: 14px 24px;
+      }
+
+      section {
+        padding: 80px 24px;
+      }
+
+      .hero {
+        padding: 100px 24px 80px;
+      }
+
+      .problem-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .business-grid,
+      .forwhom-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cases-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .process-steps::before {
+        display: none;
+      }
+
+      .investment-includes {
+        flex-direction: column;
+      }
+
+      .about-stats {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+
+      .hero-line-left,
+      .hero-line-right {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .about-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-logo">NATALIA <span>SVERSUT</span></div>
+    <div class="nav-menu">
+      <a href="index.html" class="nav-link">ORHA</a>
+      <a href="natalia-sversut.html" class="nav-link active">EMPRESAS</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-line-left"></div>
+    <div class="hero-line-right"></div>
+    <div class="hero-inner">
+      <div class="hero-label">Diagnóstico Estrutural de Liderança e Negócios</div>
+      <h1 class="hero-title">
+        Empresas não travam<br>por falta de <em>estratégia.</em>
+      </h1>
+      <div class="hero-divider"></div>
+      <p class="hero-subtitle">O problema está em outro lugar.</p>
+      <p class="hero-body">
+        Quando o plano existe, a equipe existe e o capital existe — mas o crescimento não acontece —
+        o gargalo está na <strong>estrutura invisível que governa quem executa.</strong>
+        Decisões, relações, liderança, fluxo financeiro. É aí que o diagnóstico atua.
+      </p>
+      <div class="hero-actions">
+        <a href="#solicitar" class="btn-primary">Solicitar Avaliação</a>
+        <a href="https://api.whatsapp.com/send/?phone=554199902068" class="btn-secondary">Falar no WhatsApp</a>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>Rolar</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem">
+    <div class="problem-grid">
+      <div class="problem-left reveal">
+        <div class="section-label">O Problema Real</div>
+        <h2 class="section-title">Quando a empresa<br>sabe o que fazer mas<br><em>não consegue avançar</em></h2>
+        <p class="problem-intro">
+          Empresas com faturamento consistente, equipe técnica competente e estratégia estruturada ainda assim enfrentam
+          bloqueios que nenhuma consultoria tradicional consegue resolver.
+        </p>
+        <p class="problem-quote">
+          "Se você reconhece pelo menos dois desses pontos, o gargalo não está na operação — está na estrutura invisível
+          da liderança."
+        </p>
+      </div>
+      <div class="problem-right reveal reveal-delay-2">
+        <div class="problem-items">
+          <div class="problem-item">
+            <span class="problem-num">01</span>
+            <div class="problem-text">
+              <strong>Instabilidade de caixa recorrente</strong>
+              Sem causa operacional clara. O dinheiro entra mas não fica — padrão invisível de sabotagem financeira.
+            </div>
+          </div>
+          <div class="problem-item">
+            <span class="problem-num">02</span>
+            <div class="problem-text">
+              <strong>Decisões importantes sendo adiadas</strong>
+              O CEO sabe o que precisa ser feito, mas algo sempre impede a execução. Paralisia estratégica.
+            </div>
+          </div>
+          <div class="problem-item">
+            <span class="problem-num">03</span>
+            <div class="problem-text">
+              <strong>Conflitos velados e clima pesado</strong>
+              A equipe não engaja. As reuniões não geram resultado. A tensão está presente mas ninguém nomeia.
+            </div>
+          </div>
+          <div class="problem-item">
+            <span class="problem-num">04</span>
+            <div class="problem-text">
+              <strong>Esforço alto, retorno baixo</strong>
+              A empresa trabalha muito, mas o resultado não é proporcional ao investimento de energia e capital.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+  <section id="diagnostico">
+    <div class="tools">
+      <div class="tools-header reveal">
+        <div class="section-label">As Ferramentas</div>
+        <h2 class="section-title">11 dimensões de leitura<br><em>integrada do líder</em></h2>
+        <p class="tools-subtitle">
+          Cada ferramenta revela uma camada diferente da estrutura interna. Juntas, formam um mapa completo de quem é o
+          líder — e como isso impacta a empresa.
+        </p>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card reveal">
+          <span class="tool-icon">01</span>
+          <div class="tool-name">Ikigai</div>
+          <p class="tool-desc">Alinha propósito, vocação, missão e sustento. Revela onde o líder opera fora do seu eixo
+            natural.</p>
+        </div>
+        <div class="tool-card reveal reveal-delay-1">
+          <span class="tool-icon">02</span>
+          <div class="tool-name">Mapa Natal</div>
+          <p class="tool-desc">Perfil de nascimento astrológico. Identifica forças naturais e padrões estruturais do
+            líder.</p>
+        </div>
+        <div class="tool-card reveal reveal-delay-2">
+          <span class="tool-icon">03</span>
+          <div class="tool-name">Mapa Solar</div>
+          <p class="tool-desc">Retrato energético do ciclo anual. Essencial para timing de decisões estratégicas.</p>
+        </div>
+        <div class="tool-card reveal reveal-delay-3">
+          <span class="tool-icon">04</span>
+          <div class="tool-name">Kin Maia</div>
+          <p class="tool-desc">Frequência vibratória do líder. Revela o arquétipo de liderança e padrão de criação de
+            realidade.</p>
+        </div>
+        <div class="tool-card reveal">
+          <span class="tool-icon">05</span>
+          <div class="tool-name">Aura</div>
+          <p class="tool-desc">Leitura do campo energético. Identifica bloqueios que afetam presença, autoridade e
+            relações.</p>
+        </div>
+        <div class="tool-card reveal reveal-delay-1">
+          <span class="tool-icon">06</span>
+          <div class="tool-name">Frequência</div>
+          <p class="tool-desc">Nível vibracional pela Escala de Hawkins. Indica o estado emocional que governa os
+            resultados.</p>
+        </div>
+        <div class="tool-card reveal reveal-delay-2">
+          <span class="tool-icon">07</span>
+          <div class="tool-name">Chakras</div>
+          <p class="tool-desc">Análise dos centros energéticos. Cada chakra corresponde a uma função — financeiro,
+            poder, comunicação.</p>
+        </div>
+        <div class="tool-card reveal reveal-delay-3">
+          <span class="tool-icon">08</span>
+          <div class="tool-name">Missão de Vida</div>
+          <p class="tool-desc">Propósito estrutural do líder. Quando desalinhado da missão, a execução trava
+            sistematicamente.</p>
+        </div>
+        <div class="tool-card reveal">
+          <span class="tool-icon">09</span>
+          <div class="tool-name">Dosha</div>
+          <p class="tool-desc">Constituição ayurvédica. Revela padrão de stress, reatividade e como o líder processa
+            pressão.</p>
+        </div>
+        <div class="tool-card reveal reveal-delay-1">
+          <span class="tool-icon">10</span>
+          <div class="tool-name">Meditação</div>
+          <p class="tool-desc">Avalia capacidade de presença e regulação. Líderes que não regulam o estado decidem a
+            partir do caos.</p>
+        </div>
+        <div class="tool-card reveal reveal-delay-2" style="grid-column: span 2;">
+          <span class="tool-icon">11</span>
+          <div class="tool-name">Temperamento</div>
+          <p class="tool-desc">Perfil comportamental estrutural. Identifica como o líder decide, lidera e onde seus
+            padrões causam conflito ou estagnação na empresa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS DIAGNOSIS -->
+  <section class="business">
+    <div class="business-inner">
+      <div class="reveal">
+        <div class="section-label">A Empresa</div>
+        <h2 class="section-title">Diagnóstico sistêmico<br>do <em>negócio inteiro</em></h2>
+      </div>
+      <div class="business-grid">
+        <div class="business-card reveal">
+          <div class="business-card-num">01</div>
+          <div class="business-card-title">Travamento</div>
+          <div class="business-card-title-main">Onde a empresa parou de crescer</div>
+          <ul class="business-list">
+            <li>Momento e gatilho do travamento</li>
+            <li>Padrões de decisão que perpetuam a estagnação</li>
+            <li>Crenças organizacionais que limitam o crescimento</li>
+            <li>Pontos de ruptura na execução da estratégia</li>
+          </ul>
+        </div>
+        <div class="business-card reveal reveal-delay-1">
+          <div class="business-card-num">02</div>
+          <div class="business-card-title">Finanças</div>
+          <div class="business-card-title-main">Fluxo financeiro e seus bloqueios</div>
+          <ul class="business-list">
+            <li>Leitura estrutural do fluxo de caixa</li>
+            <li>Padrões de sabotagem financeira inconsciente</li>
+            <li>Relação do líder com dinheiro e impacto no negócio</li>
+            <li>Bloqueios na atração e retenção de capital</li>
+          </ul>
+        </div>
+        <div class="business-card reveal reveal-delay-2">
+          <div class="business-card-num">03</div>
+          <div class="business-card-title">Equipe</div>
+          <div class="business-card-title-main">Fluxo humano e relacional</div>
+          <ul class="business-list">
+            <li>Mapeamento das relações-chave e seus impactos</li>
+            <li>Dinâmicas de poder, conflito e boicote velado</li>
+            <li>Por que a equipe não engaja mesmo com salários competitivos</li>
+            <li>Onde a liderança drena em vez de catalisar</li>
+          </ul>
+        </div>
+        <div class="business-card reveal reveal-delay-3">
+          <div class="business-card-num">04</div>
+          <div class="business-card-title">Gargalos</div>
+          <div class="business-card-title-main">O que está operando invisível</div>
+          <ul class="business-list">
+            <li>Decisões que nunca saem do papel</li>
+            <li>Reuniões que não geram resultado</li>
+            <li>Processos que dependem de uma única pessoa</li>
+            <li>Campo relacional que bloqueia a expansão</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section>
+    <div class="process">
+      <div class="process-header reveal">
+        <div class="section-label">O Processo</div>
+        <h2 class="section-title">Como funciona<br><em>na prática</em></h2>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal">
+          <div class="step-circle"><span class="step-num">01</span></div>
+          <div class="step-title">Conversa inicial</div>
+          <p class="step-desc">Alinhamento de contexto, objetivos e mapeamento do cenário atual da empresa.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-1">
+          <div class="step-circle"><span class="step-num">02</span></div>
+          <div class="step-title">Diagnóstico</div>
+          <p class="step-desc">Aplicação das 11 ferramentas de leitura integrada do líder e do negócio.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="step-circle"><span class="step-num">03</span></div>
+          <div class="step-title">Mapeamento</div>
+          <p class="step-desc">Liderança, relações-chave, fluxo financeiro e pontos de fuga identificados.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-1">
+          <div class="step-circle"><span class="step-num">04</span></div>
+          <div class="step-title">Padrões</div>
+          <p class="step-desc">Identificação dos padrões de travamento recorrentes — com causa raiz mapeada.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="step-circle"><span class="step-num">05</span></div>
+          <div class="step-title">Parecer Estratégico</div>
+          <p class="step-desc">Entrega do documento completo com correções sugeridas e linguagem executiva.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-3">
+          <div class="step-circle"><span class="step-num">06</span></div>
+          <div class="step-title">Direcionamento</div>
+          <p class="step-desc">Sequência lógica de próximos passos e espaço para dúvidas e alinhamento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASES -->
+  <section class="cases">
+    <div class="cases-inner">
+      <div class="reveal">
+        <div class="section-label">Casos Reais</div>
+        <h2 class="section-title">Resultados com<br><em>sigilo preservado</em></h2>
+      </div>
+      <div class="cases-grid">
+        <div class="case-card reveal">
+          <div class="case-tag">Liderança & Engajamento</div>
+          <div class="case-title">Diretor que recuperou autoridade e presença</div>
+          <p class="case-body">Diretor executivo com baixa autoridade interna e dificuldade de engajar a equipe. Após o
+            Diagnóstico Estrutural, trabalhou-se a identidade de liderança e o poder decisório. Resultado: alinhamento e
+            engajamento do time a partir da primeira sessão.</p>
+          <div class="case-result">"É um novo ciclo na minha vida." — Diretor executivo</div>
+        </div>
+        <div class="case-card reveal reveal-delay-1">
+          <div class="case-tag">Estrutura Financeira</div>
+          <div class="case-title">De R$ 300M para R$ 1B sob custódia</div>
+          <p class="case-body">Escritório financeiro em São Paulo operava com R$ 300 milhões sob custódia e enfrentava
+            estagnação. Após o alinhamento estrutural, fechou nova parceria estratégica e expandiu a operação para cerca
+            de R$ 1 bilhão sob custódia.</p>
+          <div class="case-result">Expansão de 3x em volume após desbloqueio estrutural.</div>
+        </div>
+        <div class="case-card reveal reveal-delay-2">
+          <div class="case-tag">Palestra Corporativa</div>
+          <div class="case-title">Sabesp — Saúde mental e performance executiva</div>
+          <p class="case-body">Condução de palestra corporativa para equipe executiva da Sabesp — empresa de saneamento
+            com mais de 15 mil colaboradores. Formato remoto com liderança presente e aplicação direta de ferramentas
+            diagnósticas.</p>
+          <div class="case-result">Atuação presencial e remota com grandes equipes executivas.</div>
+        </div>
+      </div>
+      <p style="font-size:11px; color:var(--gray); text-align:center; margin-top:32px; letter-spacing:0.1em;">
+        OS ATENDIMENTOS SEGUEM RIGOROSAMENTE ACORDOS DE CONFIDENCIALIDADE. NOMES E DETALHES SENSÍVEIS SÃO PRESERVADOS.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOR WHOM -->
+  <section>
+    <div class="forwhom">
+      <div class="reveal">
+        <div class="section-label">Indicação</div>
+        <h2 class="section-title">Para quem é<br><em>este diagnóstico</em></h2>
+      </div>
+      <div class="forwhom-grid">
+        <div class="forwhom-col yes reveal">
+          <div class="forwhom-col-title">✦ &nbsp; Indicado para</div>
+          <ul class="forwhom-list">
+            <li><span class="check">✦</span> Empresas com faturamento acima de R$ 1M/ano</li>
+            <li><span class="check">✦</span> CEOs e fundadores que já investiram em consultoria e não avançaram</li>
+            <li><span class="check">✦</span> Líderes que sentem que o gargalo é interno, mas não conseguem nomear</li>
+            <li><span class="check">✦</span> Negócios em transição crítica de crescimento ou reestruturação</li>
+            <li><span class="check">✦</span> Empresários que entendem que resultado começa na liderança</li>
+          </ul>
+        </div>
+        <div class="forwhom-col no reveal reveal-delay-2">
+          <div class="forwhom-col-title">✕ &nbsp; Não indicado para</div>
+          <ul class="forwhom-list">
+            <li><span class="cross">✕</span> Quem busca terapia ou suporte emocional</li>
+            <li><span class="cross">✕</span> Quem busca motivação ou palestras genéricas</li>
+            <li><span class="cross">✕</span> Quem procura soluções de baixo investimento</li>
+            <li><span class="cross">✕</span> Empresas em fase inicial sem histórico de resultado</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVESTMENT -->
+  <section class="investment">
+    <div class="investment-inner reveal">
+      <div class="section-label" style="justify-content:center;">
+        Investimento
+      </div>
+      <div class="investment-amount"><span>R$</span> 5.000</div>
+      <div class="investment-note">Sessão única · Processo completo · Entrega por escrito</div>
+      <div class="investment-divider"></div>
+      <div class="investment-includes">
+        <div class="inv-item">
+          <strong>Mapa Estrutural Completo</strong>
+          Visão integrada do líder e da empresa em documento estratégico.
+        </div>
+        <div class="inv-item">
+          <strong>11 Ferramentas</strong>
+          Leitura interpretada com análise cruzada e aplicação executiva.
+        </div>
+        <div class="inv-item">
+          <strong>Parecer Estratégico</strong>
+          Correções sugeridas com foco em implementação imediata.
+        </div>
+        <div class="inv-item">
+          <strong>Sessão de Dúvidas</strong>
+          Alinhamento e aprofundamento após a entrega do parecer.
+        </div>
+      </div>
+      <a href="#solicitar" class="btn-primary">Solicitar Avaliação Agora</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section>
+    <div class="about">
+      <div class="about-grid">
+        <div class="about-img-wrap reveal">
+          <div class="about-img-placeholder">
+            <img src="images/NATH.jpeg" alt="Natalia Sversut">
+          </div>
+          <div class="about-img-label">Estrategista</div>
+        </div>
+        <div class="about-content reveal reveal-delay-2">
+          <div class="section-label">A Especialista</div>
+          <h2 class="about-name">Natalia Sversut</h2>
+          <div class="about-role">Estrategista em Diagnóstico Estrutural de Liderança e Negócios</div>
+          <div class="about-divider"></div>
+          <p class="about-bio">
+            Atua com <strong>CEOs, fundadores e empresas</strong> que não conseguem avançar mesmo após investimentos em
+            consultorias, mentorias e planejamentos estratégicos tradicionais.
+          </p>
+          <p class="about-bio">
+            Desde 2019, conduz processos estruturais com líderes em momentos críticos de crescimento e transição —
+            incluindo <strong>escritórios financeiros, indústria e empresas de médio porte em escala</strong>.
+          </p>
+          <p class="about-bio">
+            Natalia opera em uma camada que a maioria das abordagens não acessa: o campo <strong>energético, somático e
+              comportamental</strong> do líder — simultaneamente. O resultado é uma mudança rápida e estrutural, não
+            apenas circunstancial.
+          </p>
+          <div class="about-stats">
+            <div>
+              <div class="about-stat-num">2019</div>
+              <div class="about-stat-label">Início de atuação com líderes</div>
+            </div>
+            <div>
+              <div class="about-stat-num">11</div>
+              <div class="about-stat-label">Ferramentas de diagnóstico</div>
+            </div>
+            <div>
+              <div class="about-stat-num">48h</div>
+              <div class="about-stat-label">Retorno após solicitação</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="form-section" id="solicitar">
+    <div class="form-inner">
+      <div class="reveal">
+        <div class="section-label" style="justify-content:center;">Próximo Passo</div>
+        <h2 class="form-title">Avalie se sua empresa<br>está pronta para este<br><em>diagnóstico</em></h2>
+        <p class="form-subtitle">
+          Este diagnóstico não é para todas as empresas.<br>
+          Natalia analisa pessoalmente cada solicitação e retorna em até 48 horas úteis.<br>
+          <a href="https://api.whatsapp.com/send/?phone=554199902068"
+            style="color:var(--gold); text-decoration:none; margin-top:10px; display:inline-block;">Ou chame direto no
+            WhatsApp →</a>
+        </p>
+      </div>
+      <form class="form reveal reveal-delay-1" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Nome completo</label>
+            <input type="text" class="form-input" placeholder="Seu nome" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">E-mail corporativo</label>
+            <input type="email" class="form-input" placeholder="seu@empresa.com" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Empresa</label>
+            <input type="text" class="form-input" placeholder="Nome da empresa" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Faturamento anual</label>
+            <select class="form-select form-input" required>
+              <option value="" disabled selected>Selecione o faturamento</option>
+              <option>R$ 1M – R$ 5M</option>
+              <option>R$ 5M – R$ 20M</option>
+              <option>R$ 20M – R$ 100M</option>
+              <option>Acima de R$ 100M</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Principal desafio da empresa hoje</label>
+          <textarea class="form-textarea"
+            placeholder="Descreva brevemente o principal gargalo que sua empresa enfrenta..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Solicitar Avaliação</button>
+        <p class="form-note">
+          Ao enviar, Natalia analisa pessoalmente o contexto e avalia se este Diagnóstico Estrutural<br>
+          é o próximo passo mais inteligente para a sua empresa.
+        </p>
+      </form>
+      <div id="form-success" style="display:none; text-align:center; padding:60px 0;">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:48px; color:var(--gold); margin-bottom:16px;">✦
+        </div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:300; margin-bottom:16px;">
+          Solicitação recebida.</h3>
+        <p style="font-size:14px; color:var(--light-gray); line-height:1.8;">Natalia analisará pessoalmente seu contexto
+          e retornará em até 48 horas úteis.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Natalia <span>Sversut</span></div>
+    <div class="footer-text">Diagnóstico Estrutural de Liderança e Negócios · Confidencial</div>
+  </footer>
+
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    reveals.forEach(el => observer.observe(el));
+
+    // Form submit
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.querySelector('.form').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    }
+  </script>
+</body>
+
+</html>

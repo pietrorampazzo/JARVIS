@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OR'HA — Reconexão Integral</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --cream: #F5F0E8;
+      --dark: #0E0C0A;
+      --dark2: #1A1612;
+      --text: #2C2518;
+      --muted: #8A7A60;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--dark);
+      color: var(--cream);
+      overflow-x: hidden;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px;
+      position: relative;
+      background: radial-gradient(ellipse at 50% 0%, #2A1F0A 0%, var(--dark) 60%);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201, 168, 76, 0.12) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      pointer-events: none;
+    }
+
+    .orha-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      letter-spacing: 6px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.2s;
+    }
+
+    .hero-eyebrow {
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.4s;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 8vw, 88px);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--cream);
+      margin-bottom: 12px;
+      opacity: 0;
+      animation: fadeUp 0.9s ease forwards 0.5s;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: rgba(245, 240, 232, 0.65);
+      max-width: 520px;
+      line-height: 1.7;
+      margin: 28px auto 0;
+      font-weight: 300;
+      opacity: 0;
+      animation: fadeUp 0.9s ease forwards 0.7s;
+    }
+
+    .hero-pain {
+      margin: 36px auto 0;
+      max-width: 480px;
+      opacity: 0;
+      animation: fadeUp 0.9s ease forwards 0.9s;
+    }
+
+    .hero-pain p {
+      font-size: 15px;
+      color: rgba(245, 240, 232, 0.5);
+      line-height: 1.8;
+    }
+
+    .hero-pain strong {
+      color: var(--cream);
+      font-weight: 500;
+    }
+
+    .cta-primary {
+      display: inline-block;
+      margin-top: 52px;
+      padding: 18px 52px;
+      background: var(--gold);
+      color: var(--dark);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      opacity: 0;
+      animation: fadeUp 0.9s ease forwards 1.1s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-primary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateX(-100%);
+      transition: transform 0.4s ease;
+    }
+
+    .cta-primary:hover::after {
+      transform: translateX(0);
+    }
+
+    .cta-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(201, 168, 76, 0.35);
+    }
+
+    .urgency-note {
+      margin-top: 16px;
+      font-size: 12px;
+      color: rgba(201, 168, 76, 0.7);
+      letter-spacing: 1px;
+      opacity: 0;
+      animation: fadeUp 0.9s ease forwards 1.3s;
+    }
+
+    /* DIVIDER */
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(201, 168, 76, 0.3), transparent);
+      margin: 0 auto;
+      max-width: 600px;
+    }
+
+    /* PAIN SECTION */
+    .pain-section {
+      padding: 100px 24px;
+      text-align: center;
+      background: var(--dark2);
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .pain-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(30px, 5vw, 52px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--cream);
+      max-width: 680px;
+      margin: 0 auto 60px;
+    }
+
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .pain-item {
+      padding: 36px 28px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(201, 168, 76, 0.08);
+      text-align: left;
+      transition: all 0.3s ease;
+    }
+
+    .pain-item:hover {
+      background: rgba(201, 168, 76, 0.05);
+      border-color: rgba(201, 168, 76, 0.2);
+    }
+
+    .pain-icon {
+      font-size: 22px;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .pain-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .pain-item p {
+      font-size: 13px;
+      color: rgba(245, 240, 232, 0.45);
+      line-height: 1.7;
+    }
+
+    /* SOLUTION */
+    .solution-section {
+      padding: 100px 24px;
+      text-align: center;
+      background: var(--dark);
+      position: relative;
+    }
+
+    .solution-section::before {
+      content: 'OR\'HA';
+      position: absolute;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 220px;
+      font-weight: 300;
+      color: rgba(201, 168, 76, 0.03);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .solution-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 300;
+      color: var(--cream);
+      max-width: 640px;
+      margin: 0 auto 16px;
+      line-height: 1.2;
+    }
+
+    .solution-section h2 em {
+      color: var(--gold-light);
+      font-style: italic;
+    }
+
+    .solution-intro {
+      font-size: 16px;
+      color: rgba(245, 240, 232, 0.55);
+      max-width: 500px;
+      margin: 0 auto 70px;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .pillar {
+      padding: 44px 36px;
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      text-align: left;
+      position: relative;
+      transition: all 0.4s ease;
+      background: rgba(201, 168, 76, 0.02);
+    }
+
+    .pillar:hover {
+      border-color: rgba(201, 168, 76, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .pillar-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      color: rgba(201, 168, 76, 0.15);
+      line-height: 1;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+
+    .pillar h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+    }
+
+    .pillar p {
+      font-size: 14px;
+      color: rgba(245, 240, 232, 0.5);
+      line-height: 1.8;
+    }
+
+    /* WHAT YOU GET */
+    .offer-section {
+      padding: 100px 24px;
+      background: var(--dark2);
+    }
+
+    .offer-inner {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .offer-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 300;
+      color: var(--cream);
+      text-align: center;
+      margin-bottom: 60px;
+      line-height: 1.2;
+    }
+
+    .offer-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .offer-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+      transition: all 0.3s;
+    }
+
+    .offer-item:hover {
+      padding-left: 8px;
+    }
+
+    .offer-check {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--gold);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .offer-item h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      color: var(--cream);
+      margin-bottom: 4px;
+      font-weight: 400;
+    }
+
+    .offer-item p {
+      font-size: 13px;
+      color: rgba(245, 240, 232, 0.45);
+      line-height: 1.7;
+    }
+
+    /* SOCIAL PROOF */
+    .proof-section {
+      padding: 80px 24px;
+      background: var(--dark);
+      text-align: center;
+    }
+
+    .proof-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 10vw, 100px);
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .proof-label {
+      font-size: 13px;
+      color: rgba(245, 240, 232, 0.4);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 700px;
+      margin: 60px auto 0;
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      padding: 120px 24px;
+      text-align: center;
+      background: radial-gradient(ellipse at 50% 100%, #2A1F0A 0%, var(--dark) 60%);
+      position: relative;
+    }
+
+    .cta-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 6vw, 68px);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.1;
+      max-width: 700px;
+      margin: 0 auto 24px;
+    }
+
+    .cta-section h2 em {
+      color: var(--gold-light);
+      font-style: italic;
+    }
+
+    .cta-section p {
+      font-size: 15px;
+      color: rgba(245, 240, 232, 0.5);
+      max-width: 420px;
+      margin: 0 auto 52px;
+      line-height: 1.8;
+    }
+
+    .cta-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .cta-secondary {
+      font-size: 13px;
+      color: rgba(245, 240, 232, 0.35);
+      letter-spacing: 1px;
+    }
+
+    .cta-options {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 52px;
+    }
+
+    .cta-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 13px;
+      transition: all 0.3s ease;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .cta-option:hover {
+      border-color: var(--gold);
+      background: rgba(201, 168, 76, 0.05);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 40px 24px;
+      border-top: 1px solid rgba(201, 168, 76, 0.08);
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: rgba(245, 240, 232, 0.2);
+      letter-spacing: 1px;
+    }
+
+    footer a {
+      color: rgba(201, 168, 76, 0.5);
+      text-decoration: none;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      .pain-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pillars {
+        grid-template-columns: 1fr;
+      }
+
+      .proof-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .cta-options {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* STICKY CTA BAR */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(14, 12, 10, 0.95);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(201, 168, 76, 0.2);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+
+    .sticky-bar.show {
+      transform: translateY(0);
+    }
+
+    .sticky-bar p {
+      font-size: 13px;
+      color: rgba(245, 240, 232, 0.6);
+      display: none;
+    }
+
+    @media (min-width: 600px) {
+      .sticky-bar p {
+        display: block;
+      }
+    }
+
+    .sticky-bar .cta-primary {
+      margin: 0;
+      opacity: 1;
+      animation: none;
+      padding: 13px 36px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- STICKY BAR -->
+  <div class="sticky-bar" id="stickyBar">
+    <p>Sua transformação começa agora — sem fórmulas prontas.</p>
+    <a href="https://pay.kirvano.com/5cce6631-487e-4c7b-bed4-72ce45ea6c65" class="cta-primary">Quero Entrar →</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="orha-logo">OR'HA — Portal da Consciência</div>
+    <span class="hero-eyebrow">Reconexão Integral</span>
+    <h1>Você não está<br><em>quebrado.</em><br>Está desconectado.</h1>
+    <p class="hero-sub">O OR'HA é o único sistema que une corpo, emoção, energia e alma — com práticas diárias reais que
+      funcionam em 3 minutos por dia.</p>
+    <div class="hero-pain">
+      <p>
+        <strong>Ansiedade que não passa. Corpo doendo sem motivo claro.<br>
+          Sensação de vazio mesmo fazendo tudo "certo".<br>
+          Solidão mesmo cercado de pessoas.</strong><br><br>
+        Isso tem raiz. E tem saída.
+      </p>
+    </div>
+    <a href="https://pay.kirvano.com/5cce6631-487e-4c7b-bed4-72ce45ea6c65" class="cta-primary">Quero Reconectar Agora
+      →</a>
+    <p class="urgency-note">⚡ Acesso imediato após confirmação</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- DOR -->
+  <section class="pain-section">
+    <span class="section-label reveal">Você se reconhece aqui?</span>
+    <h2 class="reveal">O problema não é fraqueza.<br>É falta de mapa.</h2>
+    <div class="pain-grid">
+      <div class="pain-item reveal">
+        <span class="pain-icon">🌀</span>
+        <h3>Ansiedade e Estresse</h3>
+        <p>Mente que não desliga. Corpo sempre em alerta. Dificuldade de dormir e de estar presente.</p>
+      </div>
+      <div class="pain-item reveal">
+        <span class="pain-icon">🔍</span>
+        <h3>Falta de Propósito</h3>
+        <p>Sensação de que algo importante está faltando. Não sabe quem é de verdade ou o que realmente quer.</p>
+      </div>
+      <div class="pain-item reveal">
+        <span class="pain-icon">💢</span>
+        <h3>Corpo Falando</h3>
+        <p>Dor de cabeça, gastrite, tensão cervical, fadiga. Sintomas físicos que são mensagens emocionais não
+          escutadas.</p>
+      </div>
+      <div class="pain-item reveal">
+        <span class="pain-icon">🌫️</span>
+        <h3>Solidão Interna</h3>
+        <p>Mesmo com família e amigos, há uma solidão profunda. Sente que ninguém te entende de verdade.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUÇÃO -->
+  <section class="solution-section">
+    <span class="section-label reveal">A Solução</span>
+    <h2 class="reveal">O OR'HA não é mais um<br>app de meditação.<br>É um <em>sistema vivo.</em></h2>
+    <p class="solution-intro reveal">Três pilares integrados que trabalham juntos — corpo, mente e energia — para uma
+      transformação que você sente no primeiro dia.</p>
+
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="pillar-num">01</div>
+        <h3>Banco Somático</h3>
+        <p>Identifique a raiz emocional dos seus sintomas físicos. Dor de cabeça, ansiedade, gastrite — tudo tem uma
+          mensagem. Aqui você aprende a escutar.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar-num">02</div>
+        <h3>Micropráticas Diárias</h3>
+        <p>Rituais de 3 minutos que realmente funcionam. Respirações, aterramento, âncoras emocionais. Simples o
+          suficiente para manter. Poderoso o suficiente para mudar.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar-num">03</div>
+        <h3>Comunidade Viva</h3>
+        <p>8 espaços organizados onde ninguém caminha sozinho. Diário de rituais, cura compartilhada, estudos da alma.
+          Pertencimento real, não superficial.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE VOCÊ RECEBE -->
+  <section class="offer-section">
+    <div class="offer-inner">
+      <h2 class="reveal">Tudo que você recebe<br>ao entrar agora</h2>
+      <div class="offer-list">
+        <div class="offer-item reveal">
+          <div class="offer-check">✓</div>
+          <div>
+            <h4>Banco Somático Completo</h4>
+            <p>Mapa de sintomas → emoções → chakras → rituais de desbloqueio. Sua enciclopédia viva de autoconhecimento
+              corporal.</p>
+          </div>
+        </div>
+        <div class="offer-item reveal">
+          <div class="offer-check">✓</div>
+          <div>
+            <h4>Comunidade OR'HA — 8 Categorias</h4>
+            <p>Diário de Rituais, Diário de Cura, Rotina Sagrada, Estudos da Alma, Novos Hábitos e mais. Suporte real,
+              todo dia.</p>
+          </div>
+        </div>
+        <div class="offer-item reveal">
+          <div class="offer-check">✓</div>
+          <div>
+            <h4>Módulo DOPAMINE-SE</h4>
+            <p>Descubra seus valores, virtudes e o que faz seus olhos brilharem. O ponto de partida para qualquer
+              transformação duradoura.</p>
+          </div>
+        </div>
+        <div class="offer-item reveal">
+          <div class="offer-check">✓</div>
+          <div>
+            <h4>Biblioteca de Saberes Ancestrais</h4>
+            <p>Louise Hay, São Germain, Ho'oponopono, Ayurveda, Bashar, Chakras. Toda a sabedoria integrada num só
+              lugar.</p>
+          </div>
+        </div>
+        <div class="offer-item reveal">
+          <div class="offer-check">✓</div>
+          <div>
+            <h4>Rituais Matinais e Noturnos</h4>
+            <p>Rotinas personalizadas para começar e encerrar o dia com intenção. Sono reparador, foco matinal, leveza
+              constante.</p>
+          </div>
+        </div>
+        <div class="offer-item reveal">
+          <div class="offer-check">✓</div>
+          <div>
+            <h4>App OR'HA (em breve)</h4>
+            <p>Acesso mobile completo, iOS e Android. Quem entrar agora garante o primeiro acesso quando lançar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVA SOCIAL -->
+  <section class="proof-section">
+    <span class="section-label reveal">O Movimento já começou</span>
+    <div class="proof-grid reveal">
+      <div>
+        <div class="proof-number">8</div>
+        <div class="proof-label">Comunidades ativas</div>
+      </div>
+      <div>
+        <div class="proof-number">1°</div>
+        <div class="proof-label">Dia já transforma</div>
+      </div>
+      <div>
+        <div class="proof-number">3'</div>
+        <div class="proof-label">Por dia é suficiente</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-section">
+    <span class="section-label reveal">O Portal está aberto</span>
+    <h2 class="reveal">Você já sabe que<br>algo precisa<br><em>mudar.</em></h2>
+    <p class="reveal">A única diferença entre onde você está e onde quer estar é a decisão de dar o primeiro passo.
+      Agora.</p>
+    <div class="cta-stack">
+      <a href="https://pay.kirvano.com/5cce6631-487e-4c7b-bed4-72ce45ea6c65" class="cta-primary reveal">Quero Entrar no
+        OR'HA →</a>
+      <span class="cta-secondary reveal">Acesso imediato · Suporte direto · Sem risco</span>
+    </div>
+
+    <div class="cta-options reveal">
+      <a href="https://api.whatsapp.com/send/?phone=554199902068" class="cta-option">
+        💬 Comunidade WhatsApp
+      </a>
+      <a href="mailto:ou.ha.sversut@gmail.com" class="cta-option">
+        ✉️ Falar por E-mail
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2024 OR'HA — Portal da Consciência &nbsp;·&nbsp; <a
+        href="mailto:ou.ha.sversut@gmail.com">ou.ha.sversut@gmail.com</a></p>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Sticky bar
+    const stickyBar = document.getElementById('stickyBar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) stickyBar.classList.add('show');
+      else stickyBar.classList.remove('show');
+    });
+  </script>
+</body>
+
+</html>
