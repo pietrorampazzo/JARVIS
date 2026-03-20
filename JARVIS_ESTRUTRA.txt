@@ -1,16 +1,16 @@
 arte_comercial/
-        ARTE_Pipeline_Arquitetura.md
-        TODO.md
-        arte_/
-            arte_catalogos/
-                arte_metadados.py
-                arte_metadados_excel.py
-                arte_metadados_grok.py
-            arte_edital/
-                01_ingestao_edital.py
-                02_limpeza_rodape.py
-                03_extracao_docling.py
-                03_extracao_ocr.py
+    ARTE_Pipeline_Arquitetura.md
+    TODO.md
+    arte_/
+        arte_catalogos/
+            arte_metadados.py
+            arte_metadados_excel.py
+            arte_metadados_grok.py
+                  arte_edital/
+            01_ingestao_edital.py
+            02_limpeza_rodape.py
+            03_extracao_docling.py
+            03_extracao_ocr.py
                 03_extracao_tabelas copy.py
                 03_extracao_tabelas.py
                 04_leitura_ia_edital.py
@@ -120,44 +120,6 @@ arte_comercial/
                 master_heavy_2.xlsx
                 master_heavy_4.xlsx
                 master_heavy_validado.xlsx
-                ACHIVE/
-                    master_09_01_26.xlsx
-                    master_13_01_26.xlsx
-                    master_21_01.xlsx
-                    master_heavy_09_01_26.xlsx
-                v1/
-                    master_estudo.xlsx
-                    master_heavy.xlsx
-                    master_heavy_2.xlsx
-                    master_heavy_3.xlsx
-                    master_heavy_5.xlsx
-                v2/
-                    master_heavy_2.xlsx
-                    master_heavy_3.xlsx
-                    master_heavy_4.xlsx
-                v3/
-                    master_heavy_3.xlsx
-                    master_heavy_4.xlsx
-                v4/
-                    master_heavy_3.xlsx
-                    master_heavy_4.xlsx
-                v5/
-                    master_heavy_2.xlsx
-                    master_heavy_3.xlsx
-                    master_heavy_4.xlsx
-                v6/
-                    master_heavy_3.xlsx
-                    master_heavy_4.xlsx
-                v7/
-                    master.xlsx
-                    master_heavy_3.xlsx
-                    master_heavy_4.xlsx
-                    summary.xlsx
-                v8/
-                    master.xlsx
-                    master_heavy_2.xlsx
-                    master_heavy_3.xlsx
-                    master_heavy_4.xlsx
         JARVIS/
             audit.py
             MANIFEST.md
@@ -267,53 +229,6 @@ arte_comercial/
                         share/
                             poppler/
                                 CMakeLists.txt
-                                COPYING
-                                COPYING.adobe
-                                COPYING.gpl2
-                                Makefile
-                                poppler-data.pc
-                                poppler-data.pc.in
-                                README
-                                cidToUnicode/
-                                    Adobe-CNS1
-                                    Adobe-GB1
-                                    Adobe-Japan1
-                                    Adobe-Korea1
-                                cMap/
-                                    Adobe-CNS1/
-                                        Adobe-CNS1-0
-                                        Adobe-CNS1-1
-                                        Adobe-CNS1-2
-                                    Adobe-Japan1/
-                                        78-EUC-H
-                                        78-EUC-V
-                                        78-H
-                                        78-RKSJ-H
-                                        78-RKSJ-V
-                                        78-V
-                                        WP-Symbol
-                                    Adobe-Japan2/
-                                        Adobe-Japan2-0
-                                    Adobe-Korea1/
-                                        Adobe-Korea1-0
-                                        Adobe-Korea1-1
-                                        Adobe-Korea1-2
-                                        Adobe-Korea1-H-CID
-                                        Adobe-Korea1-H-Host
-                                    Adobe-KR/
-                                        Adobe-KR-0
-                                        Adobe-KR-1
-                                        Adobe-KR-2
-                                        Adobe-KR-3
-                                nameToUnicode/
-                                    Bulgarian
-                                    Greek
-                                    Thai
-                                unicodeMap/
-                                    Big5
-                                    Big5ascii
-                                    EUC-CN
-                                    EUC-JP
                 Tesseract-OCR/
                     ambiguous_words.1.html
                     ambiguous_words.exe
