@@ -1,0 +1,63 @@
+# 📦 Arquivo de Tarefas Concluídas (Arquivado em 2026-03-22)
+
+## 🌐 ARTE — Licitações & BI
+- [X] Matching Inteligente: Melhorar precisão do `arte_heavy.py` para >85%.
+- [X] Corrigir site ATA's: Catalogo bonito, Backend e Frontend unidos (artecomercialbrasil.base44.app).
+- [X] Construir Fundação do NLM Client: Blindar contra quedas de sessão (Auto-Relogin) do MCP.
+- [X] Construir script de Ingestão de Dados: Upload de editais e manuais da pasta DOWNLOADS.
+- [X] Integrar nova arquitetura robusta no `arte_heavy.py`.
+- [X] Receber ZIP → deszipar recursivamente → achatar estrutura
+- [X] Processar RelacaoItens → extrair itens tabelados (`_itens.xlsx`)
+- [X] Identificar e renomear Termo de Referência (`termo_referencia.pdf`)
+- [X] Merge itens + referência → `_master.xlsx` por subpasta
+- [X] Concatenar tudo → `summary.xlsx` + `master.xlsx` (filtrado por keywords)
+- [X] Quality Logger: `edital_quality_logger.py` (detecta bugs por edital)
+- [X] Rate-limit Guard: retry automático quando resposta < 5s
+- [X] Performance Tracker: `arte_perf_tracker.py` (parseia logs, detecta falsos negativos)
+- [X] Métricas JSON: export automático em `arte_heavy/metrics/`
+- [X] Integrar tracker no daemon pulse ✅ (Step 5/5)
+
+## 🚀 WAPPI (WhatsApp Evolution API)
+- [x] Setup Supabase (DB + Auth)
+- [x] Google OAuth no Frontend (`Auth.tsx`)
+- [x] `AuthContext.tsx` com sessão persistente
+- [x] Protected Routes em `App.tsx`
+- [x] Multi-Tenancy: `user_id` em `leads` e `agents`
+- [x] Microsserviço Node.js com Express (porta 3001)
+- [x] QR Code via Baileys + API REST
+- [x] Frontend `WhatsApp.tsx` com polling de status
+- [x] Humanized Send (delay, composing)
+- [x] JID Resolution para números BR (regra 9º dígito)
+- [x] Supabase bridge (leitura de leads + salvamento de msgs)
+- [x] `prompt_gemini.py` com bridge via child_process
+- [x] Leitura de personalidade via `skill.md`
+- [x] Histórico de conversa por telefone (`conversas/`)
+- [x] Multi-key rotation (`GEMINI_API_KEY`, `GEMINI_API_KEY2`, etc.)
+- [x] Model fallback: `gemini-2.5-flash` → `gemini-2.5-flash-lite` → `gemini-3.1-flash`
+- [x] `Agents.tsx` — Criar agente (insert no Supabase)
+- [x] `Agents.tsx` — Editar agente (update no Supabase)
+- [x] `Agents.tsx` — Arquivar/Excluir agente (status='archived')
+- [x] `Agents.tsx` — Toggle On/Off (status='active'/'paused') com Play/Pause UI
+- [x] `Contacts.tsx` — Dropdown de Proprietário sincronizado com agentes ativos
+- [x] `Contacts.tsx` — Atribuição em Massa de Agentes (Bulk Assign)
+- [x] `Settings.tsx` — Horário Comercial de Operação (Brasília Time)
+- [x] `Contacts.tsx` — Criar contato (insert no Supabase)
+- [x] `Contacts.tsx` — Editar contato (modal de edição)
+- [x] `Contacts.tsx` — Exclusão individual (ícone lixeira por linha)
+- [x] `Contacts.tsx` — Exclusão em massa (checkboxes + "Excluir Selecionados")
+- [x] `Contacts.tsx` — Limpar mensagens associadas ao excluir lead
+- [x] `Contacts.tsx` — Importação de Excel (.xlsx)
+- [x] (Fase 6) Funcionalidade removida para focar em Inbox e Dashboard.
+- [x] `Inbox.tsx` — Chat centralizado com visual WhatsApp
+- [x] `Inbox.tsx` — Agrupamento de mensagens por lead/phone
+- [x] `Inbox.tsx` — Real-time subscription do Supabase
+- [x] **B1 Fix:** Respeitar status `active`/`paused` do agente no motor Node.js
+- [x] **B2 Fix:** Silenciar IA quando `owner === 'Nenhum'`
+- [x] Sincronização automática Agents ↔ Contacts
+- [x] Teste de fluxo E2E: Disparo via API → Resposta IA com Persona correta
+- [x] Mensagens agrupadas por lead com histórico resiliente
+- [x] Exclusão de contato limpa o histórico da Inbox automaticamente
+- [x] **Stripe Live:** Integração Embedded Checkout finalizada
+- [x] **Suporte:** Link WhatsApp integrado no Header
+- [x] Dashboard com métricas reais (leads, conversão, tokens)
+- [x] Temas escuro/claro persistente (Branding Premium)

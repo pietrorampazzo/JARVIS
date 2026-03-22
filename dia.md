@@ -1,45 +1,30 @@
-# ☀️ Status do Dia: 19/03/2026
+# ☀️ Status do Dia: 22/03/2026
  
-> **Última atualização:** 17:54 | **Points:** 1883 pts | **Média (7d):** 1617.2 pts
-> **Performance:** 🔥 ⚖️ NA MÉDIA (1.16x)
+> **Última atualização:** 18:00 | **Points:** 1904 pts | **Média (7d):** 1904.0 pts
+> **Performance:** ❄️ ⚖️ NA MÉDIA (1.00x)
 
 # 📊 Resumo do Status:
  
-* Total de Tasks: 72
-* Concluídas: 43 (59%)
-* Pendentes: 29 (40%)
+* Total de Tasks: 29
+* Concluídas: 0 (0%)
+* Pendentes: 29 (100%)
  
 Resumo dia até agora:
  
 - 0 tasks concluidas hoje
-- Performance Relativa: 1.16x vs média móvel.
+- Performance Relativa: 1.00x vs média móvel.
 
-## 1) 🏢 PIPELINE DE LICITAÇÕES: 98 Licitações
+## 1) 🏢 PIPELINE DE LICITAÇÕES: 0 Licitações
 
-📊 PIPELINE ATIVO — 98 licitações
+📊 PIPELINE ATIVO — 0 licitações
 
-LISTA                        QTD   GOV   ESTÁGIO
-────────────────────────────────────────────────────────────
-🔵 Compras.Gov                  1           (prospeccao)
-🟡 PREPARANDO                   3           (preparacao)
-🟠 PROPOSTAS - PIEZO            10          (proposta)
-🟠 PROPOSTAS - ARTE             6           (proposta)
-🔴 PREGAO                       2           (disputa)
-🟣 HABILITADO                   49          (habilitacao)
-🟢 EMPENHO                      3           (ganho_parcial)
-🟢 ENVIADO                      3           (entrega)
-✅ RECEBIDO                     1           (concluido)
-🏆 GANHOS - ARTE                20          (ganho_final)
-─────────────────────────────
-🏆 Total histórico GANHAS: 75
-❌ PERDIDAS: 331 | 🗑️ DESCART: 118
-⚠️  HABILITAÇÕES VENCIDAS: 82
+- Operando sem dados do Trello localmente (Rode `pipeline_report.py --import-first`)
 
 ### 📊 Inteligência de Planilhas (ARTE)
 
 **📋 master.xlsx** — `198` itens | `7` licitações | Potencial: `R$ 2.067.825,60`
   - Processadas por mês: Mar/26: 7
-**🧠 master_heavy.xlsx** — `182` itens | `6` licitações | Pendentes: `16` | Potencial Edital: `R$ 1.882.098,63` | Proposta Total: `R$ 1.594.733,75`
+**🧠 master_heavy.xlsx** — `198` itens | `7` licitações | Pendentes: `0` | Potencial Edital: `R$ 2.067.825,60` | Proposta Total: `R$ 1.792.845,27`
 **⚡ master_heavy_ultra.xlsx** — `945` itens | `37` licitações | Potencial Edital: `R$ 14.958.473,26` | Preço Venda: `R$ 0,00`
   - Status Matching: `ATENDE COM RESSALVAS`: 448 · `Sem Candidatos`: 390 · `NAO ATENDE`: 70 · `ATENDE`: 31
 
@@ -47,10 +32,45 @@ LISTA                        QTD   GOV   ESTÁGIO
 
 > *Esta seção é reescrita automaticamente pela Engine JARVIS.*
 
-⚠️ Erro: GEMINI_API_KEY não encontrada no arquivo `.env`.
+### 📊 Índice de Esforço
+- **JARVIS CORE (Infraestrutura):** Alto. As 742 modificações não commitadas indicam um esforço significativo e contínuo na infraestrutura central, possivelmente em refatoração ou novas funcionalidades de base.
+- **Wappi (Evolution API WhatsApp):** Médio. As 14 modificações não commitadas demonstram atividade no desenvolvimento desta API crucial, sinalizando um foco em sua evolução.
+- **Planejamento e Identificação de Gaps (ARTE & WAPPI):** Alto. A extensa e detalhada lista de pendências e TODOs para ambos os projetos sugere um considerável tempo investido na análise, estruturação e refinamento dos roadmaps operacionais e de desenvolvimento, mesmo sem logs de execução direta de tarefas.
+
+### 🤖 Insights Operacionais ESTRATÉGICOS (Sintetizados)
+- **Desconexão de Produtividade:** Seu Score do Dia de 1904/100, embora alto, contrasta diretamente com a Classificação "NA MÉDIA" e a informação crucial de que *nenhum evento produtivo foi logado hoje*. Isso aponta para um foco em atividades não diretamente vinculadas ao registro de tarefas concluídas. **É imperativo que você logue suas tarefas para que o JARVIS possa fornecer análises e direcionamentos mais precisos e justos à sua classificação.**
+- **Progresso Não Persistido:** As 742 modificações em `JARVIS CORE` e as 14 em `Wappi` que não foram commitadas representam um risco significativo. Seu esforço está ativo, mas sem commits, ele não está salvo de forma segura nem rastreável. **Priorize commitar essas alterações para versionar seu progresso e mitigar perdas potenciais.**
+- **Visibilidade Zero no Pipeline ARTE:** A ausência de dados do Trello é um gargalo crítico. O JARVIS não consegue aplicar as regras de negócio (Compras.Gov, PREPARANDO, HABILITADO) e, portanto, não pode te guiar sobre os próximos passos operacionais nas licitações. **Conecte o Trello imediatamente para desbloquear os insights direcionados e as ações necessárias no seu funil da ARTE.**
+- **Prioridades Operacionais Estagnadas:** As "Prioridades Máximas" da ARTE, como a implementação do pipeline completo (Edital → Matching → Proposta → Licitei) e o fluxo automático Empenho -> Trello -> Planilha de Pedidos, permanecem pendentes. **Sem dados de produção ou do Trello, não há evidências de avanço nestes pilares críticos para a automação e lucratividade da ARTE.**
+- **Robutsez do `Arte_Edital` em Aberto:** A lista de pendências em `Arte_Edital: Qualidade & Robustez` é extensa (lidar com PDFs sem texto/scaneados, tabelas desconcatenadas, validação de referência). Esses itens são fundamentais para a confiabilidade do seu core econômico. **É crucial direcionar esforços para resolver essas instabilidades, pois a qualidade da extração de editais é a base de todo o funil de licitações.**
 ## 3) 🦉 ORÁCULO (Dica da Memória Longa)
 
-> O Oráculo está em silêncio no momento. A névoa ainda não se dissipou.
+> 🦉 As engrenagens do imperio giram com o peso do ouro acumulado e vitrines polidas mas a cegueira na leitura das mensagens e o sangramento nas licitacoes perdidas exigem a atencao do arquiteto para que a fonte de prosperidade nao seque
+1
+2
+.
+1 O ecossistema consolida grandes avancos em sua arquitetura com a plataforma de comunicacao integrando pagamentos diretos e dando vida ao seu mascote animado enquanto o monitoramento social rastreia os dialogos ativamente
+3
+4
+. Porem um gargalo critico assombra a operacao pois um erro de decodificacao corrompe o processamento do contexto do aplicativo de mensagens cegando a inteligencia artificial para o acompanhamento preciso dos clientes prioritarios da rede
+2
+5
+.
+2 O braco de licitacoes exibe uma forca imponente abrigando quarenta e nove processos na fase de habilitados e vinte vitorias consolidadas atestando o enorme sucesso pratico do projeto
+1
+. Contudo o sistema sofre um atrito severo com trezentas e trinta e uma propostas perdidas e cento e dezoito descartes alem de sessenta e tres itens pendentes de orcamento pesado exigindo acao imediata na triagem
+1
+. Somado a isso o fluxo automatizado ainda esbarra repetidamente no erro de ferramentas desconhecidas da inteligencia artificial limitando a produtividade do funil
+6
+7
+.
+3 O nucleo central do oraculo mantem sua fundacao forte recebendo novos fluxos de sincronizacao global mas a performance da jornada registrou um ritmo abaixo da media
+8
+9
+. Para retomar a tracao total o mestre precisa urgentemente selar as vinte e uma modificacoes pendentes no codigo central do sistema e redirecionar todo o seu esforco para a execucao comercial das licitacoes que estao estagnadas nas fases iniciais
+9
+more_horiz
+.
 
 
 ## 4) 📌 TASKS EM ABERTO (Global)
@@ -61,35 +81,24 @@ LISTA                        QTD   GOV   ESTÁGIO
 
 ### 🚀 Prioridades Máximas (Workflow & Pipeline)
 
-- [X] Matching Inteligente: Melhorar precisão do `arte_heavy.py` para >85%.
 - [ ] Implementar pipeline completo e contínuo: Edital → Matching → Proposta → Licitei
 - [ ] Desenvolver Fluxo automático: Empenho -> Trello -> Planilha de Pedidos.
 - [ ] Habilitação: Criar Cronjob para coleta mensal de documentos de habilitação (ARTE & PIEZZO).
 
 ### 🌍 Expansão & B2C
 
-- [X] Corrigir site ATA's: Catalogo bonito, Backend e Frontend unidos (artecomercialbrasil.base44.app).
 - [ ] Estruturar a "Loginha da Arte" (B2C): Bling (Mercado Livre, Shopee...)
 
 ### 🧠 NotebookLM RAG (Memória & Inteligência ARTE)
 
-- [X] Construir Fundação do NLM Client: Blindar contra quedas de sessão (Auto-Relogin) do MCP.
-- [X] Construir script de Ingestão de Dados: Upload de editais e manuais da pasta DOWNLOADS.
-- [X] Integrar nova arquitetura robusta no `arte_heavy.py`.
 
 ### Arte_Edital: Pipeline Core
 
-- [X] Receber ZIP → deszipar recursivamente → achatar estrutura
-- [X] Processar RelacaoItens → extrair itens tabelados (`_itens.xlsx`)
-- [X] Identificar e renomear Termo de Referência (`termo_referencia.pdf`)
 - [/] Extrair tabelas com Camelot → `_referencia.xlsx` (funcional mas instável)
 - [ ] Fallback pdfplumber quando Camelot retorna 0 tabelas
-- [X] Merge itens + referência → `_master.xlsx` por subpasta
-- [X] Concatenar tudo → `summary.xlsx` + `master.xlsx` (filtrado por keywords)
 
 ### Arte_Edital: Qualidade & Robustez
 
-- [X] Quality Logger: `edital_quality_logger.py` (detecta bugs por edital)
 - [ ] Lidar com PDFs sem texto (OCR via `03_extracao_ocr.py`)
 - [ ] Tratar tabelas desconcatenadas (itens divididos em páginas diferentes)
 - [ ] Validação: garantir que nenhum item do RelacaoItens fique sem REFERENCIA no merge
@@ -101,10 +110,6 @@ LISTA                        QTD   GOV   ESTÁGIO
 
 ### Arte_Heavy: Infraestrutura CI
 
-- [X] Rate-limit Guard: retry automático quando resposta < 5s
-- [X] Performance Tracker: `arte_perf_tracker.py` (parseia logs, detecta falsos negativos)
-- [X] Métricas JSON: export automático em `arte_heavy/metrics/`
-- [X] Integrar tracker no daemon pulse ✅ (Step 5/5)
 - [ ] Melhorar instruções do notebook para matching (prompt engineering)
 - [ ] Validar conformidade jurídica (PARECER_JURIDICO_IMPUGNACAO preenchido)
 - [ ] Validar conformidade técnica (JUSTIFICATIVA_TECNICA com substância)
@@ -122,78 +127,15 @@ LISTA                        QTD   GOV   ESTÁGIO
 
 ---
 
-## ✅ Fase 1: Fundação & Auth (CONCLUÍDA)
-- [x] Setup Supabase (DB + Auth)
-- [x] Google OAuth no Frontend (`Auth.tsx`)
-- [x] `AuthContext.tsx` com sessão persistente
-- [x] Protected Routes em `App.tsx`
-- [x] Multi-Tenancy: `user_id` em `leads` e `agents`
-
-## ✅ Fase 2: Motor WhatsApp Baileys (CONCLUÍDA)
-- [x] Microsserviço Node.js com Express (porta 3001)
-- [x] QR Code via Baileys + API REST
-- [x] Frontend `WhatsApp.tsx` com polling de status
-- [x] Humanized Send (delay, composing)
-- [x] JID Resolution para números BR (regra 9º dígito)
-- [x] Supabase bridge (leitura de leads + salvamento de msgs)
-
-## ✅ Fase 3: IA Gemini (CONCLUÍDA)
-- [x] `prompt_gemini.py` com bridge via child_process
-- [x] Leitura de personalidade via `skill.md`
-- [x] Histórico de conversa por telefone (`conversas/`)
-- [x] Multi-key rotation (`GEMINI_API_KEY`, `GEMINI_API_KEY2`, etc.)
-- [x] Model fallback: `gemini-2.5-flash` → `gemini-2.5-flash-lite` → `gemini-3.1-flash`
-
-## ✅ Fase 4: CRUD de Agentes (CONCLUÍDA)
-- [x] `Agents.tsx` — Criar agente (insert no Supabase)
-- [x] `Agents.tsx` — Editar agente (update no Supabase)
-- [x] `Agents.tsx` — Arquivar/Excluir agente (status='archived')
-- [x] `Agents.tsx` — Toggle On/Off (status='active'/'paused') com Play/Pause UI
-- [x] `Contacts.tsx` — Dropdown de Proprietário sincronizado com agentes ativos
-- [x] `Contacts.tsx` — Atribuição em Massa de Agentes (Bulk Assign)
-- [x] `Settings.tsx` — Horário Comercial de Operação (Brasília Time)
-
-## ✅ Fase 5: CRUD de Contatos (CONCLUÍDA)
-- [x] `Contacts.tsx` — Criar contato (insert no Supabase)
-- [x] `Contacts.tsx` — Editar contato (modal de edição)
-- [x] `Contacts.tsx` — Exclusão individual (ícone lixeira por linha)
-- [x] `Contacts.tsx` — Exclusão em massa (checkboxes + "Excluir Selecionados")
-- [x] `Contacts.tsx` — Limpar mensagens associadas ao excluir lead
-- [x] `Contacts.tsx` — Importação de Excel (.xlsx)
-
-## 🗑️ Fase 6: CRM Kanban (REMOVIDA PARA SIMPLIFICAÇÃO)
-- [x] Funcionalidade removida do `App.tsx` e Navegação para focar em Inbox e Dashboard.
-
-## ✅ Fase 7: Inbox / Conversas (CONCLUÍDA)
-- [x] `Inbox.tsx` — Chat centralizado com visual WhatsApp
-- [x] `Inbox.tsx` — Agrupamento de mensagens por lead/phone
-- [x] `Inbox.tsx` — Real-time subscription do Supabase
-
----
-
-## ✅ Fase 8: Testes & Fluidez (CONCLUÍDA)
-- [x] **B1 Fix:** Respeitar status `active`/`paused` do agente no motor Node.js
-- [x] **B2 Fix:** Silenciar IA quando `owner === 'Nenhum'`
-- [x] Sincronização automática Agents ↔ Contacts
-- [x] Teste de fluxo E2E: Disparo via API → Resposta IA com Persona correta
-
-### 📬 Conversas / Inbox
-- [x] Mensagens agrupadas por lead com histórico resiliente
-- [x] Exclusão de contato limpa o histórico da Inbox automaticamente
-
 ## ⬜ Fase 9: Infraestrutura & DevOps (FUTURA)
 - [ ] Docker Compose para produção
 - [ ] Deploy em servidor dedicado (Hetzner/Contabo)
 - [ ] Monitoramento de saúde (RAM/CPU/Logs)
 - [ ] Rate limiting e proteção de API
 - [ ] Backup automático do Supabase
-- [x] **Stripe Live:** Integração Embedded Checkout finalizada
-- [x] **Suporte:** Link WhatsApp integrado no Header
 
 ## ⬜ Fase 10: Melhorias UX (FUTURA)
 - [ ] Unified Inbox com WebSockets (sem F5)
 - [ ] Notificações push de novas mensagens
-- [x] Dashboard com métricas reais (leads, conversão, tokens)
-- [x] Temas escuro/claro persistente (Branding Premium)
 - [ ] Mobile responsive completo (Ajustes finos)
 - [ ] Reconstrução de histórico Real-time (Chat Resiliency Blueprint)

@@ -5,13 +5,16 @@ import sys
 import subprocess
 import time
 import pandas as pd
+from pathlib import Path
 
-
-MASTER_FILE = r"C:\Users\pietr\OneDrive\.vscode\arte_\DOWNLOADS\master.xlsx"
-PROJ_DIR = r"C:\Users\pietr\OneDrive\.vscode\arte_\DOWNLOADS"
-OUTPUT_FILE = os.path.join(PROJ_DIR, "master_heavy.xlsx")
-LAST_ANSWER_FILE = os.path.join(PROJ_DIR, "last_answer.json")
-SKILL_RUN_SCRIPT = r"C:\Users\pietr\.antigravity\skills\notebooklm\scripts\run.py"
+# --- CONFIGURAÇÕES DE CAMINHO ---
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent # arte_comercial
+DOWNLOADS_DIR = ROOT_DIR / "downloads"
+MASTER_FILE = DOWNLOADS_DIR / "master.xlsx"
+PROJ_DIR = DOWNLOADS_DIR
+OUTPUT_FILE = DOWNLOADS_DIR / "master_heavy.xlsx"
+LAST_ANSWER_FILE = DOWNLOADS_DIR / "last_answer.json"
+SKILL_RUN_SCRIPT = Path(os.path.expanduser("~")) / ".antigravity" / "skills" / "notebooklm" / "scripts" / "run.py"
 MARGIN_MULTIPLIER = 1.50
 
 
@@ -83,10 +86,12 @@ def process_row(row):
         valor_unit = clean_number(row["VALOR_UNIT"])
         valor_meta = valor_unit * 0.70
 
-        ref_curta = referencia[:800]
-        query = f"REFERENCIA: {ref_curta} por ate {valor_meta:.2f}"
+        # Fallback para DESCRICAO se REFERENCIA for nula
+        ref_query = referencia if (referencia.lower() != "nan" and referencia.strip() != "") else str(row.get("DESCRICAO", ""))
+        ref_curta = ref_query[:800]
+        query = f"BUSCA: {ref_curta} por ate {valor_meta:.2f}"
 
-        print(f"\nProcessando item: {referencia[:100]}...")
+        print(f"\nProcessando item: {ref_curta[:100]}...")
         print(f"Query enviada: {query[:150]}...")
 
         cmd = [
@@ -160,21 +165,25 @@ def main():
             df_existing = normalize_output_dataframe(pd.read_excel(OUTPUT_FILE))
             if "STATUS" in df_existing.columns:
                 finished_items = df_existing[df_existing["STATUS"].notna() & (df_existing["STATUS"] != "")]
-                processed_refs = set(finished_items["REFERENCIA"].astype(str).tolist())
+                # Cria UID (ARQUIVO + Nº) para os itens já concluídos
+                processed_uids = set((df_existing["ARQUIVO"].astype(str) + "_" + df_existing["Nº"].astype(str)).tolist())
 
             results = df_existing.to_dict("records")
-            print(f"Continuando: {len(processed_refs)} itens ja concluidos no arquivo de saida.")
+            print(f"Continuando: {len(processed_uids)} itens ja concluidos no arquivo de saida.")
         except Exception as exc:
             print(f"Aviso ao ler arquivo de saida: {exc}. Comecando do zero.")
 
-    to_process = df_master[~df_master["REFERENCIA"].astype(str).isin(processed_refs)]
-    print(f"Itens pendentes para processar: {len(to_process)}")
+    # Identifica o que falta baseado na chave composta
+    df_master["UID"] = df_master["ARQUIVO"].astype(str) + "_" + df_master["Nº"].astype(str)
+    to_process = df_master[~df_master["UID"].isin(processed_uids)]
+    print(f"Itens pendentes para processar (UID unique): {len(to_process)}")
 
     for _, row in to_process.iterrows():
         res = process_row(row)
         if res:
-            ref_str = str(res["REFERENCIA"])
-            results = [item for item in results if str(item.get("REFERENCIA")) != ref_str]
+            uid_str = str(row["UID"])
+            # Remove se ja existia (update)
+            results = [item for item in results if (str(item.get("ARQUIVO")) + "_" + str(item.get("Nº"))) != uid_str]
             results.append(res)
 
             normalize_output_dataframe(pd.DataFrame(results)).to_excel(OUTPUT_FILE, index=False)

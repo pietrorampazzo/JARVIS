@@ -18,11 +18,11 @@ BASE_DIR = Path(__file__).parent.parent.parent # JARVIS/
 sys.path.insert(0, str(BASE_DIR))
 
 from engine.logic.score_engine import calculate_daily_score
-from engine.logic.governance_rules import evaluate_governance
+# from engine.logic.governance_rules import evaluate_governance
 from engine.logic.predictive_engine import get_predictive_alerts
 from engine.logic import gerador_dia
-from engine.logic import knowledge_engine
-from engine.oracle import oracle_manager
+# from engine.logic import knowledge_engine
+# from engine.oracle import oracle_manager
 from engine.logic import task_sync
 
 
@@ -50,7 +50,7 @@ def print_pulse_report():
     
     # Executar as engines
     score_data = calculate_daily_score()
-    gov_data = evaluate_governance()
+    # gov_data = evaluate_governance()
     
     is_morning = (hour >= 7 and hour < 10)
     is_eod = (hour >= 18)
@@ -73,18 +73,9 @@ def print_pulse_report():
     # Gap Calculator
     print_score_gap(score_data.get("gaps", {}))
     
-    print(f"\n  ⚖️  GOVERNANÇA (Pulse-check):")
-    interventions = gov_data.get("interventions", [])
-    if interventions:
-        for iv in interventions:
-            print(f"  [{iv['priority']}] {iv['message']}")
-    else:
-        print("  ✅ Nenhuma intervenção ativa. Caminho livre.")
-        
-    if gov_data.get("actions"):
-        print("\n  📋 DIREÇÃO IMEDIATA:")
-        for action in gov_data["actions"]:
-            print(f"  • {action}")
+    # print(f"\n  ⚖️  GOVERNANÇA (Pulse-check):")
+    # interventions = gov_data.get("interventions", [])
+    # ... (governance section skipped)
             
     if is_morning:
         alerts = get_predictive_alerts(3)
@@ -100,9 +91,9 @@ def print_pulse_report():
     print("  🔄 Sincronizando Tasks entre projetos (Bidirecional)...")
     task_sync.run_full_sync()
 
-    # Importa dados frescos do Trello em tempo real (sempre que o pulso rodar)
+    # Importa dados frescos do Trello em tempo real
     print("  🔄 Importando snapshot fresco do Trello (Real-time)...")
-    import_script = BASE_DIR / "engine" / "skills" / "board_manager.py"
+    import_script = BASE_DIR / "brain" / "skills" / "board_manager.py"
     subprocess.run([sys.executable, str(import_script)], capture_output=True)
     
     # Atualiza o Frontend Markdown e o Gemini Insight
@@ -110,14 +101,15 @@ def print_pulse_report():
     gerador_dia.build_dia_md()
     
     # --- Ciclo do Oráculo (NotebookLM) ---
-    print("  🧠 Alimentando a Biblioteca do Oráculo (Google Drive)...")
-    knowledge_engine.run_knowledge_cycle()
+    # print("  🧠 Alimentando a Biblioteca do Oráculo (Google Drive)...")
+    # knowledge_engine.run_knowledge_cycle()
     
     # Faz o Sync visual no NotebookLM (opcional em cada pulso, vamos rodar no EOD e Morning)
     # Ou se preferir, a cada pulso para manter o Oráculo sempre 'vivo'.
-    if is_morning or is_eod or hour % 4 == 0:
-        print("  📡 Sincronizando Oráculo com o Google Drive (Browser Sync)...")
-        oracle_manager.run_sync()
+    # Faz o Sync visual no NotebookLM (opcional em cada pulso)
+    # if is_morning or is_eod or hour % 4 == 0:
+    #     print("  📡 Sincronizando Oráculo com o Google Drive (Browser Sync)...")
+    #     oracle_manager.run_sync()
 
     print("=" * 64 + "\n")
 

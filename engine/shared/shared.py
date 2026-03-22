@@ -20,18 +20,21 @@ CONFIG_DIR = ENGINE_DIR / "config"
 LOGS_DIR = BASE_DIR / "logs"
 INTEGRATIONS_DIR = ENGINE_DIR / "integrations"
 SNAPSHOTS_DIR = INTEGRATIONS_DIR / "snapshots"
+VAULT_DIR = BASE_DIR / "vault"
+SKILLS_DIR = BASE_DIR / "brain" / "skills"
+EXECUTIVE_LOG_PATH = VAULT_DIR / "executive_log.json"
 HEARTBEAT_FILE = LOGS_DIR / "jarvis_heartbeat.json"
 DIA_MD_PATH = BASE_DIR / "dia.md"
 
 def load_json(path: Path) -> dict:
     if path.exists():
-        with open(path, "r", encoding="utf-8") as f:
+        with open(path, "r", encoding="utf-8-sig") as f:
             return json.load(f)
     return {}
 
 def load_env() -> dict:
     env = {}
-    env_file = CONFIG_DIR / ".env"
+    env_file = BASE_DIR / ".env"
     if env_file.exists():
         with open(env_file, "r", encoding="utf-8") as f:
             for line in f:
@@ -46,7 +49,7 @@ def get_config(name: str) -> dict:
     return load_json(CONFIG_DIR / f"{name}.json")
 
 def get_today_log() -> list:
-    all_events = load_json(LOGS_DIR / "events_master.json")
+    all_events = load_json(EXECUTIVE_LOG_PATH)
     if not isinstance(all_events, list): return []
     today = date.today().isoformat()
     return [e for e in all_events if e.get("timestamp", "").startswith(today)]

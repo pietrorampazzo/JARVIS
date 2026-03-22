@@ -95,7 +95,10 @@ def get_todos_content() -> str:
         if todo_path.exists():
             try:
                 with open(todo_path, "r", encoding="utf-8") as f:
-                    content = f.read().strip()
+                    lines = f.readlines()
+                    # Filtra: mantém tudo exceto o que for explicitamente [x] ou [X]
+                    filtered_lines = [l for l in lines if not (l.strip().lower().startswith("- [x]") or l.strip().lower().startswith("* [x]"))]
+                    content = "".join(filtered_lines).strip()
                     if content:
                         todos.append(content) # sem limite rígido para preservar formatação do template
             except Exception:
@@ -113,7 +116,10 @@ def get_planilhas_summary() -> str:
     projects_config = get_config("projects")
     arte_path = None
     if projects_config:
-        for proj_data in projects_config.get("projects", []):
+        # Pega a lista de projetos de dentro do dicionário se necessário
+        proj_list = projects_config.get("projects", []) if isinstance(projects_config, dict) else projects_config
+        
+        for proj_data in proj_list:
             if "arte" in proj_data.get("id", "").lower() or "arte" in proj_data.get("name", "").lower():
                 arte_path = proj_data.get("path")
                 break
@@ -122,7 +128,7 @@ def get_planilhas_summary() -> str:
         # Fallback: tentar path padrão
         arte_path = r"c:\Users\pietr\OneDrive\.vscode\arte_"
 
-    downloads_path = Path(arte_path) / "DOWNLOADS"
+    downloads_path = Path(arte_path) / "downloads"
     master_path = downloads_path / "master.xlsx"
     heavy_path = downloads_path / "master_heavy.xlsx"
     ultra_path = downloads_path / "master_heavy_ultra.xlsx"
@@ -170,12 +176,16 @@ def get_planilhas_summary() -> str:
         try:
             df_h = pd.read_excel(heavy_path)
             total_itens_h = len(df_h)
-            licit_unicas_h = df_h["ARQUIVO"].nunique() if "ARQUIVO" in df_h.columns else 0
+            # Substituindo a contagem de linhas por contagem de licitações únicas (ARQUIVO) processadas.
+            licit_unicas_h = df_h[df_h["STATUS"].notna() & (df_h["STATUS"] != "")] ["ARQUIVO"].nunique() if "ARQUIVO" in df_h.columns and "STATUS" in df_h.columns else 0
             valor_total_h = df_h["VALOR_TOTAL"].sum() if "VALOR_TOTAL" in df_h.columns else 0
             valor_venda_h = df_h["VALOR_FINAL"].sum() if "VALOR_FINAL" in df_h.columns else 0
 
-            # Cálculo de Pendentes: Itens master.xlsx - master_heavy.xlsx
-            pendentes_h = max(0, total_itens_m - total_itens_h)
+            # Cálculo de Pendentes: Baseado em UID (Arquivo+Nº) para bater com a Engine
+            m_refs = set((df_m["ARQUIVO"].astype(str) + "_" + df_m["Nº"].astype(str)).tolist()) if "ARQUIVO" in df_m.columns and "Nº" in df_m.columns else set()
+            h_refs = set((df_h[df_h["STATUS"].notna() & (df_h["STATUS"] != "")] ["ARQUIVO"].astype(str) + "_" + df_h["Nº"].astype(str)).tolist()) if "ARQUIVO" in df_h.columns and "Nº" in df_h.columns else set()
+            
+            pendentes_h = len(m_refs - h_refs)
             
             # Potencial Edital: soma VALOR_TOTAL (já estava correto, mas garantindo contexto)
             # Proposta Total: soma (QTDE * VALOR_VENDA)

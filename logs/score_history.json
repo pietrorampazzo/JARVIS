@@ -1,0 +1,12 @@
+{
+  "2026-03-22": {
+    "total_pts": 1904,
+    "metrics": {
+      "inventory_skipped": true,
+      "triados_count": 198,
+      "total_master": 198,
+      "items_ultra": 853,
+      "logs_count": 0
+    }
+  }
+}

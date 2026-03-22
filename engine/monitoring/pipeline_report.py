@@ -25,10 +25,12 @@ import subprocess
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-BASE_DIR = Path(__file__).parent.parent
-CONFIG_DIR = BASE_DIR / "config"
-SNAPSHOTS_DIR = BASE_DIR / "integrations" / "snapshots"
-OUTPUT_DIR = BASE_DIR.parent / "logs" / "briefings"
+BASE_DIR_ENGINE = Path(__file__).parent.parent
+sys.path.insert(0, str(BASE_DIR_ENGINE))
+from shared.shared import SKILLS_DIR
+CONFIG_DIR = BASE_DIR_ENGINE / "config"
+SNAPSHOTS_DIR = BASE_DIR_ENGINE / "integrations" / "snapshots"
+OUTPUT_DIR = BASE_DIR_ENGINE.parent / "logs" / "briefings"
 TRELLO_CONFIG_FILE = CONFIG_DIR / "trello_config.json"
 
 
@@ -339,7 +341,7 @@ Exemplos:
     # Importa snapshot fresco se pedido
     if args.import_first:
         print("  🔄 Importando snapshot atualizado do Trello...")
-        import_script = BASE_DIR / "skills" / "board_manager.py"
+        import_script = SKILLS_DIR / "board_manager.py"
         result = subprocess.run(
             [sys.executable, str(import_script)],
             capture_output=True, text=True

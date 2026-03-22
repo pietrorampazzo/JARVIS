@@ -1,0 +1,28 @@
+{
+  "jobs": [
+    {
+      "name": "Pulse",
+      "script": "engine/monitoring/jarvis_pulse.py",
+      "frequency": "HOURLY",
+      "modifier": "1",
+      "start_time": "00:00",
+      "enabled": true
+    },
+    {
+      "name": "Efficiency",
+      "script": "brain/.agents/efficiency_agent.py",
+      "frequency": "DAILY",
+      "modifier": "1",
+      "start_time": "00:00",
+      "enabled": true
+    },
+    {
+      "name": "HeavyMatching",
+      "script": "brain/.agents/arte_heavy_agent.py",
+      "frequency": "MINUTE",
+      "modifier": "30",
+      "start_time": "00:00",
+      "enabled": true
+    }
+  ]
+}

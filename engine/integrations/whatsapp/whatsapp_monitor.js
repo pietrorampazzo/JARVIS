@@ -11,7 +11,7 @@ require('dotenv').config();
 // CONFIGURAÇÕES
 // ============================================
 const AUTH_DIR = path.join(__dirname, 'auth_info');
-const LOGS_FILE = path.join(__dirname, '../../../logs/events_master.json');
+const LOGS_FILE = path.join(__dirname, '../../../vault/executive_log.json');
 const RAW_LOGS_FILE = path.join(__dirname, '../../../logs/whatsapp_pietro.json');
 const GEMINI_SCRIPT = path.join(__dirname, 'prompt_monitor.py');
 const CONFIG_FILE = path.join(__dirname, 'config.json');

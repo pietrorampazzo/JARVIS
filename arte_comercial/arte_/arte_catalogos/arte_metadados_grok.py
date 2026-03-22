@@ -31,8 +31,11 @@ except Exception as e:
     print(f"Erro ao configurar a API da xAI. Verifique sua XAI_KEY no arquivo .env: {e}")
     exit()
 
-# --- CAMINHOS E MODELOS ---
-INPUT_DIR = Path(r"C:\Users\pietr\OneDrive\.vscode\arte_\DOWNLOADS\CATALOGOS")
+# --- CONSTANTES DE DIRETÓRIO ---
+ROOT_DIR = Path(__file__).resolve().parent.parent
+DOWNLOADS_DIR = ROOT_DIR / "DOWNLOADS"
+CATALOGS_DIR = DOWNLOADS_DIR / "CATALOGOS"
+INPUT_DIR = CATALOGS_DIR
 XAI_MODELS = [
     "grok-4-1-fast-reasoning",
     "grok-4-1-fast",

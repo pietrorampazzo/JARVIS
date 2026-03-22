@@ -8,6 +8,11 @@ def query_oracle():
     
     skill_path = Path(r"C:\Users\pietr\.antigravity\skills\notebooklm")
     python_exe = skill_path / ".venv" / "Scripts" / "python.exe"
+    
+    # Fallback caso o VENV não exista
+    if not python_exe.exists():
+        python_exe = Path(sys.executable)
+        
     script_path = skill_path / "scripts" / "ask_question.py"
     
     notebook_url = "https://notebooklm.google.com/notebook/e23ea047-7f1e-4c93-b6d2-f3dd6b912104"
